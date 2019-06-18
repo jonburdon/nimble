@@ -1,3 +1,5 @@
-easyNimGame = function(easyNim) {
-    console.log ("Nim Game");
+var nimstaken = 0;
+
+easyNimGame = function() {
+    console.log(nimstaken);
     };
