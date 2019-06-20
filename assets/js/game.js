@@ -51,6 +51,9 @@ switchPlayer = function (currentPlayer) {
 
 // -*- endTheGame
 
+endTheGame = function () {
+    
+}
 
 // ----------------- Handling a Win  ----------------- 
 
