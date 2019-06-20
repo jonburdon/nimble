@@ -79,6 +79,11 @@ describe("Checks switchPlayer has code", function() {
     });
 });
 
-
+describe("Checks switchPlayer toggles player ", function() {
+    it("should return 2", function() {
+        var result = switchPlayer(1);
+        expect(result).toBe(2);
+    });
+});
 
 });
