@@ -2,7 +2,9 @@
 
 // reportScore Function to take a variable and place it on the DOM
 
-
+reportScore = function (target, score) {
+    document.getElementById(target).innerHTML = score;
+}
 
 // ----------------- Functions to run when a Counter is clicked  ----------------- 
 
