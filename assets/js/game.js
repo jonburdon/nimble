@@ -5,7 +5,6 @@ let totalCounters = 21;
 
 
 
-
 // ----------------- Functions to access DOM  ----------------- 
 
 // reportScore Function to take a variable and place it on the DOM
@@ -70,14 +69,16 @@ function checkPassTurn(takenThisTurn) {
 function checkSwitchPlayer (currentPlayer) {
     var check = checkPassTurn(countersTakenThisTurn);
     if (check) {
-        countersTakenThisTurn = 0;
-        
-        if (currentPlayer === 1) {
+        countersTakenThisTurn = 0;      //Reset counters taken
+
+        if (currentPlayer === 1) {      // Change player
+  
             return 2;
         } else {
+
             return 1;
         }
-    } else {
+    } else {                            // Keep player the same
         if (currentPlayer === 1) {
             return 1;
         } else {
@@ -90,6 +91,7 @@ function checkSwitchPlayer (currentPlayer) {
 // -*- Do the action of switching player automatically
 
 function switchPlayer() {
+   
     reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
@@ -114,6 +116,7 @@ totalCounters=decreaseOverallCounters(totalCounters),
 reportScore("totalCounters",totalCounters),
 switchPlayer(),
 reportScore("takenThisTurn",countersTakenThisTurn);
+
     // endTheGameOrContinue(),
     // switchPlayer();
 }
