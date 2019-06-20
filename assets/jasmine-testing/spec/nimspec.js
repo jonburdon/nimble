@@ -75,20 +75,20 @@ describe("Checks checkPassTurn ", function() {
 
 describe("Checks switchPlayer has code", function() {
     it("should exist", function() {
-        expect(switchPlayer).toBeDefined();
+        expect(checkSwitchPlayer).toBeDefined();
     });
 });
 
 describe("Checks switchPlayer toggles player from p1 to p2 ", function() {
     it("should return 2", function() {
-        var result = switchPlayer(1);
+        var result = checkSwitchPlayer(1);
         expect(result).toBe(2);
     });
 });
 
 describe("Checks switchPlayer toggles player from p2 to p1 ", function() {
     it("should return 1", function() {
-        var result = switchPlayer(2);
+        var result = checkSwitchPlayer(2);
         expect(result).toBe(1);
     });
 });
