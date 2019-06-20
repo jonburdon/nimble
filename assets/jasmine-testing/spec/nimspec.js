@@ -59,4 +59,18 @@ describe("Checks checkPassTurn has code", function() {
     });
 });
 
+describe("Checks checkPassTurn has code", function() {
+    it("should return false if given a value above 3", function() {
+        var result = checkPassTurn(4);
+        expect(result).toBe(false);
+    });
+});
+
+describe("Checks checkPassTurn has code", function() {
+    it("should return false if given a value below 3", function() {
+        var result = checkPassTurn(2);
+        expect(result).toBe(false);
+    });
+});
+
 });
