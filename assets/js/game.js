@@ -49,6 +49,7 @@ checkSwitchPlayer = function (currentPlayer) {
 
 // -*- Do the action of switching player
 
+// NEXT STEP: Write this function!
 
 // -*- endTheGameOrContinue
 

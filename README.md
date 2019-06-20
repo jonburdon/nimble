@@ -20,3 +20,12 @@ As a player aged 8+ I want to be able to
 3. Be able to play the game easily on a mobile screen.
 4. Keep a check of previous wins so see who is the most successful.
 5. Be able to play against another player (or the computer?)
+
+
+### Ideas for development and plans:
+
+[] High Score table to log the wins by a particular player
+[] Play against a human
+[] Choose a colour theme
+[] Audio plays on a mobile but not on a desktop, can be muted on either
+[] Play against the computer, with levels of difficulty
