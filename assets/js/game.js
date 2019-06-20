@@ -54,6 +54,6 @@ switchPlayer = function (currentPlayer) {
 // -*- checkForWin
 
 checkForWin = function (totalCounts) {
-
+return true;
 }
 
