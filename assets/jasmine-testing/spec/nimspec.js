@@ -52,4 +52,11 @@ describe("Checks checkPassTurn has code", function() {
     });
 });
 
+describe("Checks checkPassTurn has code", function() {
+    it("should return true if given a value of 3", function() {
+        var result = checkPassTurn(3);
+        expect(result).toBe(true);
+    });
+});
+
 });
