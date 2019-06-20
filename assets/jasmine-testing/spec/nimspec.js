@@ -93,4 +93,11 @@ describe("Checks switchPlayer toggles player from p2 to p1 ", function() {
     });
 });
 
+describe("Checks checkForWin has code", function() {
+    it("should exist", function() {
+        expect(checkForWin).toBeDefined();
+    });
+});
+
+
 });
