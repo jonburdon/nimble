@@ -132,4 +132,12 @@ describe("Checks checkPassAllowed has code", function() {
     });
 });
 
+
+describe("Checks passTurnToOtherPlayerManually has code", function() {
+    it("should exist", function() {
+        expect(passTurnToOtherPlayerManually).toBeDefined();
+    });
+});
+
+
 });

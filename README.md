@@ -24,6 +24,8 @@ As a player aged 8+ I want to be able to
 
 ### Ideas for development and plans:
 
+[] Pass Play to other player is greyed out until it is allowed
+[] Change the colour scheme depending on whose turn it is
 [] High Score table to log the wins by a particular player
 [] Play against a human
 [] Choose a colour theme

@@ -46,14 +46,16 @@ checkSwitchPlayer = function (currentPlayer) {
     if (check === true) {
         if (currentPlayer === 1) {
             return 2;
-        } else {return 1}
-    } 
+        } else {
+            return 1
+        }
+    }
 }
 
 // -*- Do the action of switching player automatically
 
 switchPlayer = function () {
-reportScore("whoseTurn",checkSwitchPlayer(whoseTurnItIs));
+    reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
 
@@ -79,23 +81,36 @@ counterIsClicked = function () {
 // -*- checkForWin
 
 checkForWin = function (totalCounts) {
-if (totalCounts === 0) {
-    return true;
-} else {return false;}
+    if (totalCounts === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 respondToWin = function () {
-    reportScore ("gameStatus","Game Over")
-        // Also need to say who has won
-        // Also need to clear screen etc, and update High Score tables etc
+    reportScore("gameStatus", "Game Over")
+    // Also need to say who has won
+    // Also need to clear screen etc, and update High Score tables etc
 }
-
 
 // ----------------- Functions to run when a the Pass Button has been clicked  ----------------- 
 
-// -*- checkPassAllowed Check if passing play to other player is allowed, and if so, pass play
-   
-checkPassAllowed = function () {
+// -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
 
+checkPassAllowed = function () {
+    if (countersTakenThisTurn > 1) {
+        if (currentPlayer === 1) {
+            return 2;
+        } else {
+            return 1
+        }
+
+    }
 }
 
+// -*- passTurnToOtherPlayerManually - Update DOM by changing the player ONLY if allowed.
+
+passTurnToOtherPlayerManually = function () { // Call this function when 'PASS' Button is clicked
+reportScore("whoseTurn",checkPassAllowed);
+}
