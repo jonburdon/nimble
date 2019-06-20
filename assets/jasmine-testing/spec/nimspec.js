@@ -7,10 +7,23 @@ describe("Checks increaseCountersTaken has code", function() {
 });
 
 describe("Checks increaseCountersTaken increases Nims taken by 1", function() {
-    it("should increase nimstaken from 0 to 1", function() {
+    it("should increase counters from 0 to 1", function() {
         var result = increaseCountersTaken(0);
-        
         expect(result).toBe(1);
+    });
+});
+
+
+describe("Checks decreaseOverallCounters has code", function() {
+    it("should exist", function() {
+        expect(decreaseOverallCounters).toBeDefined();
+    });
+});
+
+describe("Checks decreaseOverallCounters increases Nims taken by 1", function() {
+    it("should decrease value from by one", function() {
+        var result = decreaseOverallCounters(21);
+        expect(result).toBe(20);
     });
 });
 
