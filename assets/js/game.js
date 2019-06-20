@@ -26,6 +26,6 @@ decreaseOverallCounters = function (counts) {
 // -*- checkPassTurn Pass turn to other player after three counters taken
 
 checkPassTurn = function (takenThisTurn) {
-
+    return true;
 }
 
