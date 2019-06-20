@@ -46,10 +46,14 @@ switchPlayer = function (currentPlayer) {
     } 
 }
 
+// -*- monitorGameEnd
+
+
+// ----------------- Handling a Win  ----------------- 
+
 // -*- checkForWin
 
 checkForWin = function (totalCounts) {
 
-    
 }
 

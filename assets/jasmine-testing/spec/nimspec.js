@@ -99,5 +99,11 @@ describe("Checks checkForWin has code", function() {
     });
 });
 
+describe("Checks switchPlayer toggles player from p2 to p1 ", function() {
+    it("should return true", function() {
+        var result = checkForWin(0);
+        expect(result).toBe(true);
+    });
+});
 
 });
