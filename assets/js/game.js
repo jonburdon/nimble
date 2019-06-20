@@ -16,7 +16,11 @@ function reportScore(target, score) {
 
 // ----------------- Functions to initialise the game  ----------------- 
 
-
+function restartScores() {
+    whoseTurnItIs = 1;
+    countersTakenThisTurn = 0;
+    totalCounters = 21;
+}
 
 function displayStartScores() {
     reportScore("totalCounters",totalCounters),

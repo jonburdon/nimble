@@ -79,14 +79,14 @@ describe("Checks switchPlayer has code", function() {
     });
 });
 
-describe("Checks switchPlayer toggles player from p1 to p2 ", function() {
+describe("Checks checkSwitchPlayer toggles player from p1 to p2 ", function() {
     it("should return 2", function() {
         var result = checkSwitchPlayer(1);
         expect(result).toBe(2);
     });
 });
 
-describe("Checks switchPlayer toggles player from p2 to p1 ", function() {
+describe("Checks checkSwitchPlayer toggles player from p2 to p1 ", function() {
     it("should return 1", function() {
         var result = checkSwitchPlayer(2);
         expect(result).toBe(1);
