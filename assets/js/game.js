@@ -2,6 +2,8 @@
 var whoseTurnItIs = 1;
 var countersTakenThisTurn = 3;
 var totalCounters = 21;
+var currentPlayer = 1;
+
 //NEED TO CREATE A VARIABLE TO SET UP THE GAME AND SET VARIABLES UP
 
 // ----------------- Functions to access DOM  ----------------- 
@@ -98,19 +100,18 @@ respondToWin = function () {
 
 // -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
 
-checkPassAllowed = function () {
-    if (countersTakenThisTurn > 1) {
+checkPassAllowed = function (passcheck) {
+    if (passcheck > 1) {
         if (currentPlayer === 1) {
             return 2;
         } else {
             return 1
         }
-
     }
 }
 
-// -*- passTurnToOtherPlayerManually - Update DOM by changing the player ONLY if allowed.
+// -*- passTurnToOtherPlayerManually - EXECUTE OTHER FUNCTIONS to update DOM by changing the player ONLY if allowed.
 
 passTurnToOtherPlayerManually = function () { // Call this function when 'PASS' Button is clicked
-reportScore("whoseTurn",checkPassAllowed);
+reportScore("whoseTurn",checkPassAllowed(countersTakenThisTurn));
 }

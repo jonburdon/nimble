@@ -140,4 +140,11 @@ describe("Checks passTurnToOtherPlayerManually has code", function() {
 });
 
 
+describe("Checks checkPassAllowed returns", function() {
+    it("should return true", function() {
+        var result = checkPassAllowed(2);
+        expect(result).toBe(2);
+    });
+});
+
 });
