@@ -52,25 +52,33 @@ describe("Checks checkPassTurn has code", function() {
     });
 });
 
-describe("Checks checkPassTurn has code", function() {
+describe("Checks checkPassTurn ", function() {
     it("should return true if given a value of 3", function() {
         var result = checkPassTurn(3);
         expect(result).toBe(true);
     });
 });
 
-describe("Checks checkPassTurn has code", function() {
+describe("Checks checkPassTurn ", function() {
     it("should return false if given a value above 3", function() {
         var result = checkPassTurn(4);
         expect(result).toBe(false);
     });
 });
 
-describe("Checks checkPassTurn has code", function() {
+describe("Checks checkPassTurn ", function() {
     it("should return false if given a value below 3", function() {
         var result = checkPassTurn(2);
         expect(result).toBe(false);
     });
 });
+
+describe("Checks switchPlayer has code", function() {
+    it("should exist", function() {
+        expect(switchPlayer).toBeDefined();
+    });
+});
+
+
 
 });
