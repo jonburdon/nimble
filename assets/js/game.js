@@ -29,6 +29,12 @@ function displayStartScores() {
     reportScore("takenThisTurn",countersTakenThisTurn);
 };
 
+// -*- RUNS START OF GAME FUNCTIONS
+
+function startGame() {
+    restartScores();
+    displayStartScores();
+}
 
 // ----------------- Functions to run when a Counter is clicked  ----------------- 
 
@@ -95,7 +101,8 @@ function counterIsClicked() {
 countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn),
 reportScore("takenThisTurn",countersTakenThisTurn),
 totalCounters=decreaseOverallCounters(totalCounters),
-reportScore("totalCounters",totalCounters);
+reportScore("totalCounters",totalCounters),
+
 
     // endTheGameOrContinue(),
     // switchPlayer();
