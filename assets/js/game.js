@@ -1,30 +1,44 @@
 // Declare variables
 let whoseTurnItIs = 1;
-let countersTakenThisTurn = 3;
+let countersTakenThisTurn = 0;
 let totalCounters = 21;
 
-//NEED TO CREATE A VARIABLE TO SET UP THE GAME AND SET VARIABLES UP
+
+
 
 // ----------------- Functions to access DOM  ----------------- 
 
 // reportScore Function to take a variable and place it on the DOM
 
-reportScore = function (target, score) {
+function reportScore(target, score) {
     document.getElementById(target).innerHTML = score;
 }
+
+// ----------------- Functions to initialise the game  ----------------- 
+
+
+
+function displayStartScores() {
+    reportScore("totalCounters",totalCounters),
+    reportScore("whoseTurn",whoseTurnItIs),
+    reportScore("gameStatus","Playing..."),
+    reportScore("takenThisTurn",countersTakenThisTurn);
+};
+
 
 // ----------------- Functions to run when a Counter is clicked  ----------------- 
 
 // -*- increaseCountersTaken Function to increase number of counters taken in this turn    
 
-increaseCountersTaken = function (counts) {
+function increaseCountersTaken (counts) {
     counts++;
     return counts;
-};
+}
+
 
 // -*- decreaseOverallCounters Function to decrease number of overall counters
 
-decreaseOverallCounters = function (counts) {
+function decreaseOverallCounters (counts) {
     counts--;
     return counts;
 };
@@ -32,7 +46,7 @@ decreaseOverallCounters = function (counts) {
 
 // -*- checkPassTurn Check if play should be passed to other player because they took 3
 
-checkPassTurn = function (takenThisTurn) {
+function checkPassTurn(takenThisTurn) {
     if (takenThisTurn === 3) {
         return true;
     } else {
@@ -42,9 +56,9 @@ checkPassTurn = function (takenThisTurn) {
 
 // -*- checkSwitchPlayer Switches Player if checkPassTurn returns True
 
-checkSwitchPlayer = function (currentPlayer) {
+function checkSwitchPlayer (currentPlayer) {
     var check = checkPassTurn(countersTakenThisTurn);
-    if (check === true) {
+    if (check) {
         if (currentPlayer === 1) {
             return 2;
         } else {
@@ -55,16 +69,16 @@ checkSwitchPlayer = function (currentPlayer) {
 
 // -*- Do the action of switching player automatically
 
-switchPlayer = function () {
+function switchPlayer() {
     reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
 
 // -*- endTheGameOrContinue
 
-endTheGameOrContinue = function () {
+function endTheGameOrContinue () {
     var endOrNot = checkForWin(totalCounters);
-    if (endOrNot === true) {
+    if (endOrNot) {
         respondToWin();
     }
 }
@@ -72,18 +86,22 @@ endTheGameOrContinue = function () {
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 // List to execute: hideCounterClicked
 
-counterIsClicked = function () {
-    increaseCountersTaken(countersTakenThisTurn),
-    decreaseOverallCounters(totalCounters),
-    endTheGameOrContinue(),
-    switchPlayer();
+function counterIsClicked() {
+
+countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn),
+reportScore("takenThisTurn",countersTakenThisTurn),
+totalCounters=decreaseOverallCounters(totalCounters),
+reportScore("totalCounters",totalCounters);
+
+    // endTheGameOrContinue(),
+    // switchPlayer();
 }
 
 // ----------------- Handling a Win  ----------------- 
 
 // -*- checkForWin
 
-checkForWin = function (totalCounts) {
+function checkForWin (totalCounts) {
     if (totalCounts === 0) {
         return true;
     } else {
@@ -91,7 +109,7 @@ checkForWin = function (totalCounts) {
     }
 }
 
-respondToWin = function () {
+function respondToWin () {
     reportScore("gameStatus", "Game Over")
     // Also need to say who has won
     // Also need to clear screen etc, and update High Score tables etc
@@ -101,7 +119,7 @@ respondToWin = function () {
 
 // -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
 
-checkPassAllowed = function (passcheck) {
+function checkPassAllowed (passcheck) {
     if (passcheck > 1) {
         if (currentPlayer === 1) {
             return 2;
@@ -113,6 +131,6 @@ checkPassAllowed = function (passcheck) {
 
 // -*- passTurnToOtherPlayerManually - EXECUTE OTHER FUNCTIONS to update DOM by changing the player ONLY if allowed.
 
-passTurnToOtherPlayerManually = function () { // Call this function when 'PASS' Button is clicked
+function passTurnToOtherPlayerManually () { // Call this function when 'PASS' Button is clicked
 reportScore("whoseTurn",checkPassAllowed(countersTakenThisTurn));
 }
