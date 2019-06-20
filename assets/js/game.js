@@ -50,7 +50,7 @@ checkSwitchPlayer = function (currentPlayer) {
     } 
 }
 
-// -*- Do the action of switching player
+// -*- Do the action of switching player automatically
 
 switchPlayer = function () {
 reportScore("whoseTurn",checkSwitchPlayer(whoseTurnItIs));
@@ -67,8 +67,6 @@ endTheGameOrContinue = function () {
 }
 
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
-
-
 // List to execute: hideCounterClicked
 
 counterIsClicked = function () {
@@ -90,5 +88,14 @@ respondToWin = function () {
     reportScore ("gameStatus","Game Over")
         // Also need to say who has won
         // Also need to clear screen etc, and update High Score tables etc
+}
+
+
+// ----------------- Functions to run when a the Pass Button has been clicked  ----------------- 
+
+// -*- checkPassAllowed Check if passing play to other player is allowed, and if so, pass play
+   
+checkPassAllowed = function () {
+
 }
 

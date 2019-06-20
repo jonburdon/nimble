@@ -125,4 +125,11 @@ describe("Checks switchPlayer has code", function() {
 });
 
 
+
+describe("Checks checkPassAllowed has code", function() {
+    it("should exist", function() {
+        expect(checkPassAllowed).toBeDefined();
+    });
+});
+
 });
