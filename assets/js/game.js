@@ -24,6 +24,8 @@ decreaseOverallCounters = function (counts) {
 
 
 // -*- checkPassTurn Pass turn to other player after three counters taken
+var whoseTurn = 1;
+var countersTakenThisTurn = 3;
 
 checkPassTurn = function (takenThisTurn) {
     if (takenThisTurn === 3) {
@@ -36,11 +38,11 @@ checkPassTurn = function (takenThisTurn) {
 // -*- switchPlayer Switches Player if checkPassTurn returns True
 
 switchPlayer = function (currentPlayer) {
-    var check = checkPassTurn(3);
-    if (check = true) {
-        if (currentPlayer = 1) {
+    var check = checkPassTurn(countersTakenThisTurn);
+    if (check === true) {
+        if (currentPlayer === 1) {
             return 2;
-        }
+        } else {return 1}
     } 
 }
 
