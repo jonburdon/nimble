@@ -1,6 +1,3 @@
-var nimstaken = 0;
+increaseCountersTaken = function (counts) {
 
-easyNimGame = function() {
-    console.log(nimstaken);
-    nimstaken ++;
-    };
+};
