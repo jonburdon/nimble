@@ -70,11 +70,11 @@ function checkPassTurn(takenThisTurn) {
 function checkSwitchPlayer (currentPlayer) {
     var check = checkPassTurn(countersTakenThisTurn);
     if (check) {
+        countersTakenThisTurn = 0;
+        
         if (currentPlayer === 1) {
-            
             return 2;
         } else {
-            
             return 1;
         }
     } else {
@@ -112,8 +112,8 @@ countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn),
 reportScore("takenThisTurn",countersTakenThisTurn),
 totalCounters=decreaseOverallCounters(totalCounters),
 reportScore("totalCounters",totalCounters),
-switchPlayer();
-
+switchPlayer(),
+reportScore("takenThisTurn",countersTakenThisTurn);
     // endTheGameOrContinue(),
     // switchPlayer();
 }
