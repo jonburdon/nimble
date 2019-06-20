@@ -57,7 +57,7 @@ function decreaseOverallCounters (counts) {
 
 function checkPassTurn(takenThisTurn) {
     if (takenThisTurn === 3) {
-        
+        countersTakenThisTurn = 0
         return true;
     } else {
         return false;
@@ -69,30 +69,17 @@ function checkPassTurn(takenThisTurn) {
 function checkSwitchPlayer (currentPlayer) {
     var check = checkPassTurn(countersTakenThisTurn);
     if (check) {
-        countersTakenThisTurn = 0;      //Reset counters taken
-
-        if (currentPlayer === 1) {      // Change player
-  
-            return 2;
-        } else {
-
-            return 1;
-        }
-    } else {                            // Keep player the same
-        if (currentPlayer === 1) {
-            return 1;
-        } else {
-            return 2;
-        }
-
+        return currentPlayer = (currentPlayer === 1)? 2:1;
+    } else {
+    return currentPlayer
     }
 }
 
 // -*- Do the action of switching player automatically
 
 function switchPlayer() {
-   
-    reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
+    whoseTurnItIs = checkSwitchPlayer(whoseTurnItIs);
+    // reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
 
@@ -111,14 +98,15 @@ function endTheGameOrContinue () {
 function counterIsClicked() {
 
 countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn),
-reportScore("takenThisTurn",countersTakenThisTurn),
+// reportScore("takenThisTurn",countersTakenThisTurn),
 totalCounters=decreaseOverallCounters(totalCounters),
 reportScore("totalCounters",totalCounters),
 switchPlayer(),
+reportScore("whoseTurn", whoseTurnItIs);
 reportScore("takenThisTurn",countersTakenThisTurn);
 
     // endTheGameOrContinue(),
-    // switchPlayer();
+
 }
 
 // ----------------- Handling a Win  ----------------- 
