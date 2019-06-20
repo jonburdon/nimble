@@ -46,6 +46,9 @@ switchPlayer = function (currentPlayer) {
     } 
 }
 
+// -*- Do the action of switching player
+
+
 // -*- monitorGameEnd
 
 
@@ -56,6 +59,9 @@ switchPlayer = function (currentPlayer) {
 checkForWin = function (totalCounts) {
 if (totalCounts === 0) {
     return true;
-}
+} else {return false;}
 }
 
+respondToWin = function () {
+    
+}
