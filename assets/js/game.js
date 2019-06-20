@@ -28,6 +28,8 @@ decreaseOverallCounters = function (counts) {
 checkPassTurn = function (takenThisTurn) {
     if (takenThisTurn === 3) {
         return true;
-    } 
+    } else {
+        return false;
+    }
 }
 
