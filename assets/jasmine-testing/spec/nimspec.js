@@ -106,4 +106,10 @@ describe("Checks switchPlayer toggles player from p2 to p1 ", function() {
     });
 });
 
+describe("Checks respondToWin has code", function() {
+    it("should exist", function() {
+        expect(respondToWin).toBeDefined();
+    });
+});
+
 });
