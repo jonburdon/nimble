@@ -9,3 +9,7 @@ increaseCountersTaken = function (counts) {
 
 // -*- decreaseOverallCounters Function to decrease number of overall counters
     
+decreaseOverallCounters = function (counts) {
+    counts--;
+    return counts;
+};
