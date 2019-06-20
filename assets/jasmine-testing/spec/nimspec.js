@@ -46,4 +46,10 @@ describe("Checks reportScore has code", function() {
     });
 });
 
+describe("Checks checkPassTurn has code", function() {
+    it("should exist", function() {
+        expect(checkPassTurn).toBeDefined();
+    });
+});
+
 });
