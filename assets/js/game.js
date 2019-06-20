@@ -36,6 +36,11 @@ checkPassTurn = function (takenThisTurn) {
 // -*- switchPlayer Switches Player if checkPassTurn returns True
 
 switchPlayer = function (currentPlayer) {
-return 2;
+    var check = checkPassTurn(3);
+    if (check = true) {
+        if (currentPlayer = 1) {
+            return 2;
+        }
+    } 
 }
 
