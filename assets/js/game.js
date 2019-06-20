@@ -1,3 +1,9 @@
+// Declare variables
+var whoseTurnItIs = 1;
+var countersTakenThisTurn = 3;
+var totalCounters = 21;
+//NEED TO CREATE A VARIABLE TO SET UP THE GAME AND SET VARIABLES UP
+
 // ----------------- Functions to access DOM  ----------------- 
 
 // reportScore Function to take a variable and place it on the DOM
@@ -23,10 +29,7 @@ decreaseOverallCounters = function (counts) {
 };
 
 
-// -*- checkPassTurn Pass turn to other player after three counters taken
-var whoseTurn = 1;
-var countersTakenThisTurn = 3;
-var totalCounters = 21;
+// -*- checkPassTurn Check if play should be passed to other player because they took 3
 
 checkPassTurn = function (takenThisTurn) {
     if (takenThisTurn === 3) {
@@ -49,7 +52,10 @@ checkSwitchPlayer = function (currentPlayer) {
 
 // -*- Do the action of switching player
 
-// NEXT STEP: Write this function!
+switchPlayer = function () {
+reportScore("whoseTurn",checkSwitchPlayer(whoseTurnItIs));
+}
+
 
 // -*- endTheGameOrContinue
 
@@ -61,7 +67,14 @@ endTheGameOrContinue = function () {
 }
 
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
-// List to execute: endTheGameOrContinue
+
+
+// List to execute: hideCounterClicked
+
+counterIsClicked = function () {
+    switchPlayer();
+    endTheGameOrContinue();
+}
 
 // ----------------- Handling a Win  ----------------- 
 

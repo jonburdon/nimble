@@ -29,3 +29,5 @@ As a player aged 8+ I want to be able to
 [] Choose a colour theme
 [] Audio plays on a mobile but not on a desktop, can be muted on either
 [] Play against the computer, with levels of difficulty
+[] 'Classic' version, with random number of stacks of counters. You can take as many as you like from any stack
+[] Implement tests for those functions which access the DOM

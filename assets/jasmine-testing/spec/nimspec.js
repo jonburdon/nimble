@@ -118,5 +118,11 @@ describe("Checks respondToWin has code", function() {
     });
 });
 
+describe("Checks switchPlayer has code", function() {
+    it("should exist", function() {
+        expect(switchPlayer).toBeDefined();
+    });
+});
+
 
 });
