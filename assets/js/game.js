@@ -1,8 +1,7 @@
 // Declare variables
-var whoseTurnItIs = 1;
-var countersTakenThisTurn = 3;
-var totalCounters = 21;
-var currentPlayer = 1;
+let whoseTurnItIs = 1;
+let countersTakenThisTurn = 3;
+let totalCounters = 21;
 
 //NEED TO CREATE A VARIABLE TO SET UP THE GAME AND SET VARIABLES UP
 
