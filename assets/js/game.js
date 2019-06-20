@@ -74,8 +74,10 @@ endTheGameOrContinue = function () {
 // List to execute: hideCounterClicked
 
 counterIsClicked = function () {
+    increaseCountersTaken(countersTakenThisTurn),
+    decreaseOverallCounters(totalCounters),
+    endTheGameOrContinue(),
     switchPlayer();
-    endTheGameOrContinue();
 }
 
 // ----------------- Handling a Win  ----------------- 
