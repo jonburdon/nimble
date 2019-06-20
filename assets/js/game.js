@@ -26,6 +26,7 @@ decreaseOverallCounters = function (counts) {
 // -*- checkPassTurn Pass turn to other player after three counters taken
 var whoseTurn = 1;
 var countersTakenThisTurn = 3;
+var totalCounters = 21;
 
 checkPassTurn = function (takenThisTurn) {
     if (takenThisTurn === 3) {
@@ -49,11 +50,17 @@ switchPlayer = function (currentPlayer) {
 // -*- Do the action of switching player
 
 
-// -*- endTheGame
+// -*- endTheGameOrContinue
 
-endTheGame = function () {
-    
+endTheGameOrContinue = function () {
+    var endOrNot = checkForWin(totalCounters);
+    if (endOrNot === true) {
+        respondToWin();
+    }
 }
+
+// -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
+// List to execute: endTheGameOrContinue
 
 // ----------------- Handling a Win  ----------------- 
 
