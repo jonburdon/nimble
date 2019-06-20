@@ -112,4 +112,11 @@ describe("Checks respondToWin has code", function() {
     });
 });
 
+describe("Checks respondToWin has code", function() {
+    it("should exist", function() {
+        expect(endTheGame).toBeDefined();
+    });
+});
+
+
 });

@@ -49,7 +49,7 @@ switchPlayer = function (currentPlayer) {
 // -*- Do the action of switching player
 
 
-// -*- monitorGameEnd
+// -*- endTheGame
 
 
 // ----------------- Handling a Win  ----------------- 
@@ -63,5 +63,8 @@ if (totalCounts === 0) {
 }
 
 respondToWin = function () {
-    
+    reportScore ("gameStatus","Game Over")
+        // Also need to say who has won
+        // Also need to clear screen etc, and update High Score tables etc
 }
+
