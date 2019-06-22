@@ -226,14 +226,14 @@ function computersTurn() {
 }
 
 
-//-*- Hard Mode - 80% chance of ideal move taken, otherwise random move taken
+//-*- Levelled Move - 80% chance of ideal move taken, otherwise random move taken
 
-function hardModeMove(difficulty) {
+function levelledMove(difficulty) {
 let guesshard = (Maths.random()*(difficulty+3)); //Pass this function 8 for hard, 3 for Medium Mode, 1 for Easy Mode
 if (guesshard > difficulty) {
-    return makeRandomMove(totalCounters); //Won't work yet - won't actually take counters
+    return makeRandomMove(totalCounters); 
 } else {
-    return takeTheIdealMove(totalCounters); //Won't work yet - won't actually take counters
+    return takeTheIdealMove(totalCounters); 
 }
 }
 
