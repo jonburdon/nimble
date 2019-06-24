@@ -3,7 +3,7 @@ let whoseTurnItIs = 1;
 let countersTakenThisTurn = 0;
 let totalCounters = 21;
 let idealMoves = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1];
-
+let mode = "impossible";
 
 
 
@@ -35,6 +35,7 @@ function displayStartScores() {
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
+    showAllCounters();
     restartScores();
     displayStartScores();
 }
@@ -49,6 +50,9 @@ $(`.counter:nth-of-type(${totalCounters})`)
 
 //-*- Show all counters
 
+function showAllCounters() {
+    $(".counter").removeClass("hidden");
+}
 
 // ----------------- Functions to run when a Counter is clicked  ----------------- 
 
@@ -109,7 +113,6 @@ function endTheGameOrContinue () {
 }
 
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
-// List to execute: hideCounterClicked
 
 function counterIsClicked() {
 reportScore("whoseTurn", whoseTurnItIs);
@@ -121,8 +124,8 @@ switchPlayer();
 reportScore("whoseTurn", whoseTurnItIs);
 reportScore("takenThisTurn",countersTakenThisTurn);
 activateWinSequenceTest();
-    // endTheGameOrContinue(),
-    // switchPlayer();
+humanOrComputer();
+
 }
 
 // ----------------- Handling a Win  ----------------- 
@@ -183,7 +186,40 @@ reportScore("takenThisTurn", countersTakenThisTurn);
 
 // ----------------- Functions for Human Vs Computer  ----------------- 
 
+// -*- If Human v Human, do nothing, otherwise make a move based on difficulty mode and return play to P1
 
+function humanOrComputer () {
+    console.log(`It is player ${whoseTurnItIs} 's turn according to HorC function`)
+    if (mode === "human") {
+        reportScore("gameStatus","Human Mode");
+    }
+     
+    
+    else {
+
+        if (mode === "impossible") {
+            console.log('Impossible Mode activated in humanOrComputer')
+            thinkThenMove(50);
+        }
+        else if (mode === "hard") {
+            console.log('Hard Mode activated in humanOrComputer')
+            thinkThenMove(8);
+        }
+        else if (mode === "medium") {
+            console.log('Medium Mode activated in humanOrComputer')
+            thinkThenMove(3);
+        } 
+        else { // SET THIS TO DEFAULT TO EASY MODE
+            console.log('Easy Mode activated in humanOrComputer')
+            thinkThenMove(1);
+
+    }
+    // else {
+    //     console.log('It must be player 1s turn then ...')
+    // }
+    }
+
+}
 
 //-*- Impossible Mode - Computer makes ideal move every time
 
