@@ -188,10 +188,15 @@ function randomMoveWithThree() {
 // -*- Decide randomly between taking 1 or 2 counters
 
 function randomMoveWithTwo() {
-    let guess2 = (Maths.random()*2);
+    console.log('Using randomMoveWithTwo ...')
+    let guess2 = (Math.random()*2);
+    console.log(guess2)
     if (guess2 <1) {
+        console.log('I will return 1');
         return 1
-    } else {return 2}
+    } else {
+        console.log('I will return 2');
+        return 2}
 }
 
 // -*- Make a random moved based on how many counters are left - 1, 2 or 3
