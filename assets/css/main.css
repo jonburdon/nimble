@@ -1,0 +1,16 @@
+
+
+
+.counter {
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    border-color: black;
+    border: solid;
+    border-width: 5px;
+}
+
+.hidden {
+    display:none;
+}

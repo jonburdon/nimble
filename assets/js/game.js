@@ -5,6 +5,7 @@ let totalCounters = 21;
 let idealMoves = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1];
 
 
+
 // ----------------- Functions to access DOM  ----------------- 
 
 // reportScore Function to take a variable and place it on the DOM
@@ -35,7 +36,25 @@ function startGame() {
     displayStartScores();
 }
 
+// ----------------- Hiding and showing Counters on the screen  ----------------- 
+
+//-*- Hide that which is clicked on
+function hideCounterClicked() {
+    $(this).addClass("hidden");
+}
+
+
+//-*- Remove Nth counter
+function hideNthCounter(toRemove) {
+$(`.counter:nth-of-type(${toRemove})`)
+.addClass("hidden");
+}
+
+//-*- Show all counters
+
+
 // ----------------- Functions to run when a Counter is clicked  ----------------- 
+
 
 // -*- increaseCountersTaken Function to increase number of counters taken in this turn    
 
@@ -134,7 +153,7 @@ function activateWinSequenceTest () {
 }
 
 
-// ----------------- Functions to run when a the Pass Button has been clicked  ----------------- 
+// ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
 
 // -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
 
@@ -166,6 +185,8 @@ reportScore("takenThisTurn", countersTakenThisTurn);
 }
 
 // ----------------- Functions for Human Vs Computer  ----------------- 
+
+
 
 //-*- Impossible Mode - Computer makes ideal move every time
 
@@ -199,6 +220,17 @@ function randomMoveWithTwo() {
         return 2}
 }
 
+//-*- Turn off Human Playability for 3 seconds whilst Computer 'thinks'
+
+function thinkThenMove(diffLevel) {
+    console.log('Human move is off');
+    reportScore("gameStatus", "I am thinking ...");
+    setTimeout(function(){
+        levelledMove(diffLevel)
+       },3000);
+}
+
+
 // -*- Make a random moved based on how many counters are left - 1, 2 or 3
 
 function makeRandomMove(counters) {
@@ -211,63 +243,39 @@ function makeRandomMove(counters) {
     }
 }
 
-//-*- Levelled Move - receive difficulty level and return the number of counters to take *** NOT WORKING ***
+
+
+//-*- Levelled Move - receive difficulty level and return the number of counters to take 
 
 function levelledMove(difficulty) {
-let myGo = (Maths.random()*(difficulty+3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
-if (myGo > difficulty) {
-    return makeRandomMove(totalCounters); 
-} else {
-    return takeTheIdealMove(); 
-}
-}
-
-
-
-
-// -*- Take an impossible to beat move
-
-function perfectMove() {
-    let myDecision = takeTheIdealMove();
-    totalCounters = totalCounters - myDecision;
-    reportScore("gameStatus","Computer Decided to take "+ myDecision + " counters.");
-    reportScore("totalCounters", totalCounters);
+    console.log('Human is off');
     
-    // Pass play to player 1 UNLESS Computer has won.
-    if (totalCounters === 0) {
-        respondToWin();
-    } else {
-        whoseTurnItIs = 1;
-        reportScore("whoseTurn", whoseTurnItIs);
-    }
+myGo = (Math.random()*(difficulty+3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
+console.log(`levelledMove received ${difficulty} and will return ${myGo}`)
+
+if (myGo > difficulty) {
+    console.log('I chose to take a random move');
+    let dec = makeRandomMove(totalCounters); 
+    console.log(`I decided to take ${dec} counters`);
+    totalCounters = totalCounters - dec;
+    
+    reportScore("gameStatus","Computer Decided to take "+ dec + " counters.");
+    
+    reportScore("totalCounters", totalCounters);
+} else {
+    console.log('I chose to take an ideal move');
+    let dec = takeTheIdealMove(); 
+    console.log(`I decided to take ${dec} counters`)
+    totalCounters = totalCounters - dec;
+   
+    reportScore("gameStatus","Computer Decided to take "+ dec + " counters.");
+    
+    reportScore("totalCounters", totalCounters);
+    console.log('Human move is def back on');
 }
 
-
-// -*- Do the action of taking a Computers Turn in HARD MODE
-
-function computersHardModeTurn() { 
-console.log('I am in Hard Mode.');
-let guesshard = (Math.random()*11);
-console.log('My value is guess hard ' + guesshard)
-if (guesshard > 7.5) {
-    console.log('I will make a random move');
-    var decision = makeRandomMove(totalCounters);
-    console.log('I ran the makeRandomMove function and received ' + decision)
-}
-else
-{
-    console.log('I will make an impossible to beat move');
-    var decision = takeTheIdealMove();
-    console.log('I ran the impossible function and received ' + decision)
-}
-
-// let decision = makeRandomMove(totalCounters);
-totalCounters = totalCounters - decision;
-reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
-reportScore("totalCounters", totalCounters);
-
-// Pass play to player 1 UNLESS Computer has won.
-if (totalCounters === 0) {
+   // Pass play to player 1 UNLESS Computer has won.
+   if (totalCounters === 0) {
     respondToWin();
 } else {
     whoseTurnItIs = 1;
@@ -275,14 +283,76 @@ if (totalCounters === 0) {
 }
 }
 
+
+// -*- Take an impossible to beat move
+
+// function perfectMove() {
+//     let myDecision = takeTheIdealMove();
+//     totalCounters = totalCounters - myDecision;
+//     reportScore("gameStatus","Computer Decided to take "+ myDecision + " counters.");
+//     reportScore("totalCounters", totalCounters);
+    
+//     // Pass play to player 1 UNLESS Computer has won.
+//     if (totalCounters === 0) {
+//         respondToWin();
+//     } else {
+//         whoseTurnItIs = 1;
+//         reportScore("whoseTurn", whoseTurnItIs);
+//     }
+// }
+
+
+// -*- Do the action of taking a Computers Turn in HARD MODE --- DON'T NEED THIS ANY MORE ---
+
+// function computersHardModeTurn() { 
+// console.log('I am in Hard Mode.');
+// let guesshard = (Math.random()*11);
+// console.log('My value is guess hard ' + guesshard)
+// if (guesshard > 7.5) {
+//     console.log('I will make a random move');
+//     var decision = makeRandomMove(totalCounters);
+//     console.log('I ran the makeRandomMove function and received ' + decision)
+// }
+// else
+// {
+//     console.log('I will make an impossible to beat move');
+//     var decision = takeTheIdealMove();
+//     console.log('I ran the impossible function and received ' + decision)
+// }
+
+// // let decision = makeRandomMove(totalCounters);
+// totalCounters = totalCounters - decision;
+// reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
+// reportScore("totalCounters", totalCounters);
+
+// // Pass play to player 1 UNLESS Computer has won.
+// if (totalCounters === 0) {
+//     respondToWin();
+// } else {
+//     whoseTurnItIs = 1;
+//     reportScore("whoseTurn", whoseTurnItIs);
+// }
+// }
+
+
 // -*- Do the action of taking a Computers Turn
 
 function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impossible, hard, medium and easy
 
-        // let decision = levelledMove(diffLevel);
+    // Say 'I a thinking'
+
+    // Wait 2 seconds
+
+    // Carry on
     
     let decision = makeRandomMove(totalCounters);
     
+    // Take first counter away
+
+    // Take second counter away
+
+    // Take third counter away
+
     totalCounters = totalCounters - decision;
     reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
     reportScore("totalCounters", totalCounters);
