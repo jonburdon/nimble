@@ -169,8 +169,8 @@ reportScore("takenThisTurn", countersTakenThisTurn);
 
 //-*- Impossible Mode - Computer makes ideal move every time
 
-function takeTheIdealMove(counters) {
-    return idealMoves[counters-1];
+function takeTheIdealMove() {
+    return idealMoves[totalCounters-1];
 }
 
 //-*- Random Move logic
@@ -206,10 +206,45 @@ function makeRandomMove(counters) {
     }
 }
 
+//-*- Levelled Move - receive difficulty level and return the number of counters to take *** NOT WORKING ***
+
+function levelledMove(difficulty) {
+let myGo = (Maths.random()*(difficulty+3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
+if (myGo > difficulty) {
+    return makeRandomMove(totalCounters); 
+} else {
+    return takeTheIdealMove(); 
+}
+}
+
+
+
+
+// -*- Take an impossible to beat move
+
+function perfectMove() {
+    let myDecision = takeTheIdealMove();
+    totalCounters = totalCounters - myDecision;
+    reportScore("gameStatus","Computer Decided to take "+ myDecision + " counters.");
+    reportScore("totalCounters", totalCounters);
+    
+    // Pass play to player 1 UNLESS Computer has won.
+    if (totalCounters === 0) {
+        respondToWin();
+    } else {
+        whoseTurnItIs = 1;
+        reportScore("whoseTurn", whoseTurnItIs);
+    }
+}
+
 // -*- Do the action of taking a Computers Turn
 
-function computersTurn() {
+function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impossible, hard, medium and easy
+
+        // let decision = levelledMove(diffLevel);
+    
     let decision = makeRandomMove(totalCounters);
+    
     totalCounters = totalCounters - decision;
     reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
     reportScore("totalCounters", totalCounters);
@@ -224,16 +259,3 @@ function computersTurn() {
 
     // Needs refactoring to choose which function to run based on Random, Easy, Medium, Hard or Impossible Mode.
 }
-
-
-//-*- Levelled Move - 80% chance of ideal move taken, otherwise random move taken
-
-function levelledMove(difficulty) {
-let guesshard = (Maths.random()*(difficulty+3)); //Pass this function 8 for hard, 3 for Medium Mode, 1 for Easy Mode
-if (guesshard > difficulty) {
-    return makeRandomMove(totalCounters); 
-} else {
-    return takeTheIdealMove(totalCounters); 
-}
-}
-
