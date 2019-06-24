@@ -6,6 +6,9 @@ let idealMoves = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1];
 
 
 
+
+
+
 // ----------------- Functions to access DOM  ----------------- 
 
 // reportScore Function to take a variable and place it on the DOM
@@ -38,15 +41,9 @@ function startGame() {
 
 // ----------------- Hiding and showing Counters on the screen  ----------------- 
 
-//-*- Hide that which is clicked on
-function hideCounterClicked() {
-    $(this).addClass("hidden");
-}
-
-
 //-*- Remove Nth counter
-function hideNthCounter(toRemove) {
-$(`.counter:nth-of-type(${toRemove})`)
+function hideNthCounter() {
+$(`.counter:nth-of-type(${totalCounters})`)
 .addClass("hidden");
 }
 
@@ -367,3 +364,14 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 
     // Needs refactoring to choose which function to run based on Random, Easy, Medium, Hard or Impossible Mode.
 }
+
+// ----------------- jQuery Event Listeners  ----------------- 
+
+$(document).ready(function () {
+    $(".counter").click(function (e) { 
+        e.preventDefault();
+        counterIsClicked();
+        $(this).addClass('hidden');
+    });
+});
+

@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--  Use Google CDN to speed load of jQuery - should already be loaded!-->>
         <script type="text/javascript" src="assets/js/game.js"></script>
     </head>
     <body>
@@ -27,10 +27,9 @@
             <button onclick="thinkThenMove(8)">HARD MOVE by computer</button>
             <button onclick="thinkThenMove(3)">MEDIUM MOVE by computer</button>
             <button onclick="thinkThenMove(1)">EASY MOVE by computer</button>
-            <button onclick="testComp()">Computer Go</button>
-            <button onclick="hideOneCounter()">Hide One Counter</button>
-            <button onclick="hideCounterTwo()">Hide Counter Two</button>
-            <button onclick="hideCounterThree()">Hide Counter Three</button>
+            <!-- <button onclick="testComp()">Computer Go</button> -->
+            <button onclick="hideNthCounter()">Hide Nth Counter</button>
+           
             
             <!-- <button onclick="counterIsClicked()">Click Counter</button>
             <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
@@ -52,6 +51,24 @@
             Test:<br>
             <p id="testArea"></p>
 <div class="countersOnScreen">
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
+    <div class="counter"></div>
     <div class="counter"></div>
     <div class="counter"></div>
     <div class="counter"></div>
