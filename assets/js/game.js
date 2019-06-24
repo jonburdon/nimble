@@ -242,6 +242,39 @@ function perfectMove() {
     }
 }
 
+
+// -*- Do the action of taking a Computers Turn in HARD MODE
+
+function computersHardModeTurn() { 
+console.log('I am in Hard Mode.');
+let guesshard = (Math.random()*11);
+console.log('My value is guess hard ' + guesshard)
+if (guesshard > 7.5) {
+    console.log('I will make a random move');
+    var decision = makeRandomMove(totalCounters);
+    console.log('I ran the makeRandomMove function and received ' + decision)
+}
+else
+{
+    console.log('I will make an impossible to beat move');
+    var decision = takeTheIdealMove();
+    console.log('I ran the impossible function and received ' + decision)
+}
+
+// let decision = makeRandomMove(totalCounters);
+totalCounters = totalCounters - decision;
+reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
+reportScore("totalCounters", totalCounters);
+
+// Pass play to player 1 UNLESS Computer has won.
+if (totalCounters === 0) {
+    respondToWin();
+} else {
+    whoseTurnItIs = 1;
+    reportScore("whoseTurn", whoseTurnItIs);
+}
+}
+
 // -*- Do the action of taking a Computers Turn
 
 function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impossible, hard, medium and easy
