@@ -15,3 +15,63 @@
 .hidden {
     display:none;
 }
+
+#hardmodebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#easymodebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#mediummodebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#impossiblemodebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#humanmodebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
