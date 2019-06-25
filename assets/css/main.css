@@ -12,10 +12,6 @@
     border-width: 5px;
 }
 
-.hidden {
-    display:none;
-}
-
 #hardmodebutton {
     display: inline-block;
     width: 200px;
@@ -76,7 +72,7 @@
 
 }
 
-#clickcounterbutton {
+.clickcounterbutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -100,7 +96,7 @@
 
 }
 
-#passplaybutton {
+.passplaybutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -110,4 +106,8 @@
     border: solid;
     border-width: 1px;
 
+}
+
+.hidden {
+    display:none;
 }

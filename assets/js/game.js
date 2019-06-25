@@ -20,8 +20,6 @@ function reportScore(target, score) {
 // ----------------- Functions to initialise the game  ----------------- 
 
 function restartScores() {
-    
-    
     whoseTurnItIs = chooseWhoGoesFirst();
     console.log(`It is player ${whoseTurnItIs} first ..`)
     countersTakenThisTurn = 0;
@@ -34,6 +32,8 @@ function displayStartScores() {
         reportScore("gameStatus", "Playing..."),
         reportScore("takenThisTurn", countersTakenThisTurn);
 };
+
+
 
 // -*- choose who goes first.
 
@@ -50,12 +50,16 @@ function chooseWhoGoesFirst() {
     }
 }
 
-
+//-*- unhide buttons
+function gamePlayButtons() {
+    $(".passplaybutton, .clickcounterbutton").removeClass("hidden");
+}
 
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
     // asignWhoGoesFirst();
+    gamePlayButtons();
     showAllCounters();
     restartScores();
     displayStartScores();
@@ -443,7 +447,7 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 $(document).ready(function () {
 
 
-    $("#clickcounterbutton").click(function (e) {
+    $(".clickcounterbutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't take a counter! It's not your turn.");
         } else {
@@ -453,7 +457,7 @@ $(document).ready(function () {
                 e.preventDefault();
                 hideNthCounter(totalCounters);
                 counterIsClicked();
-                $(this).addClass('hidden');
+                // $(this).addClass('hidden');
 
             } else {
                 reportScore("gameStatus","The Game is Over.")
@@ -488,11 +492,11 @@ $(document).ready(function () {
     });
 
 
-    // $("#passplaybutton").click(function() {
+    // $(".passplaybutton").click(function() {
     //     passTurnToOtherPlayerManually();
     // });
 
-    $("#passplaybutton").click(function (e) {
+    $(".passplaybutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't click this whilst I'm thinking...");
         } else {
@@ -505,10 +509,10 @@ $(document).ready(function () {
             } else {
                 reportScore("gameStatus","The Game is Over.")
             }
-
-
         }
     });
+
+ 
 
 
 

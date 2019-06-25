@@ -6,7 +6,8 @@
 * The player to take the last counter is the winner.
 
 ###Developer Goals
-* A first try at Javascript and Jasmine.
+* A first try at Javascript to write a game.
+* Implement Jasmine tests.
 
 ## UX
 ### Project Goals
