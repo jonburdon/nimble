@@ -20,7 +20,10 @@ function reportScore(target, score) {
 // ----------------- Functions to initialise the game  ----------------- 
 
 function restartScores() {
-    whoseTurnItIs = 1;
+    
+    
+    whoseTurnItIs = chooseWhoGoesFirst();
+    console.log(`It is player ${whoseTurnItIs} first ..`)
     countersTakenThisTurn = 0;
     totalCounters = 21;
 }
@@ -32,12 +35,36 @@ function displayStartScores() {
         reportScore("takenThisTurn", countersTakenThisTurn);
 };
 
+// -*- choose who goes first.
+
+function chooseWhoGoesFirst() {
+    console.log('Choosing who goes first ...')
+    let playDec = (Math.random() * 2);
+    console.log(`Ransom decision is ${playDec}`)
+    if (playDec < 1) {
+        console.log('P1 can go first this time');
+        return 1
+    } else {
+        console.log('P2 can go first this time');
+        return 2
+    }
+}
+
+
+
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
+    // asignWhoGoesFirst();
     showAllCounters();
     restartScores();
     displayStartScores();
+    if (whoseTurnItIs === 2 && mode !== "human") {
+        reportScore("gameStatus","Computer will start play this time ...")
+        humanOrComputer();
+    } else {
+        reportScore("gameStatus","Computer is getting bored, please play me ...")
+    }
 }
 
 // -*- Change difficulty mode
@@ -56,17 +83,6 @@ function hideNthCounter(counterNumber) {
         .addClass("hidden");
 }
 
-//-*- Remove either one, two or three counters
-
-//*** SOMEWHERE HERE IT STOPS JAVA RUNNING ***/
-
-// function hideComputersCounters(numToTake) {
-//     // let countersToTake = numToTake;
-//     for (i = numToTake; i > 0; i --;) {
-         
-//         hideNthCounter(totalCounters-(i-1));
-//     }
-// }
 
 function hideComputersCounters(num) {
     for (i = num; i > 0; i--) {
@@ -151,7 +167,6 @@ function counterIsClicked() {
     switchPlayer();
     reportScore("whoseTurn", whoseTurnItIs);
     reportScore("takenThisTurn", countersTakenThisTurn);
-    
     humanOrComputer();
     activateWinSequenceTest();
 }
