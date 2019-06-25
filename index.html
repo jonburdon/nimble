@@ -14,23 +14,33 @@
         <script type="text/javascript" src="assets/js/game.js"></script>
     </head>
     <body>
-    <p>Take up to three counters in your turn. The player to take the last counter is the winner.</p>
-            <button onclick="startGame()">Start Game</button>
-            <button onclick="counterIsClicked()">Click Counter</button>
+    <p>
+        Take up to three counters in your turn, or click Pass to other player. You must take at least one counter.<br>
+        The player to take the last counter is the winner.</p>
+        <div id="impossiblemodebutton">Set Impossible Mode</div>
+        <div id="hardmodebutton">Set Hard Mode</div>
+        <div id="mediummodebutton">Set Medium Mode</div>
+        <div id="easymodebutton">Set Easy Mode</div>
+        <div id="humanmodebutton">Set Human Mode</div>
+        
+        <hr>
+        
+        <button onclick="startGame()">Start Game</button>
+            
+            <!-- <button onclick="counterIsClicked()">Click Counter</button> -->
             <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button>
             
-            
-            <button onclick="computersTurn()">Computer as Player 2 in Random Mode</button>
-            <button onclick="changeMode(impossible)">Set Impossible Mode</button>
+            <!-- <button onclick="computersTurn()">Computer as Player 2 in Random Mode</button> -->
+            <!-- <button onclick="changeMode(impossible)">Set Impossible Mode</button> -->
             <!-- <button onclick="computersHardModeTurn()">Computer as Player 2 in Hard Mode</button> -->
             <hr>
-            <button onclick="changeMode(hard)">Set HARD MODE</button>
-            <button onclick="changeMode(medium)">Set MEDIUM MODE</button>
-            <button onclick="changeMode(easy)">Set EASY MODE</button>
-            <button onclick="changeMode(human)">Set HUMAN MODE</button>
+            <!-- <button onclick="changeMode(hard)">Set HARD MODE</button> -->
+            <!-- <button onclick="changeMode(medium)">Set MEDIUM MODE</button> -->
+            <!-- <button onclick="changeMode(easy)">Set EASY MODE</button> -->
+            <!-- <button onclick="changeMode(human)">Set HUMAN MODE</button> -->
             <!-- <button onclick="testComp()">Computer Go</button> -->
-            <button onclick="hideNthCounter()">Hide Nth Counter</button>
-            <button onclick="showAllCounters()">Show All Counters</button>
+            <!-- <button onclick="hideNthCounter()">Hide Nth Counter</button> -->
+            <!-- <button onclick="showAllCounters()">Show All Counters</button> -->
            
             
             <!-- <button onclick="counterIsClicked()">Click Counter</button>
