@@ -3,7 +3,7 @@ let whoseTurnItIs = 1;
 let countersTakenThisTurn = 0;
 let totalCounters = 21;
 let idealMoves = [1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1];
-let mode = "impossible";
+let mode = "hard";
 
 
 
@@ -182,44 +182,44 @@ whoseTurnItIs = checkPassAllowed(countersTakenThisTurn);
 countersTakenThisTurn = 0;
 reportScore("whoseTurn",whoseTurnItIs);
 reportScore("takenThisTurn", countersTakenThisTurn);
+humanOrComputer();
 }
 
 // ----------------- Functions for Human Vs Computer  ----------------- 
 
 // -*- If Human v Human, do nothing, otherwise make a move based on difficulty mode and return play to P1
 
-function humanOrComputer () {
+function humanOrComputer() {
     console.log(`It is player ${whoseTurnItIs} 's turn according to HorC function`)
-    if (mode === "human") {
-        reportScore("gameStatus","Human Mode");
-    }
-     
+    if (mode !== "human" && whoseTurnItIs === 2) { // IF HUMAN UPDATE STATUS
+        
+                    if (mode === "impossible") {
+                        console.log('Impossible Mode activated in humanOrComputer')
+                        thinkThenMove(50);
+                    }
+                    else if (mode === "hard") {
+                        console.log('Hard Mode activated in humanOrComputer')
+                        thinkThenMove(8);
+                    }
+                    else if (mode === "medium") {
+                        console.log('Medium Mode activated in humanOrComputer')
+                        thinkThenMove(3);
+                    } 
+                    else { // DEFAULT TO EASY MODE
+                        console.log('Easy Mode activated in humanOrComputer')
+                        thinkThenMove(1);
+                     }
+        
+        }
+        else // IF NOT HUMAN, TAKE A TURN BASED ON DIFFICULTY LEVEL
+        {
+            reportScore("gameStatus","Human Mode");
+        }
     
-    else {
-
-        if (mode === "impossible") {
-            console.log('Impossible Mode activated in humanOrComputer')
-            thinkThenMove(50);
-        }
-        else if (mode === "hard") {
-            console.log('Hard Mode activated in humanOrComputer')
-            thinkThenMove(8);
-        }
-        else if (mode === "medium") {
-            console.log('Medium Mode activated in humanOrComputer')
-            thinkThenMove(3);
-        } 
-        else { // SET THIS TO DEFAULT TO EASY MODE
-            console.log('Easy Mode activated in humanOrComputer')
-            thinkThenMove(1);
-
-    }
-    // else {
-    //     console.log('It must be player 1s turn then ...')
-    // }
-    }
-
 }
+ 
+
+
 
 //-*- Impossible Mode - Computer makes ideal move every time
 
