@@ -3,7 +3,7 @@ let whoseTurnItIs = 1;
 let countersTakenThisTurn = 0;
 let totalCounters = 21;
 let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1];
-let mode = "hard";
+let mode = "human";
 
 
 
@@ -70,6 +70,7 @@ function hideNthCounter(counterNumber) {
 
 function hideComputersCounters(num) {
     for (i = num; i > 0; i--) {
+        console.log(`TAKING COUNTER... Total Counters is ${totalCounters} TOTAL TO TAKE IS ${num} counter to take this time is ${totalCounters-(i-1)}th`)
         hideNthCounter(totalCounters-(i-1));
       }
 
@@ -150,9 +151,9 @@ function counterIsClicked() {
     switchPlayer();
     reportScore("whoseTurn", whoseTurnItIs);
     reportScore("takenThisTurn", countersTakenThisTurn);
-    activateWinSequenceTest();
+    
     humanOrComputer();
-
+    activateWinSequenceTest();
 }
 
 // ----------------- Handling a Win  ----------------- 
@@ -424,18 +425,26 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 // ----------------- jQuery Event Listeners  ----------------- 
 
 
-
 $(document).ready(function () {
 
 
-
-    $(".counter").click(function (e) {
+    $("#clickcounterbutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
-            reportScore("gameStatus", "Human Clicks are off");
+            reportScore("gameStatus", "Oy! You can't take a counter! It's not your turn.");
         } else {
-            e.preventDefault();
-            counterIsClicked();
-            $(this).addClass('hidden');
+            
+            if (totalCounters > 0) {
+
+                e.preventDefault();
+                hideNthCounter(totalCounters);
+                counterIsClicked();
+                $(this).addClass('hidden');
+
+            } else {
+                reportScore("gameStatus","The Game is Over.")
+            }
+
+
         }
     });
 
@@ -458,6 +467,16 @@ $(document).ready(function () {
     $("#humanmodebutton").click(function() {
         changeMode("human");
     });
+
+    $("#startgamebutton").click(function() {
+        startGame();
+    });
+
+
+    $("#passplaybutton").click(function() {
+        passTurnToOtherPlayerManually();
+    });
+
 
 
 

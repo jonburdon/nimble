@@ -75,3 +75,39 @@
     border-width: 1px;
 
 }
+
+#clickcounterbutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#startgamebutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
+
+#passplaybutton {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px;
+
+}
