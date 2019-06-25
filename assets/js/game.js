@@ -473,11 +473,27 @@ $(document).ready(function () {
     });
 
 
-    $("#passplaybutton").click(function() {
-        passTurnToOtherPlayerManually();
+    // $("#passplaybutton").click(function() {
+    //     passTurnToOtherPlayerManually();
+    // });
+
+    $("#passplaybutton").click(function (e) {
+        if (whoseTurnItIs === 2 && mode !== "human") {
+            reportScore("gameStatus", "Oy! You can't click this whilst I'm thinking...");
+        } else {
+            
+            if (totalCounters > 0) {
+
+                e.preventDefault();
+                passTurnToOtherPlayerManually();
+
+            } else {
+                reportScore("gameStatus","The Game is Over.")
+            }
+
+
+        }
     });
-
-
 
 
 
