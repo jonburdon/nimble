@@ -50,16 +50,22 @@ function chooseWhoGoesFirst() {
     }
 }
 
+//-*- hide before game buttons
+function hideBeforeGameButtons() {
+    $(".impossiblemodebutton, .mediummodebutton, .hardmodebutton, .easymodebutton, .humanmodebutton, .startgamebutton").addClass("hidden");
+}
+
 //-*- unhide buttons
-function gamePlayButtons() {
-    $(".passplaybutton, .clickcounterbutton").removeClass("hidden");
+function showGamePlayButtons() {
+    $(".duringgame").removeClass("hidden");
 }
 
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
     // asignWhoGoesFirst();
-    gamePlayButtons();
+    hideBeforeGameButtons();
+    showGamePlayButtons();
     showAllCounters();
     restartScores();
     displayStartScores();
@@ -187,6 +193,16 @@ function checkForWin(totalCounts) {
     }
 }
 
+//-*- hide game play buttons
+function hideGamePlayButtons() {
+    $(".duringgame").addClass("hidden");
+}
+
+//-*- show before game buttons
+function showBeforeGameButtons() {
+    $(".beforegame").removeClass("hidden");
+}
+
 function respondToWin() {
     reportScore("gameStatus", "Game Over, Player " + whoseTurnItIs + " has Won!");
 
@@ -195,9 +211,13 @@ function respondToWin() {
 
 function activateWinSequenceTest() {
     if (checkForWin(totalCounters)) {
+        hideGamePlayButtons();
+        showBeforeGameButtons();
         respondToWin();
+
     }
 }
+
 
 
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
@@ -467,27 +487,27 @@ $(document).ready(function () {
         }
     });
 
-    $("#impossiblemodebutton").click(function() {
+    $(".impossiblemodebutton").click(function() {
         changeMode("impossible");
     });
 
-    $("#hardmodebutton").click(function() {
+    $(".hardmodebutton").click(function() {
         changeMode("hard");
     });
 
-    $("#mediummodebutton").click(function() {
+    $(".mediummodebutton").click(function() {
         changeMode("medium");
     });
 
-    $("#easymodebutton").click(function() {
+    $(".easymodebutton").click(function() {
         changeMode("easy");
     });
 
-    $("#humanmodebutton").click(function() {
+    $(".humanmodebutton").click(function() {
         changeMode("human");
     });
 
-    $("#startgamebutton").click(function() {
+    $(".startgamebutton").click(function() {
         startGame();
     });
 

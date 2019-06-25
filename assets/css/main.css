@@ -12,7 +12,7 @@
     border-width: 5px;
 }
 
-#hardmodebutton {
+.hardmodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -24,7 +24,7 @@
 
 }
 
-#easymodebutton {
+.easymodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -36,7 +36,7 @@
 
 }
 
-#mediummodebutton {
+.mediummodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -48,7 +48,7 @@
 
 }
 
-#impossiblemodebutton {
+.impossiblemodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -60,7 +60,7 @@
 
 }
 
-#humanmodebutton {
+.humanmodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -84,7 +84,7 @@
 
 }
 
-#startgamebutton {
+.startgamebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
