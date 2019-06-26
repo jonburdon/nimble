@@ -531,6 +531,18 @@ if (musicon) {
 $(document).ready(function () {
 
 
+// ----------------- Buttons to Switch Views  ----------------- 
+
+$("#startscreen").click(function() {
+    $(this).addClass("hidden");
+    $(".modechoosingscreen").removeClass("hidden");
+});
+
+
+
+// ----------------- End of buttons to Switch Views  ----------------- 
+
+
     $(".clickcounterbutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't take a counter! It's not your turn.");
@@ -572,6 +584,8 @@ $(document).ready(function () {
     });
 
     $(".startgamebutton").click(function() {
+        $(".modechoosingscreen").addClass("hidden");
+        $(".playingdisplay").removeClass("hidden");
         startGame();
     });
 
