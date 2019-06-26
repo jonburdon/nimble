@@ -24,81 +24,84 @@
 </head>
 
 <body>
-<div class=" row align-items-center justify-content-center" >
-<div class="gameplayarea col-12 col-sm-8" >
+    <div class="container">
+        <div class="row justify-content-centre">
+            <!-- <div class="col col-sm-2"></div> -->
+            <div class=" col col-sm-8 offset-sm-2 gameplayarea">
 
-        <p >
-            <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
-            <p id="startmusicbutton">TOGGLE MUSIC</p>
-
-
-            <div id="startscreen">
-                <!-- Start Screen, hide once button has been clicked-->
-                <p>Start Screen</p>
                 <p>
-                    Take up to three counters in your turn, or click Pass to other player. You must take at least one
-                    counter.<br>
-                    The player to take the last counter is the winner.</p>
-            </div>
+                    <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
+                    <p id="startmusicbutton">TOGGLE MUSIC</p>
 
-            <div class="modechoosingscreen hidden">
-                <!-- Mode Choosing Screen, hide once mode has been selected-->
-                <p> Mode Choosing Screen</p>
-                <div class="beforegame impossiblemodebutton">Set Impossible Mode</div>
-                <div class="beforegame hardmodebutton">Set Hard Mode</div>
-                <div class="beforegame mediummodebutton">Set Medium Mode</div>
-                <div class="beforegame easymodebutton">Set Easy Mode</div>
-                <div class="beforegame humanmodebutton">Set Human Mode</div>
-                <div class="beforegame startgamebutton">Start Game</div>
-            </div>
 
-            <div class="playingdisplay hidden">
-                <!-- Buttons for play + counters, hide until selected-->
-                <p>Play Display Area</p>
-                <div class="countersOnScreen">
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                    <div class="counter"></div>
-                </div>
-                <div class="duringgame clickcounterbutton hidden">Take a Counter</div>
+                    <div id="startscreen">
+                        <!-- Start Screen, hide once button has been clicked-->
+                        <p>Start Screen</p>
+                        <p>
+                            Take up to three counters in your turn, or click Pass to other player. You must take at
+                            least one
+                            counter.<br>
+                            The player to take the last counter is the winner.</p>
+                    </div>
 
-                <div class="duringgame passplaybutton hidden ">Pass Play</div>
-            </div>
-            <div class="reportsarea">
+                    <div class="modechoosingscreen hidden">
+                        <!-- Mode Choosing Screen, hide once mode has been selected-->
+                        <p> Mode Choosing Screen</p>
+                        <div class="beforegame impossiblemodebutton">Set Impossible Mode</div>
+                        <div class="beforegame hardmodebutton">Set Hard Mode</div>
+                        <div class="beforegame mediummodebutton">Set Medium Mode</div>
+                        <div class="beforegame easymodebutton">Set Easy Mode</div>
+                        <div class="beforegame humanmodebutton">Set Human Mode</div>
+                        <div class="beforegame startgamebutton">Start Game</div>
+                    </div>
 
-                    Counters in Play:<br>
-                    <p id="totalCounters"></p>
-                    <hr>
-                    Whose Turn?<br>
-                    <p id="whoseTurn"></p>
-                    <hr>
-                    Game Status:<br>
-                    <p id="gameStatus"></p>
-                    <hr>
-                    Counters taken:<br>
-                    <p id="takenThisTurn"></p>
+                    <div class="playingdisplay hidden ">
+                        <!-- Buttons for play + counters, hide until selected-->
+                        <p>Play Display Area</p>
+                        <div class="countersOnScreen ">
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                            <div class="counter"></div>
+                        </div>
+                        <div class="duringgame clickcounterbutton hidden">Take a Counter</div>
+
+                        <div class="duringgame passplaybutton hidden ">Pass Play</div>
+                    </div>
+                    <div class="reportsarea">
+
+                        Counters in Play:
+                        <span id="totalCounters"></span><br>
+
+                        Whose Turn?
+                        <span id="whoseTurn"></span><br>
+
+                        Game Status:
+                        <span id="gameStatus"></span><br>
+
+                        Counters taken:
+                        <span id="takenThisTurn"></span>
+                    </div>
             </div>
+        </div>
     </div>
-    </div>
-    
 
 
 
@@ -126,9 +129,9 @@
 
 
 
- 
-    
-    
+
+
+
 
     <!-- <input type="button" value="PLAY"  onclick="play()"> -->
     <!-- <audio id="audio" src="assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3" ></audio> -->

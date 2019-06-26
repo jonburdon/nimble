@@ -2,10 +2,23 @@
     border: solid;
     border-width: 1px;
     border-color: black;
-    width: 500px;
-    height: 100%;
+    /* margin-top: 10%; */
+    /* width: 800px; */
+    height: 700px; 
+
+    /* padding-top: 10%; */
 }
 
+.countersOnScreen {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    height: 260px;
+}
+
+.reportsarea {
+    display: block;
+}
 
 .counter {
     display: inline-block;
