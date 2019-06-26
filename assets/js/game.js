@@ -471,13 +471,17 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 
 // ----------------- Audio Controls  -----------------
 
-// function play(){
-//     var audio = document.getElementById("audio");
-//     audio.play();
-//               }
+// Original solution from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
 
-function playAudio(url) {
+function playAudio(url, cont) {
 var a = new Audio(url);
+// let silence = false;
+if (cont === true) {
+    a.loop = true;}
+    else {
+        a.loop = false;
+    }
+
 a.play();
 }
 
