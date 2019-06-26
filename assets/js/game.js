@@ -4,9 +4,8 @@ let countersTakenThisTurn = 0;
 let totalCounters = 21;
 let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1];
 let mode = "human";
-
-
-
+var silence = false;
+var playing =false;
 
 
 // ----------------- Functions to access DOM  ----------------- 
@@ -169,7 +168,7 @@ function endTheGameOrContinue() {
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
 function counterIsClicked() {
-    playAudio('assets/audio/376968__elmasmalo1__bubble-pop.wav');
+    playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     reportScore("whoseTurn", whoseTurnItIs);
     countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn);
     // reportScore("takenThisTurn",countersTakenThisTurn);
@@ -471,19 +470,51 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 
 // ----------------- Audio Controls  -----------------
 
+
+//-*- Play a short click sound
+
+function playClick(url) {
+    var a = new Audio(url);
+        a.play();}
+
+
 // Original solution from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
+// Mute function from https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
 
 function playAudio(url, cont) {
-var a = new Audio(url);
-// let silence = false;
-if (cont === true) {
-    a.loop = true;}
-    else {
-        a.loop = false;
-    }
+    playing = !playing;
+    var a = new Audio(url);
 
-a.play();
+    if (cont === true) {
+        a.loop = true;
+        a.play();}
+        else {
+            a.loop = false;
+            a.play();
+        }
+    if (silence) {a.muted = true;}
+    else {a.muted = false;}
+    silence = true;
+
 }
+
+function muteaudio() {
+    silence = !silence;
+}
+
+var music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3');
+
+function startMusic () {
+    music.loop=true;
+    music.play();
+}
+
+function stopMusic () {
+    music.pause();
+}
+
+
+
 
 // ----------------- jQuery Event Listeners  ----------------- 
 
@@ -533,6 +564,10 @@ $(document).ready(function () {
 
     $(".startgamebutton").click(function() {
         startGame();
+    });
+
+    $("#muteaudiobutton").click(function() {
+        muteaudio();
     });
 
 
