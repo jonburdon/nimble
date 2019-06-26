@@ -13,7 +13,8 @@
     border: solid;
     border-width: 1px;
     border-color: black;
-    height: 260px;
+    /* height: 200px; */
+    min-height: 200px;
 }
 
 .reportsarea {
@@ -22,13 +23,14 @@
 
 .counter {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 35px;
+    height: 35px;
     /* background-color: yellow; */
     border-radius: 50%;
     /* border-color: black; */
     /* border: solid; */
     /* border-width: 5px; */
+    padding: 1px;
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
@@ -130,4 +132,30 @@
 
 .hidden {
     display:none;
+}
+/* --------------------------------- Media Queries */
+
+@media only screen and (min-width: 768px) {
+
+.counter {
+        width: 70px;
+        height: 70px;
+}
+
+.countersOnScreen {
+    min-height: 440px;
+}
+}
+
+@media only screen and (min-width: 992px) {
+
+.counter {
+        width: 70px;
+        min-height: 70px;
+}
+
+.countersOnScreen {
+    min-height: 440px;
+}
+
 }
