@@ -40,3 +40,10 @@ As a player aged 8+ I want to be able to
 [] Audio plays on a mobile but not on a desktop, can be muted on either
 [] 'Classic' mode, with random number of stacks of counters. You can take as many as you like from any stack
 [] Implement tests for those functions which access the DOM
+[] Earn 'badges' for achievements.
+[] Alter UI to allow playing by clicking on the counters themselves.
+
+### Credits:
+https://freesound.org/people/zagi2/sounds/260566/
+https://freesound.org/people/elmasmalo1/sounds/376968/
+Converted to mp3 with: https://online-audio-converter.com/

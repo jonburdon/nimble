@@ -14,10 +14,11 @@
         <script type="text/javascript" src="assets/js/game.js"></script>
     </head>
     <body>
+
     <p>
         Take up to three counters in your turn, or click Pass to other player. You must take at least one counter.<br>
         The player to take the last counter is the winner.</p>
-        BUTTONS VISIBLE BEFORE GAME ONLY:<BR>
+       
         <div class ="beforegame impossiblemodebutton">Set Impossible Mode</div>
         <div class ="beforegame hardmodebutton">Set Hard Mode</div>
         <div class ="beforegame mediummodebutton">Set Medium Mode</div>
@@ -26,7 +27,7 @@
         <div class ="beforegame startgamebutton">Start Game</div>
 
         <hr>
-        BUTTONS VISIBLE DURING GAME:<BR>
+       
         <div class ="duringgame clickcounterbutton hidden" >Take a Counter</div>
        
         <div class ="duringgame passplaybutton hidden " >Pass Play</div>
@@ -68,7 +69,7 @@
             Counters taken:<br>
             <p id="takenThisTurn"></p>
             <hr>
-            Test:<br>
+            <br>
             <p id="testArea"></p>
 <div class="countersOnScreen">
     <div class="counter"></div>
@@ -93,7 +94,10 @@
     <div class="counter"></div>
     <div class="counter"></div>
 </div>
+<!-- <input type="button" value="PLAY"  onclick="play()"> -->
+<!-- <audio id="audio" src="assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3" ></audio> -->
 
+<div onclick="playAudio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3')">PLAYV2</div>
 
 
         <!--[if lt IE 7]>
@@ -101,5 +105,6 @@
         <![endif]-->
         
         <script src="" async defer></script>
+
     </body>
 </html>

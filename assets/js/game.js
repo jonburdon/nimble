@@ -169,6 +169,7 @@ function endTheGameOrContinue() {
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
 function counterIsClicked() {
+    playAudio('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     reportScore("whoseTurn", whoseTurnItIs);
     countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn);
     // reportScore("takenThisTurn",countersTakenThisTurn);
@@ -205,7 +206,14 @@ function showBeforeGameButtons() {
 
 function respondToWin() {
     reportScore("gameStatus", "Game Over, Player " + whoseTurnItIs + " has Won!");
-
+if (whoseTurnItIs === 2 && mode !== "human") {
+    console.log('Increase Computer Score Tally by 1');
+    // localStorage.setItem("computerScoreTally", userName);
+} else if (whoseTurnItIs === 1) {
+    console.log('Increase Player 1 Score Tally by 1');
+} else {
+    console.log('Increase Player 2 Score Tally by 1');
+}
     // Also need to clear screen etc, and update High Score tables etc
 }
 
@@ -461,6 +469,18 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
     // Needs refactoring to choose which function to run based on Random, Easy, Medium, Hard or Impossible Mode.
 }
 
+// ----------------- Audio Controls  -----------------
+
+// function play(){
+//     var audio = document.getElementById("audio");
+//     audio.play();
+//               }
+
+function playAudio(url) {
+var a = new Audio(url);
+a.play();
+}
+
 // ----------------- jQuery Event Listeners  ----------------- 
 
 
@@ -535,5 +555,10 @@ $(document).ready(function () {
  
 
 
-
 });
+
+
+
+
+
+
