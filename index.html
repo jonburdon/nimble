@@ -18,6 +18,7 @@
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--  Use Google CDN to speed load of jQuery - should already be loaded!-->
     <script type="text/javascript" src="assets/js/game.js"></script>
@@ -26,22 +27,33 @@
 <body>
     <div class="container">
         <div class="row justify-content-centre">
+                
             <!-- <div class="col col-sm-2"></div> -->
             <div class=" col col-sm-8 offset-sm-2 gameplayarea">
+                <div class="row"> <!--Header row-->
+                        <div id="startmusicbutton" class="col col-1 smallcirclebutton">
+                                <i class="buttonicon fa fa-music" aria-hidden="true"></i>
+                        </div>
 
+                        <div class="col col-10 branding">
+                                <h1>Nimble</h1>
+                        </div>
+
+                </div>    
+                
+                
                 <p>
                     <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
-                    <p id="startmusicbutton">TOGGLE MUSIC</p>
+                    
 
 
-                    <div id="startscreen">
+                    <div id="startscreen" class="container">
                         <!-- Start Screen, hide once button has been clicked-->
-                        <p>Start Screen</p>
-                        <p>
-                            Take up to three counters in your turn, or click Pass to other player. You must take at
-                            least one
-                            counter.<br>
-                            The player to take the last counter is the winner.</p>
+                        <div class="startarrow"><br><br><br>
+                                <div id="triangle-right"></div>
+                        </div>
+                        
+
                     </div>
 
                     <div class="modechoosingscreen hidden">
@@ -86,18 +98,37 @@
                         <div class="duringgame passplaybutton hidden ">Pass Play</div>
                     </div>
                     <div class="reportsarea">
-
-                        Counters in Play:
-                        <span id="totalCounters"></span><br>
-
-                        Whose Turn?
-                        <span id="whoseTurn"></span><br>
-
-                        Game Status:
-                        <span id="gameStatus"></span><br>
-
-                        Counters taken:
-                        <span id="takenThisTurn"></span>
+                            <p class="instructions">
+                                    </p>
+                                    <div class="beforegame buttonicon impossiblemodebutton smallcirclebutton">
+                                            <i class=" fa fa-exclamation-circle" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="beforegame buttonicon hardmodebutton smallcirclebutton">
+                                            H
+                                    </div>
+                                    <div class="beforegame buttonicon mediummodebutton smallcirclebutton">
+                                            M
+                                    </div>
+                                    <div class="beforegame buttonicon easymodebutton smallcirclebutton">
+                                            <i class=" fa fa-child" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="beforegame buttonicon humanmodebutton smallcirclebutton">
+                                            <i class=" fa fa-user" aria-hidden="true"></i>
+                                    </div>
+                        
+                        <div id="gameplayscores hidden">
+                                Counters in Play:
+                                <span id="totalCounters" ></span><br>
+        
+                                Whose Turn?
+                                <span id="whoseTurn" ></span><br>
+        
+                                Game Status:
+                                <span id="gameStatus">Select Game mode and click play.</span><br>
+        
+                                Counters taken:
+                                <span id="takenThisTurn" ></span>
+                        </div>            
                     </div>
             </div>
         </div>

@@ -1,12 +1,30 @@
+.branding {
+    text-align: center;
+
+}
+h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 4em;
+}
+
 .gameplayarea {
-    border: solid;
-    border-width: 1px;
-    border-color: black;
+    /* border: solid; */
+    /* border-width: 1px; */
+    /* border-color: black; */
     /* margin-top: 10%; */
     /* width: 800px; */
+    margin-top: 20px;
     height: 700px; 
-
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+border-radius: 20px;
     /* padding-top: 10%; */
+}
+
+.reportsarea {
+    margin: 30px 30px;
+    padding: 25px;
+    border-radius: 25px;
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 }
 
 .countersOnScreen {
@@ -34,7 +52,48 @@
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-.hardmodebutton {
+.startarrow {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    margin: 0 auto;
+}
+
+.smallcirclebutton {
+    height: 60px;
+    min-width: 60px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    /* margin: 0; */
+}
+
+#startmusicbutton {
+    /* position: fixed; */
+    margin-top: 5px;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+
+
+/* Original code for shape from https://css-tricks.com/the-shapes-of-css/ */
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 150px solid #009efd;
+    border-top: 75px solid transparent;
+    border-bottom: 75px solid transparent;
+    /* margin-top: x; */
+    margin: 0 auto;
+  }
+
+.triangle-space {
+    margin-top: 25px;
+}
+
+/* .hardmodebutton {
     display: inline-block;
     width: 200px;
     height: 40px;
@@ -92,6 +151,14 @@
     border: solid;
     border-width: 1px;
 
+} */
+
+.buttonicon {
+    width: 50px;
+    height: 50px;
+    display:inline-block;
+    text-align:center;
+    padding-top: 10px;
 }
 
 .clickcounterbutton {
@@ -152,6 +219,11 @@
 .counter {
         width: 70px;
         min-height: 70px;
+}
+
+h1 {
+    
+    font-size: 6em;
 }
 
 .countersOnScreen {
