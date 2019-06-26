@@ -570,6 +570,14 @@ $(document).ready(function () {
         muteaudio();
     });
 
+    $("#startmusicbutton").click(function() {
+        startMusic();
+    });
+
+    $("#stopmusicbutton").click(function() {
+        stopMusic();
+    });
+
 
     // $(".passplaybutton").click(function() {
     //     passTurnToOtherPlayerManually();
