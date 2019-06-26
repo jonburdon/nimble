@@ -2,135 +2,155 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <link rel="stylesheet" href="assets/css/main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--  Use Google CDN to speed load of jQuery - should already be loaded!-->
-        <script type="text/javascript" src="assets/js/game.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
-<div class="gameplayarea">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--  Use Google CDN to speed load of jQuery - should already be loaded!-->
+    <script type="text/javascript" src="assets/js/game.js"></script>
+</head>
 
-    <p class="row"> <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
-        <p id ="startmusicbutton" >TOGGLE MUSIC</p>
+<body>
+<div class=" row align-items-center justify-content-center" >
+<div class="gameplayarea col-12 col-sm-8" >
+
+        <p >
+            <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
+            <p id="startmusicbutton">TOGGLE MUSIC</p>
+
+
+            <div id="startscreen">
+                <!-- Start Screen, hide once button has been clicked-->
+                <p>Start Screen</p>
+                <p>
+                    Take up to three counters in your turn, or click Pass to other player. You must take at least one
+                    counter.<br>
+                    The player to take the last counter is the winner.</p>
+            </div>
+
+            <div class="modechoosingscreen hidden">
+                <!-- Mode Choosing Screen, hide once mode has been selected-->
+                <p> Mode Choosing Screen</p>
+                <div class="beforegame impossiblemodebutton">Set Impossible Mode</div>
+                <div class="beforegame hardmodebutton">Set Hard Mode</div>
+                <div class="beforegame mediummodebutton">Set Medium Mode</div>
+                <div class="beforegame easymodebutton">Set Easy Mode</div>
+                <div class="beforegame humanmodebutton">Set Human Mode</div>
+                <div class="beforegame startgamebutton">Start Game</div>
+            </div>
+
+            <div class="playingdisplay hidden">
+                <!-- Buttons for play + counters, hide until selected-->
+                <p>Play Display Area</p>
+                <div class="countersOnScreen">
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                    <div class="counter"></div>
+                </div>
+                <div class="duringgame clickcounterbutton hidden">Take a Counter</div>
+
+                <div class="duringgame passplaybutton hidden ">Pass Play</div>
+            </div>
+            <div class="reportsarea">
+
+                    Counters in Play:<br>
+                    <p id="totalCounters"></p>
+                    <hr>
+                    Whose Turn?<br>
+                    <p id="whoseTurn"></p>
+                    <hr>
+                    Game Status:<br>
+                    <p id="gameStatus"></p>
+                    <hr>
+                    Counters taken:<br>
+                    <p id="takenThisTurn"></p>
+            </div>
     </div>
-
-
-    <div id="startscreen"> <!-- Start Screen, hide once button has been clicked-->
-    <p>Start Screen</p>
-    <p>
-            Take up to three counters in your turn, or click Pass to other player. You must take at least one counter.<br>
-            The player to take the last counter is the winner.</p>
     </div>
+    
 
-    <div class="modechoosingscreen hidden"> <!-- Mode Choosing Screen, hide once mode has been selected-->
-   <p> Mode Choosing Screen</p>
-   <div class ="beforegame impossiblemodebutton">Set Impossible Mode</div>
-   <div class ="beforegame hardmodebutton">Set Hard Mode</div>
-   <div class ="beforegame mediummodebutton">Set Medium Mode</div>
-   <div class ="beforegame easymodebutton">Set Easy Mode</div>
-   <div class ="beforegame humanmodebutton">Set Human Mode</div>
-   <div class ="beforegame startgamebutton">Start Game</div>
-    </div>
 
-    <div class="playingdisplay hidden"> <!-- Buttons for play + counters, hide until selected-->
-<p>Play Display Area</p>
-<div class="countersOnScreen">
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-        <div class="counter"></div>
-    </div>
-<div class ="duringgame clickcounterbutton hidden" >Take a Counter</div>
-       
-<div class ="duringgame passplaybutton hidden " >Pass Play</div>
-    </div>
 
-</div>
+
+    <!-- <button onclick="startGame()">Start Game</button> -->
+
+    <!-- <button onclick="counterIsClicked()">Click Counter</button> -->
+    <!-- <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
+
+    <!-- <button onclick="computersTurn()">Computer as Player 2 in Random Mode</button> -->
+    <!-- <button onclick="changeMode(impossible)">Set Impossible Mode</button> -->
+    <!-- <button onclick="computersHardModeTurn()">Computer as Player 2 in Hard Mode</button> -->
+
+    <!-- <button onclick="changeMode(hard)">Set HARD MODE</button> -->
+    <!-- <button onclick="changeMode(medium)">Set MEDIUM MODE</button> -->
+    <!-- <button onclick="changeMode(easy)">Set EASY MODE</button> -->
+    <!-- <button onclick="changeMode(human)">Set HUMAN MODE</button> -->
+    <!-- <button onclick="testComp()">Computer Go</button> -->
+    <!-- <button onclick="hideNthCounter()">Hide Nth Counter</button> -->
+    <!-- <button onclick="showAllCounters()">Show All Counters</button> -->
+
+
+    <!-- <button onclick="counterIsClicked()">Click Counter</button>
+            <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
+
 
 
  
-        
-        <!-- <button onclick="startGame()">Start Game</button> -->
-            
-            <!-- <button onclick="counterIsClicked()">Click Counter</button> -->
-            <!-- <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
-            
-            <!-- <button onclick="computersTurn()">Computer as Player 2 in Random Mode</button> -->
-            <!-- <button onclick="changeMode(impossible)">Set Impossible Mode</button> -->
-            <!-- <button onclick="computersHardModeTurn()">Computer as Player 2 in Hard Mode</button> -->
-            
-            <!-- <button onclick="changeMode(hard)">Set HARD MODE</button> -->
-            <!-- <button onclick="changeMode(medium)">Set MEDIUM MODE</button> -->
-            <!-- <button onclick="changeMode(easy)">Set EASY MODE</button> -->
-            <!-- <button onclick="changeMode(human)">Set HUMAN MODE</button> -->
-            <!-- <button onclick="testComp()">Computer Go</button> -->
-            <!-- <button onclick="hideNthCounter()">Hide Nth Counter</button> -->
-            <!-- <button onclick="showAllCounters()">Show All Counters</button> -->
-           
-            
-            <!-- <button onclick="counterIsClicked()">Click Counter</button>
-            <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
+    
+    
 
-            
-            <hr>
-            Counters in Play:<br>
-            <p id="totalCounters"></p>
-            <hr>
-            Whose Turn?<br>
-            <p id="whoseTurn"></p>
-            <hr>
-            Game Status:<br>
-            <p id="gameStatus"></p>
-            <hr>
-            Counters taken:<br>
-            <p id="takenThisTurn"></p>
-            <hr>
-            <br>
-            <p id="testArea"></p>
+    <!-- <input type="button" value="PLAY"  onclick="play()"> -->
+    <!-- <audio id="audio" src="assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3" ></audio> -->
 
-<!-- <input type="button" value="PLAY"  onclick="play()"> -->
-<!-- <audio id="audio" src="assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3" ></audio> -->
-
-<!-- <div onclick="playAudio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3',true)">PLAYV2</div> -->
-<!-- <div id="muteaudiobutton">MUTE AUDIO</div> -->
+    <!-- <div onclick="playAudio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3',true)">PLAYV2</div> -->
+    <!-- <div id="muteaudiobutton">MUTE AUDIO</div> -->
 
 
 
-        <!--[if lt IE 7]>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <script src="" async defer></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    </body>
+
+    <script src="" async defer></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
+
 </html>

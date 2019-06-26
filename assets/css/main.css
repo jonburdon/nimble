@@ -1,7 +1,9 @@
-.testbox {
+.gameplayarea {
     border: solid;
     border-width: 1px;
     border-color: black;
+    width: 500px;
+    height: 100%;
 }
 
 
