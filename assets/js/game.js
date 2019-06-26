@@ -6,7 +6,8 @@ let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1]
 let mode = "human";
 var silence = false;
 var playing =false;
-
+let musicon = false;
+let music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3');
 
 // ----------------- Functions to access DOM  ----------------- 
 
@@ -481,39 +482,47 @@ function playClick(url) {
 // Original solution from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
 // Mute function from https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
 
-function playAudio(url, cont) {
-    playing = !playing;
-    var a = new Audio(url);
+// function playAudio(url, cont) {
+//     playing = !playing;
+//     var a = new Audio(url);
 
-    if (cont === true) {
-        a.loop = true;
-        a.play();}
-        else {
-            a.loop = false;
-            a.play();
-        }
-    if (silence) {a.muted = true;}
-    else {a.muted = false;}
-    silence = true;
+//     if (cont === true) {
+//         a.loop = true;
+//         a.play();}
+//         else {
+//             a.loop = false;
+//             a.play();
+//         }
+//     if (silence) {a.muted = true;}
+//     else {a.muted = false;}
+//     silence = true;
 
-}
+// }
 
-function muteaudio() {
-    silence = !silence;
-}
+// function muteaudio() {
+//     silence = !silence;
+// }
 
-var music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3');
+
 
 function startMusic () {
     music.loop=true;
     music.play();
+    musicon = true;
 }
 
 function stopMusic () {
     music.pause();
+    musicon = false;
 }
 
-
+function toggleMusic() {
+if (musicon) {
+    stopMusic();
+} else {
+    startMusic();
+}
+}
 
 
 // ----------------- jQuery Event Listeners  ----------------- 
@@ -571,12 +580,9 @@ $(document).ready(function () {
     });
 
     $("#startmusicbutton").click(function() {
-        startMusic();
+        toggleMusic();
     });
 
-    $("#stopmusicbutton").click(function() {
-        stopMusic();
-    });
 
 
     // $(".passplaybutton").click(function() {
