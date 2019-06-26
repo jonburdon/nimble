@@ -9,11 +9,36 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
         <link rel="stylesheet" href="assets/css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--  Use Google CDN to speed load of jQuery - should already be loaded!-->
         <script type="text/javascript" src="assets/js/game.js"></script>
     </head>
     <body>
+
+<div class="gameplayarea">
+
+    <p class="row"> <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
+        <p id ="startmusicbutton" >TOGGLE MUSIC</p>
+    </div>
+
+
+    <div class="startscreen"> <!-- Start Screen, hide once button has been clicked-->
+    <p>Start Screen</p>
+    </div>
+
+    <div class="modechoosingscreen hidden"> <!-- Mode Choosing Screen, hide once mode has been selected-->
+   <p> Mode Choosing Screen</p>
+    </div>
+
+    <div class="playingdisplay hidden"> <!-- Buttons for play + counters, hide until selected-->
+<p>Play Display Area</p>
+    </div>
+
+</div>
+
 
     <p>
         Take up to three counters in your turn, or click Pass to other player. You must take at least one counter.<br>
@@ -99,7 +124,7 @@
 
 <!-- <div onclick="playAudio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3',true)">PLAYV2</div> -->
 <!-- <div id="muteaudiobutton">MUTE AUDIO</div> -->
-<div id ="startmusicbutton" >TOGGLE MUSIC</div>
+
 
 
         <!--[if lt IE 7]>
@@ -107,6 +132,9 @@
         <![endif]-->
         
         <script src="" async defer></script>
-
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
     </body>
 </html>
