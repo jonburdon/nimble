@@ -291,7 +291,7 @@ function humanOrComputer() {
 
     } else // IF NOT HUMAN, TAKE A TURN BASED ON DIFFICULTY LEVEL
     {
-        reportScore("gameStatus", "Human Mode");
+        reportScore("gameStatus", `Playing`);
     }
 
 }
@@ -376,7 +376,7 @@ function levelledMove(difficulty) {
         
           totalCounters = totalCounters - dec;
         
-        reportScore("gameStatus", "Computer Decided to take " + dec + " counters.");
+        reportScore("gameStatus", "Computer decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
     } else {
@@ -388,7 +388,7 @@ function levelledMove(difficulty) {
 
         totalCounters = totalCounters - dec;
 
-        reportScore("gameStatus", "Computer Decided to take " + dec + " counters.");
+        reportScore("gameStatus", "Computer decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
         console.log('Human move is def back on');
@@ -409,7 +409,7 @@ function levelledMove(difficulty) {
 // function perfectMove() {
 //     let myDecision = takeTheIdealMove();
 //     totalCounters = totalCounters - myDecision;
-//     reportScore("gameStatus","Computer Decided to take "+ myDecision + " counters.");
+//     reportScore("gameStatus","Computer decided to take "+ myDecision + " counters.");
 //     reportScore("totalCounters", totalCounters);
 
 //     // Pass play to player 1 UNLESS Computer has won.
@@ -442,7 +442,7 @@ function levelledMove(difficulty) {
 
 // // let decision = makeRandomMove(totalCounters);
 // totalCounters = totalCounters - decision;
-// reportScore("gameStatus","Computer Decided to take "+ decision + " counters.");
+// reportScore("gameStatus","Computer decided to take "+ decision + " counters.");
 // reportScore("totalCounters", totalCounters);
 
 // // Pass play to player 1 UNLESS Computer has won.
@@ -462,7 +462,7 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
     let decision = makeRandomMove(totalCounters);
 
     totalCounters = totalCounters - decision;
-    reportScore("gameStatus", "Computer Decided to take " + decision + " counters.");
+    reportScore("gameStatus", "Computer decided to take " + decision + " counters.");
     reportScore("totalCounters", totalCounters);
 
     // Pass play to player 1 UNLESS Computer has won.
