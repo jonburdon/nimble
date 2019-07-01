@@ -7,12 +7,8 @@ h1 {
     font-size: 4em;
 }
 
-// --------------- Button colours ---------------
+/* --------------- Button colours ---------------*/
 
-
-.orange {
-    color: #C70039;
-}
 
 .red {
     color: #FF5733;
@@ -30,8 +26,7 @@ h1 {
     color: #058E3E;
 }
 
-// --------------- Boxes ---------------
-
+/* --------------- Boxes ---------------*/
 
 .gameplayarea {
     /* border: solid; */
