@@ -27,33 +27,51 @@
 <body>
     <div class="container">
         <div class="row justify-content-centre">
-                
+
             <!-- <div class="col col-sm-2"></div> -->
             <div class=" col col-sm-8 offset-sm-2 gameplayarea">
-                <div class="row"> <!--Header row-->
-                        <div id="startmusicbutton" class="col col-1 smallcirclebutton">
-                                <i class="buttonicon fa fa-music" aria-hidden="true"></i>
-                        </div>
+                <div class="row">
+                    <!--Header row-->
+                    <div id="startmusicbutton" class="col col-1 smallcirclebutton">
+                        <i class="buttonicon fa fa-music" aria-hidden="true"></i>
+                    </div>
 
-                        <div class="col col-10 branding">
-                                <h1>Nimble</h1>
-                        </div>
+                    <div class="col col-10 branding">
+                        <h1>Nimble</h1>
+                    </div>
 
-                </div>    
-                
-                
+                </div>
+
+
                 <p>
                     <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
-                    
+
 
 
                     <div id="startscreen" class="container">
                         <!-- Start Screen, hide once button has been clicked-->
                         <div class="startarrow"><br><br><br>
-                                <div id="triangle-right"></div>
+                            <div id="triangle-right"></div>
                         </div>
-                        
+                    </div>
 
+                    <div id="buttoncontainer" class="container">
+                        <!-- Select Mode -->
+                        <div class="beforegame buttonicon impossiblemodebutton smallcirclebutton togglebutton hidden">
+                            <i class=" fa fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="beforegame buttonicon hardmodebutton smallcirclebutton togglebutton hidden">
+                            H
+                        </div>
+                        <div class="beforegame buttonicon mediummodebutton smallcirclebutton togglebutton hidden">
+                            M
+                        </div>
+                        <div class="beforegame buttonicon easymodebutton smallcirclebutton togglebutton hidden">
+                            <i class=" fa fa-child" aria-hidden="true"></i>
+                        </div>
+                        <div class="beforegame buttonicon humanmodebutton smallcirclebutton togglebutton">
+                            <i class=" fa fa-user" aria-hidden="true"></i>
+                        </div>
                     </div>
 
                     <div class="modechoosingscreen hidden">
@@ -97,40 +115,27 @@
 
                         <div class="duringgame passplaybutton hidden ">Pass Play</div>
                     </div>
-                    <div class="reportsarea">
-                            <p class="instructions">
-                                    </p>
 
-                                    <div class="beforegame buttonicon impossiblemodebutton smallcirclebutton finaltogglebutton">
-                                            <i class=" fa fa-exclamation-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="beforegame buttonicon hardmodebutton smallcirclebutton togglebutton">
-                                            H
-                                    </div>
-                                    <div class="beforegame buttonicon mediummodebutton smallcirclebutton togglebutton">
-                                            M
-                                    </div>
-                                    <div class="beforegame buttonicon easymodebutton smallcirclebutton togglebutton">
-                                            <i class=" fa fa-child" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="beforegame buttonicon humanmodebutton smallcirclebutton togglebutton">
-                                        <i class=" fa fa-user" aria-hidden="true"></i>
-                                    </div>
-                                    
-                        
+                    <div class="reportsarea">
+                        <p class="instructions">
+                        </p>
+
+
+
+
                         <div id="gameplayscores hidden">
-                                Counters in Play:
-                                <span id="totalCounters" ></span><br>
-        
-                                Whose Turn?
-                                <span id="whoseTurn" ></span><br>
-        
-                                Game Status:
-                                <span id="gameStatus">Select Game mode and click play.</span><br>
-        
-                                Counters taken:
-                                <span id="takenThisTurn" ></span>
-                        </div>            
+                            Counters in Play:
+                            <span id="totalCounters"></span><br>
+
+                            Whose Turn?
+                            <span id="whoseTurn"></span><br>
+
+                            Game Status:
+                            <span id="gameStatus">Select Game mode and click play.</span><br>
+
+                            Counters taken:
+                            <span id="takenThisTurn"></span>
+                        </div>
                     </div>
             </div>
         </div>

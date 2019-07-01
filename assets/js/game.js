@@ -563,32 +563,44 @@ $("#startscreen").click(function() {
         }
     });
 
-    $(".togglebutton").click(function() {
-        $(this).addClass('hidden');
-    });
+    // $(".togglebutton").click(function() {
+    //     $(this).addClass('hidden');
+    // });
 
-    $(".finaltogglebutton").click(function() {
-        $(".togglebutton").removeClass('hidden');
-    });
+    // $(".finaltogglebutton").click(function() {
+    //     $(".togglebutton").removeClass('hidden');
+    // });
+
+// Hide this button, and show the next one - TODO: make one, more efficient function instead of five
 
     $(".impossiblemodebutton").click(function() {
         changeMode("impossible");
+        $(this).addClass('hidden');
+        $(".humanmodebutton").removeClass('hidden');
     });
 
     $(".hardmodebutton").click(function() {
         changeMode("hard");
+        $(this).addClass('hidden');
+        $(".impossiblemodebutton").removeClass('hidden');
     });
 
     $(".mediummodebutton").click(function() {
         changeMode("medium");
+        $(this).addClass('hidden');
+        $(".hardmodebutton").removeClass('hidden');
     });
 
     $(".easymodebutton").click(function() {
         changeMode("easy");
+        $(this).addClass('hidden');
+        $(".mediummodebutton").removeClass('hidden');
     });
 
     $(".humanmodebutton").click(function() {
         changeMode("human");
+        $(this).addClass('hidden');
+        $(".easymodebutton").removeClass('hidden');
     });
 
     $(".startgamebutton").click(function() {

@@ -20,6 +20,8 @@ border-radius: 20px;
     /* padding-top: 10%; */
 }
 
+
+
 .reportsarea {
     margin: 30px 30px;
     padding: 25px;
@@ -61,13 +63,33 @@ border-radius: 20px;
 }
 
 .smallcirclebutton {
-    position: absolute;
-    height: 60px;
-    min-width: 60px;
+
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
     border-radius: 50%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
     /* margin: 0; */
 }
+
+.togglebutton {
+    margin: 0 auto;
+}
+
+/* .finaltogglebutton {
+    position: absolute;
+    left: 45%;
+} */ 
+
+/* #buttoncontainer {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} */
+
+/* .reportsarea {
+    margin-top: 100px;
+} */
 
 #startmusicbutton {
     /* position: fixed; */
