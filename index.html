@@ -43,56 +43,68 @@
                 </div>
 
                 <div class="row">
-                    
-                    
                         <!-- Select Mode -->
-                        <div class="col col-1 beforegame buttonicon impossiblemodebutton smallcirclebutton togglebutton hidden">
+                        <div class="col col-1 buttonicon impossiblemodebutton smallcirclebutton secondbutton hidden">
                             <i class=" fa fa-exclamation-circle" aria-hidden="true"></i>
                         </div>
-                        <div class="col col-1 beforegame buttonicon hardmodebutton smallcirclebutton togglebutton hidden">
+                        <div class="col col-1 buttonicon hardmodebutton smallcirclebutton secondbutton hidden">
                             H
                         </div>
-                        <div class="col col-1 beforegame buttonicon mediummodebutton smallcirclebutton togglebutton hidden">
+                        <div class="col col-1 buttonicon mediummodebutton smallcirclebutton secondbutton hidden">
                             M
                         </div>
-                        <div class="col col-1 beforegame buttonicon easymodebutton smallcirclebutton togglebutton hidden">
+                        <div class="col col-1 buttonicon easymodebutton smallcirclebutton secondbutton hidden">
                             <i class=" fa fa-child" aria-hidden="true"></i>
                         </div>
-                        <div class="col col-1 beforegame buttonicon humanmodebutton smallcirclebutton togglebutton">
+                        <div class="col col-1 beforegame buttonicon humanmodebutton smallcirclebutton secondbutton">
                             <i class=" fa fa-user" aria-hidden="true"></i>
                         </div>
-                    
 
+                        <!-- Restart Game ?-->
+                        <div class="col col-1 duringgame buttonicon quitbutton smallcirclebutton secondbutton hidden">
+                                <span>X</span>
+                        </div>
                 </div>
 
+<div class="containerfluid quitbox hidden">
+<p>Are you sure you want to quit?</p>
 
+<div class="col col-1 beforegame buttonicon quitconfirmbutton smallcirclebutton secondbutton">
+        <i class=" far fa-thumbs-up" aria-hidden="true"></i>
+    </div>
+
+    <div class="col col-1 beforegame buttonicon quitdenybutton smallcirclebutton secondbutton">
+            <i class=" far fa-thumbs-down" aria-hidden="true"></i>
+        </div>
+
+</div>
 
                 <p>
                     <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
 
 
 
-                    <div id="startscreen" class="container">
+                    <div id="startscreen" class="container beforegame">
                         <!-- Start Screen, hide once button has been clicked-->
-                        <div class="startarrow"><br><br><br>
+                        <div class="startarrow startgamebutton beforegame"><br><br><br>
                             <div id="triangle-right"></div>
                         </div>
                     </div>
 
 
 
-                    <div class="modechoosingscreen hidden">
+                    <!-- <div class="modechoosingscreen hidden"> -->
                         <!-- Mode Choosing Screen, hide once mode has been selected-->
-                        <p> Mode Choosing Screen</p>
+                        <!-- <p> Mode Choosing Screen</p>
                         <div class="beforegame impossiblemodebutton">Set Impossible Mode</div>
                         <div class="beforegame hardmodebutton">Set Hard Mode</div>
                         <div class="beforegame mediummodebutton">Set Medium Mode</div>
                         <div class="beforegame easymodebutton">Set Easy Mode</div>
                         <div class="beforegame humanmodebutton">Set Human Mode</div>
                         <div class="beforegame startgamebutton">Start Game</div>
-                    </div>
+                    </div> -->
 
-                    <div class="playingdisplay hidden ">
+                    <div class="playingdisplay hidden duringgame">
                         <!-- Buttons for play + counters, hide until selected-->
                         <p>Play Display Area</p>
                         <div class="countersOnScreen ">
@@ -130,17 +142,15 @@
 
 
 
-                        <div id="gameplayscores hidden">
-                            Counters in Play:
+                        <div id="gameplayscores hidden ">
+                            <p>Instructions: Click minimum one, maximum three counters or in your turn. Click pass to pass. Take the final counter to win.</p>
+                            <span class="duringgame hidden">Counters in Play:</span>
                             <span id="totalCounters"></span><br>
-
-                            Whose Turn?
+                            <span class="duringgame hidden">Whose Turn?</span>
                             <span id="whoseTurn"></span><br>
-
-                            Game Status:
-                            <span id="gameStatus">Select Game mode and click play.</span><br>
-
-                            Counters taken:
+                            <span class="duringgame hidden">Game Status:</span>
+                            <span id="gameStatus">Select Game mode or click play.</span><br>
+                            <span class="duringgame hidden">Counters taken:</span>
                             <span id="takenThisTurn"></span>
                         </div>
                     </div>

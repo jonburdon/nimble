@@ -60,6 +60,12 @@ function showGamePlayButtons() {
     $(".duringgame").removeClass("hidden");
 }
 
+//-*- Set up display for start screen
+function startDisplay() {
+    $(".duringgame").addClass("hidden");
+    $(".beforegame").removeClass("hidden");
+}
+
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
@@ -533,10 +539,10 @@ $(document).ready(function () {
 
 // ----------------- Buttons to Switch Views  ----------------- 
 
-$("#startscreen").click(function() {
-    $(this).addClass("hidden");
-    $(".modechoosingscreen").removeClass("hidden");
-});
+// $("#startscreen").click(function() {
+//     $(this).addClass("hidden");
+//     $(".modechoosingscreen").removeClass("hidden");
+// });
 
 
 
@@ -607,6 +613,25 @@ $("#startscreen").click(function() {
         $(".modechoosingscreen").addClass("hidden");
         $(".playingdisplay").removeClass("hidden");
         startGame();
+    });
+
+
+    $(".quitbutton").click(function() {
+        
+        $(".quitbox").removeClass('hidden');
+    });
+
+    $(".quitconfirmbutton").click(function() {
+        $(".quitbox").addClass('hidden');
+        startGame();
+        startDisplay();
+            // Add functions to restart the game here       
+
+    });
+
+    $(".quitdenybutton").click(function() {
+        
+        $(".quitbox").addClass('hidden');
     });
 
     $("#muteaudiobutton").click(function() {

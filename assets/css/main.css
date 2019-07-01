@@ -20,6 +20,15 @@ border-radius: 20px;
     /* padding-top: 10%; */
 }
 
+.quitbox {
+    position: absolute;
+    z-index: 2;
+    background-color: #009efd;
+    width: 60%;
+    padding: 20px;
+    border-radius:5px;
+    text-align: center;
+}
 
 
 .reportsarea {
@@ -30,9 +39,9 @@ border-radius: 20px;
 }
 
 .countersOnScreen {
-    border: solid;
+    /* border: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: black; */
     /* height: 200px; */
     min-height: 200px;
 }
@@ -73,7 +82,7 @@ border-radius: 20px;
     /* margin: 0; */
 }
 
-.togglebutton {
+.secondbutton {
     /* margin: 0 auto; */
     margin-top: 5px;
 }
@@ -199,14 +208,14 @@ border-radius: 20px;
 }
 
 .startgamebutton {
-    display: inline-block;
+    /* display: inline-block;
     width: 200px;
     height: 40px;
     background-color: orange;
     border-radius: 5px;
     border-color: black;
     border: solid;
-    border-width: 1px;
+    border-width: 1px; */
 
 }
 
