@@ -49,19 +49,19 @@
                 <div class="row">
                         <!-- Select Mode -->
                         <div class="col col-1 buttonicon impossiblemodebutton smallcirclebutton secondbutton hidden">
-                            <i class=" fa fa-exclamation-circle" aria-hidden="true"></i>
+                                <i class=" fas fa-robot darkred" aria-hidden="true"></i>
                         </div>
                         <div class="col col-1 buttonicon hardmodebutton smallcirclebutton secondbutton hidden">
-                            H
+                                <i class=" fas fa-robot red" aria-hidden="true"></i>
                         </div>
                         <div class="col col-1 buttonicon mediummodebutton smallcirclebutton secondbutton hidden">
-                            M
+                                <i class=" fas fa-robot orange" aria-hidden="true"></i>
                         </div>
                         <div class="col col-1 buttonicon easymodebutton smallcirclebutton secondbutton hidden">
-                            <i class=" fa fa-child" aria-hidden="true"></i>
+                                <i class=" fas fa-robot green" aria-hidden="true"></i>
                         </div>
                         <div class="col col-1 beforegame buttonicon humanmodebutton smallcirclebutton secondbutton">
-                            <i class=" fa fa-user" aria-hidden="true"></i>
+                            <i class=" far fa-user-circle" aria-hidden="true"></i>
                         </div>
 
                         <!-- Restart Game ?-->
@@ -161,12 +161,14 @@
                         <div id="gameplayscores hidden ">
                             <span class="duringgame hidden">Counters in Play:</span>
                             <span id="totalCounters"></span><br>
-                            <span class="duringgame hidden">Whose Turn?</span>
+                            <span class="duringgame hidden"><i class=" far fa-user-circle" aria-hidden="true"></i> </span>
                             <span id="whoseTurn"></span><br>
+                            <span class="duringgame hidden">1,2 or 3?</span>
+                            <span id="takenThisTurn"></span><br>
                             <span class="duringgame hidden">Game Status:</span>
-                            <span id="gameStatus">Select Game mode or click play.</span><br>
-                            <span class="duringgame hidden">Counters taken:</span>
-                            <span id="takenThisTurn"></span>
+                            <span id="gameStatus">Select Game mode or click play.<br>
+                                <i class=" far fa-user-circle" aria-hidden="true"></i> Mode is Human Mode</span>
+                            
                         </div>
                     </div>
             </div>

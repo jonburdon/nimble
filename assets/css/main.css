@@ -7,6 +7,32 @@ h1 {
     font-size: 4em;
 }
 
+// --------------- Button colours ---------------
+
+
+.orange {
+    color: #C70039;
+}
+
+.red {
+    color: #FF5733;
+}
+
+.darkred {
+    color: #C70039;
+}
+
+.orange {
+    color: #FFC300;
+}
+
+.green {
+    color: #058E3E;
+}
+
+// --------------- Boxes ---------------
+
+
 .gameplayarea {
     /* border: solid; */
     /* border-width: 1px; */
@@ -85,7 +111,8 @@ border-radius: 20px;
 
 .secondbutton {
     /* margin: 0 auto; */
-    margin-top: 5px;
+    margin-top: -25px;
+    /* margin-left: 10px; */
 }
 
 /* .finaltogglebutton {

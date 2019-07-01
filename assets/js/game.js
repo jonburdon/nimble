@@ -70,6 +70,7 @@ function startDisplay() {
 
 function startGame() {
     // asignWhoGoesFirst();
+    startDisplay();
     hideBeforeGameButtons();
     showGamePlayButtons();
     showAllCounters();
@@ -580,31 +581,31 @@ $(document).ready(function () {
 // Hide this button, and show the next one - TODO: make one, more efficient function instead of five
 
     $(".impossiblemodebutton").click(function() {
-        changeMode("impossible");
+        changeMode("human");
         $(this).addClass('hidden');
         $(".humanmodebutton").removeClass('hidden');
     });
 
     $(".hardmodebutton").click(function() {
-        changeMode("hard");
+        changeMode("impossible");
         $(this).addClass('hidden');
         $(".impossiblemodebutton").removeClass('hidden');
     });
 
     $(".mediummodebutton").click(function() {
-        changeMode("medium");
+        changeMode("hard");
         $(this).addClass('hidden');
         $(".hardmodebutton").removeClass('hidden');
     });
 
     $(".easymodebutton").click(function() {
-        changeMode("easy");
+        changeMode("medium");
         $(this).addClass('hidden');
         $(".mediummodebutton").removeClass('hidden');
     });
 
     $(".humanmodebutton").click(function() {
-        changeMode("human");
+        changeMode("easy");
         $(this).addClass('hidden');
         $(".easymodebutton").removeClass('hidden');
     });
