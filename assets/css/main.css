@@ -20,11 +20,12 @@ border-radius: 20px;
     /* padding-top: 10%; */
 }
 
-.quitbox {
+.infobox {
     position: absolute;
     z-index: 2;
     background-color: #009efd;
-    width: 60%;
+    width: 95%;
+    height: 50%;
     padding: 20px;
     border-radius:5px;
     text-align: center;
@@ -43,7 +44,7 @@ border-radius: 20px;
     border-width: 1px;
     border-color: black; */
     /* height: 200px; */
-    min-height: 200px;
+    min-height: 130px;
 }
 
 .reportsarea {
@@ -110,6 +111,13 @@ border-radius: 20px;
     
 }
 
+.firstbutton {
+    /* position: fixed; */
+    margin-top: 5px;
+    padding: 15px;
+    text-align: center;
+    
+}
 
 
 /* Original code for shape from https://css-tricks.com/the-shapes-of-css/ */
@@ -254,12 +262,12 @@ border-radius: 20px;
 @media only screen and (min-width: 768px) {
 
 .counter {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
 }
 
 .countersOnScreen {
-    min-height: 440px;
+    min-height: 200px;
 }
 }
 
@@ -276,7 +284,7 @@ h1 {
 }
 
 .countersOnScreen {
-    min-height: 440px;
+    min-height: 240px;
 }
 
 }

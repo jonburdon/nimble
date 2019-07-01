@@ -616,8 +616,7 @@ $(document).ready(function () {
     });
 
 
-    $(".quitbutton").click(function() {
-        
+    $(".quitbutton").click(function() { 
         $(".quitbox").removeClass('hidden');
     });
 
@@ -626,13 +625,21 @@ $(document).ready(function () {
         startGame();
         startDisplay();
             // Add functions to restart the game here       
-
     });
 
     $(".quitdenybutton").click(function() {
         
         $(".quitbox").addClass('hidden');
     });
+
+    $("#helpbutton").click(function() { 
+        $(".helpbox").removeClass('hidden');
+    });
+
+    $(".helpconfirmbutton").click(function() {
+        $(".helpbox").addClass('hidden');    
+    });
+
 
     $("#muteaudiobutton").click(function() {
         muteaudio();

@@ -32,13 +32,17 @@
             <div class=" col col-sm-8 offset-sm-2 gameplayarea">
                 <div class="row">
                     <!--Header row-->
-                    <div id="startmusicbutton" class="col col-1 smallcirclebutton">
+                    <div id="startmusicbutton" class="col col-1 smallcirclebutton firstbutton">
                         <i class="buttonicon fa fa-music" aria-hidden="true"></i>
                     </div>
 
-                    <div class="col col-10 branding">
+                    <div class="col col-9 branding">
                         <h1>Nimble</h1>
                     </div>
+
+                    <div id="helpbutton" class="col col-1 smallcirclebutton firstbutton">
+                            <i class="buttonicon far fa-question-circle" aria-hidden="true"></i>
+                        </div>
 
                 </div>
 
@@ -66,7 +70,7 @@
                         </div>
                 </div>
 
-<div class="containerfluid quitbox hidden">
+<div class="containerfluid quitbox infobox hidden"> <!-- Quit Confirm Box -->
 <p>Are you sure you want to quit?</p>
 
 <div class="col col-1 beforegame buttonicon quitconfirmbutton smallcirclebutton secondbutton">
@@ -78,6 +82,18 @@
         </div>
 
 </div>
+
+
+<div class="containerfluid helpbox infobox hidden"> <!-- Help Box -->
+    <p>Help:</p>
+    <p>Click <i class=" far fa-hand-pointer" aria-hidden="true"></i> minimum one, maximum three times in your turn. Click <i class=" far fa-check-circle" aria-hidden="true"></i> to pass. Take the final counter to win.</p>
+                            
+    <div class="col col-1 beforegame buttonicon helpconfirmbutton smallcirclebutton secondbutton">
+            <i class=" far fa-thumbs-up" aria-hidden="true"></i>
+        </div>
+    
+    </div>
+
 
                 <p>
                     <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
@@ -143,7 +159,6 @@
 
 
                         <div id="gameplayscores hidden ">
-                            <p>Instructions: Click <i class=" far fa-hand-pointer" aria-hidden="true"></i> minimum one, maximum three times in your turn. Click <i class=" far fa-check-circle" aria-hidden="true"></i> to pass. Take the final counter to win.</p>
                             <span class="duringgame hidden">Counters in Play:</span>
                             <span id="totalCounters"></span><br>
                             <span class="duringgame hidden">Whose Turn?</span>
