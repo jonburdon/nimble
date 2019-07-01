@@ -193,17 +193,25 @@ border-radius: 20px;
     display:inline-block;
     text-align:center;
     padding-top: 10px;
+    font-size: 2em;
 }
 
 .clickcounterbutton {
     display: inline-block;
     width: 200px;
     height: 40px;
-    background-color: orange;
+    /* background-color: orange;
     border-radius: 5px;
     border-color: black;
     border: solid;
-    border-width: 1px;
+    border-width: 1px; */
+
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 
 }
 
@@ -223,11 +231,18 @@ border-radius: 20px;
     display: inline-block;
     width: 200px;
     height: 40px;
-    background-color: orange;
+    /* background-color: orange;
     border-radius: 5px;
     border-color: black;
     border: solid;
-    border-width: 1px;
+    border-width: 1px; */
+
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 
 }
 
