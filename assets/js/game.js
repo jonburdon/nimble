@@ -80,7 +80,7 @@ function startGame() {
         reportScore("gameStatus","Computer will start play this time ...")
         humanOrComputer();
     } else {
-        reportScore("gameStatus","Computer is getting bored, please play me ...")
+        // reportScore("gameStatus","I'm bored, please have a go against the computer ...")
     }
 }
 

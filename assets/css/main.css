@@ -7,7 +7,17 @@ h1 {
     font-size: 4em;
 }
 
+/* Pulse code from http://www.tipue.com/blog/css-pulse-buttons/*/
 
+@keyframes shadow-pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+     }
+     100% {
+          box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+     }
+}
 
 /* --------------- Button colours ---------------*/
 
@@ -96,6 +106,7 @@ border-radius: 20px;
     border-radius: 50%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
     margin: 0 auto;
+    animation: shadow-pulse 1s infinite;
 }
 
 .smallcirclebutton {
