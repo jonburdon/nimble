@@ -7,6 +7,8 @@ h1 {
     font-size: 4em;
 }
 
+
+
 /* --------------- Button colours ---------------*/
 
 
@@ -52,11 +54,13 @@ border-radius: 20px;
     text-align: center;
 }
 
-
 .reportsarea {
+    display: block;
     margin: 30px 30px;
-    padding: 25px;
+    padding: 4px;
     border-radius: 25px;
+    height: 100px;
+    width: 90%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 }
 
@@ -68,9 +72,10 @@ border-radius: 20px;
     min-height: 130px;
 }
 
-.reportsarea {
-    display: block;
+.scoreboard {
+    margin-top: 0px;
 }
+
 
 .counter {
     display: inline-block;
@@ -98,9 +103,9 @@ border-radius: 20px;
     height: 80px;
     min-height: 80px;
     min-width: 80px;
-    
     border-radius: 50%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    font-size: 1.2em;
     /* margin: 0; */
 }
 
@@ -235,7 +240,7 @@ border-radius: 20px;
     border-color: black;
     border: solid;
     border-width: 1px; */
-
+    font-size: 3em;
     height: 80px;
     min-height: 80px;
     min-width: 80px;
@@ -243,6 +248,14 @@ border-radius: 20px;
     border-radius: 50%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
 
+}
+
+.score {
+    font-size: 2em;
+}
+
+.scoreboard {
+    font-size: 1.3em;
 }
 
 .startgamebutton {
@@ -266,7 +279,7 @@ border-radius: 20px;
     border-color: black;
     border: solid;
     border-width: 1px; */
-
+    font-size: 3em;
     height: 80px;
     min-height: 80px;
     min-width: 80px;
