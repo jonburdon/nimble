@@ -650,7 +650,12 @@ $(document).ready(function () {
         toggleMusic();
     });
 
+    $(".smallcirclebutton, .clickcounterbutton, .passplaybutton, .startarrow, #triangleright").click(function() {
+        console.log('button click for sound.')
+        playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
+    });
 
+    
 
     // $(".passplaybutton").click(function() {
     //     passTurnToOtherPlayerManually();
