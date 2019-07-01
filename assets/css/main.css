@@ -67,13 +67,15 @@ border-radius: 20px;
     height: 80px;
     min-height: 80px;
     min-width: 80px;
+    
     border-radius: 50%;
     background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
     /* margin: 0; */
 }
 
 .togglebutton {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 5px;
 }
 
 /* .finaltogglebutton {
