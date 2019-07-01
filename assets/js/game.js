@@ -563,6 +563,14 @@ $("#startscreen").click(function() {
         }
     });
 
+    $(".togglebutton").click(function() {
+        $(this).addClass('hidden');
+    });
+
+    $(".finaltogglebutton").click(function() {
+        $(".togglebutton").removeClass('hidden');
+    });
+
     $(".impossiblemodebutton").click(function() {
         changeMode("impossible");
     });
