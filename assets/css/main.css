@@ -14,6 +14,10 @@ body {
     color: white;
 }
 
+/*------------------ Animations ------------------ */
+
+
+
 /* Pulse code from http://www.tipue.com/blog/css-pulse-buttons/*/
 
 @keyframes shadow-pulse
@@ -163,7 +167,7 @@ position: relative;
     min-width: 80px;
     border-radius: 50%;
     /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
-    
+    margin: 0px 5px;
     background-color:#403684;
     color: #FCCD04;
     font-size: 1.2em;
@@ -370,6 +374,8 @@ position: relative;
 .startarrow {
     height: 300px;
     width: 300px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 
