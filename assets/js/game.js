@@ -61,16 +61,17 @@ function showGamePlayButtons() {
 }
 
 //-*- Set up display for start screen
-function startDisplay() {
+function () {
     $(".duringgame").addClass("hidden");
     $(".beforegame").removeClass("hidden");
+    reportScore("gameStatus",`Choose play mode <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i>`);
 }
 
 // -*- RUNS START OF GAME FUNCTIONS
 
 function startGame() {
     // asignWhoGoesFirst();
-    startDisplay();
+    ();
     hideBeforeGameButtons();
     showGamePlayButtons();
     showAllCounters();
@@ -624,7 +625,7 @@ $(document).ready(function () {
     $(".quitconfirmbutton").click(function() {
         $(".quitbox").addClass('hidden');
         startGame();
-        startDisplay();
+        ();
             // Add functions to restart the game here       
     });
 
