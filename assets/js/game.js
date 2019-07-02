@@ -539,6 +539,8 @@ if (musicon) {
 $(document).ready(function () {
 
 
+
+
 // ----------------- Buttons to Switch Views  ----------------- 
 
 // $("#startscreen").click(function() {

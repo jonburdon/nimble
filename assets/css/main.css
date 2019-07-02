@@ -171,8 +171,24 @@ position: relative;
     background-color:#403684;
     color: #FCCD04;
     font-size: 1.2em;
+    /* cursor: pointer; */
     /* margin: 0; */
 }
+
+
+/* .smallcirclebutton:hover {background-color: #3e8e41} */
+
+.smallcirclebutton:active {
+  /* background-color: #3e8e41; */
+  box-shadow: 0 5px #FCCD04;
+  transform: translateY(4px);
+}
+
+#startmusicbutton:active, .clickcounterbutton:active, .passplaybutton:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #A64AC9;
+    transform: translateY(4px);
+  }
 
 .secondbutton {
     /* margin: 0 auto; */
