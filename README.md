@@ -47,3 +47,6 @@ As a player aged 8+ I want to be able to
 https://freesound.org/people/zagi2/sounds/260566/
 https://freesound.org/people/elmasmalo1/sounds/376968/
 Converted to mp3 with: https://online-audio-converter.com/
+
+Color Scheme taken from:
+https://visme.co/blog/website-color-schemes/
