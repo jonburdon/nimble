@@ -63,12 +63,15 @@ border-radius: 20px;
 .infobox {
     position: absolute;
     z-index: 2;
-    background-color: rgba(0, 158, 253, 30);
+    /* background-color: rgba(0, 158, 253, 30); */
+    background-color: #17E9E0;
+    color: #403684;
     width: 95%;
     height: 50%;
     padding: 20px;
     border-radius:5px;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .reportsarea {
@@ -109,8 +112,8 @@ border-radius: 20px;
 }
 
 .startarrow {
-    height: 300px;
-    width: 300px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
     background-color: #A64AC9;
@@ -118,6 +121,21 @@ border-radius: 20px;
     animation: shadow-pulse 1s infinite;
 }
 
+/* Original code for shape from https://css-tricks.com/the-shapes-of-css/ */
+#triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 75px solid #17E9E0;
+    border-top: 37px solid transparent;
+    border-bottom: 37px solid transparent;
+    /* margin-top: x; */
+    margin: 0 auto;
+    margin-top: -25px;
+  }
+
+  /* .triangle-space {
+    margin-top: 12px;
+} */
 
 /* .vertical-center {
     margin: 0;
@@ -193,20 +211,9 @@ position: relative;
     color: #FCCD04;
 }
 
-/* Original code for shape from https://css-tricks.com/the-shapes-of-css/ */
-#triangle-right {
-    width: 0;
-    height: 0;
-    border-left: 150px solid #17E9E0;
-    border-top: 75px solid transparent;
-    border-bottom: 75px solid transparent;
-    /* margin-top: x; */
-    margin: 0 auto;
-  }
 
-.triangle-space {
-    margin-top: 25px;
-}
+
+
 
 /* .hardmodebutton {
     display: inline-block;
@@ -357,7 +364,26 @@ position: relative;
 .countersOnScreen {
     min-height: 200px;
 }
+
+.startarrow {
+    height: 300px;
+    width: 300px;
 }
+
+
+  #triangle-right {
+    width: 0;
+    height: 0;
+    border-left: 150px solid #17E9E0;
+    border-top: 75px solid transparent;
+    border-bottom: 75px solid transparent;
+    /* margin-top: x; */
+    margin: 0 auto;
+  }
+
+}
+
+
 
 @media only screen and (min-width: 992px) {
 
