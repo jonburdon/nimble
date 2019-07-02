@@ -29,7 +29,7 @@ function restartScores() {
 function displayStartScores() {
     reportScore("totalCounters", totalCounters),
         reportScore("whoseTurn", whoseTurnItIs),
-        reportScore("gameStatus", "Playing..."),
+        reportScore("gameStatus", ""),
         reportScore("takenThisTurn", countersTakenThisTurn);
 };
 
@@ -650,7 +650,7 @@ $(document).ready(function () {
         toggleMusic();
     });
 
-    $(".smallcirclebutton, .clickcounterbutton, .passplaybutton, .startarrow, #triangleright").click(function() {
+    $(".smallcirclebutton, .passplaybutton, .startarrow, #triangleright").click(function() {
         console.log('button click for sound.')
         playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     });

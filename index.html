@@ -36,38 +36,43 @@
                         <i class="buttonicon fa fa-music center" aria-hidden="true"></i>
                     </div>
 
-                    <div class="col branding">
-                        <h1>Nimble</h1>
-                    </div>
-
                     <div id="helpbutton" class="col col-1 smallcirclebutton firstbutton">
                         <i class="buttonicon far fa-question-circle center" aria-hidden="true"></i>
                     </div>
 
+
+                    <!-- Select Mode -->
+                    <div class="col col-1 buttonicon impossiblemodebutton smallcirclebutton secondbutton hidden">
+                            <i class=" fas fa-robot darkred center" aria-hidden="true"></i>
+                        </div>
+                        <div class="col col-1 buttonicon hardmodebutton smallcirclebutton secondbutton hidden">
+                            <i class=" fas fa-robot red center" aria-hidden="true"></i>
+                        </div>
+                        <div class="col col-1 buttonicon mediummodebutton smallcirclebutton secondbutton hidden">
+                            <i class=" fas fa-robot orange center" aria-hidden="true"></i>
+                        </div>
+                        <div class="col col-1 buttonicon easymodebutton smallcirclebutton secondbutton hidden">
+                            <i class=" fas fa-robot green center" aria-hidden="true"></i>
+                        </div>
+                        <div class="col col-1 beforegame buttonicon humanmodebutton smallcirclebutton secondbutton">
+                            <i class=" far fa-user-circle center" aria-hidden="true"></i>
+                        </div>
+    
+                        <!-- Restart Game ?-->
+                        <div class="col col-1 duringgame buttonicon quitbutton smallcirclebutton secondbutton hidden">
+                            <span><i class=" fas fa-skull center" aria-hidden="true"></i></span>
+                        </div>
+
+
+
+                    <div class="col col-12 col-lg-8 branding ">
+                            <h1>Nimble</h1>
+                        </div>
+
                 </div>
 
                 <div class="row">
-                    <!-- Select Mode -->
-                    <div class="col col-1 buttonicon impossiblemodebutton smallcirclebutton secondbutton hidden">
-                        <i class=" fas fa-robot darkred center" aria-hidden="true"></i>
-                    </div>
-                    <div class="col col-1 buttonicon hardmodebutton smallcirclebutton secondbutton hidden">
-                        <i class=" fas fa-robot red center" aria-hidden="true"></i>
-                    </div>
-                    <div class="col col-1 buttonicon mediummodebutton smallcirclebutton secondbutton hidden">
-                        <i class=" fas fa-robot orange center" aria-hidden="true"></i>
-                    </div>
-                    <div class="col col-1 buttonicon easymodebutton smallcirclebutton secondbutton hidden">
-                        <i class=" fas fa-robot green center" aria-hidden="true"></i>
-                    </div>
-                    <div class="col col-1 beforegame buttonicon humanmodebutton smallcirclebutton secondbutton">
-                        <i class=" far fa-user-circle center" aria-hidden="true"></i>
-                    </div>
 
-                    <!-- Restart Game ?-->
-                    <div class="col col-1 duringgame buttonicon quitbutton smallcirclebutton secondbutton hidden">
-                        <span><i class=" fas fa-skull center" aria-hidden="true"></i></span>
-                    </div>
                 </div>
 
                 <div class="containerfluid quitbox infobox hidden">
@@ -156,9 +161,9 @@
                                 aria-hidden="true"></i></div>
                     </div>
 
-                    <div class="reportsarea container">
+                    <div class="reportsarea ">
                        
-                        <div id="gameplayscores " class="row text-center">
+                        <div id="gameplayscores " class="row text-center justify-content-centre">
 
                             <div class="col col-4 duringgame score hidden">
                                     <span class="duringgame hidden"><i class=" fas fa-braille" aria-hidden="true"></i></span>
@@ -177,7 +182,7 @@
                                     </div>
 
                             <div class="col col-12 text-center scoreboard">
-                                    <span class="duringgame hidden">Game Status:</span>
+                                    <!-- <span class="duringgame hidden">Game Status:</span> -->
                                     <span id="gameStatus">Choose play mode 
                                         <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i></span>
                             </div>
