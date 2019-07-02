@@ -177,6 +177,7 @@ function endTheGameOrContinue() {
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
 function counterIsClicked() {
+    reportScore("gameStatus","");
     playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     reportScore("whoseTurn", whoseTurnItIs);
     countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn);
@@ -254,7 +255,9 @@ function checkPassAllowed(passcheck) {
         }
     } else {
         console.log('not found to be great than zero');
-        return whoseTurnItIs
+        reportScore("gameStatus","You can't pass yet - you must take at least one counter");
+        return whoseTurnItIs;
+        
     }
 }
 
@@ -292,7 +295,7 @@ function humanOrComputer() {
 
     } else // IF NOT HUMAN, TAKE A TURN BASED ON DIFFICULTY LEVEL
     {
-        reportScore("gameStatus", `Playing`);
+        // reportScore("gameStatus", `Playing I guess`);
     }
 
 }
@@ -377,7 +380,7 @@ function levelledMove(difficulty) {
         
           totalCounters = totalCounters - dec;
         
-        reportScore("gameStatus", "Computer decided to take " + dec + " counters.");
+        reportScore("gameStatus", "I decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
     } else {
@@ -389,7 +392,7 @@ function levelledMove(difficulty) {
 
         totalCounters = totalCounters - dec;
 
-        reportScore("gameStatus", "Computer decided to take " + dec + " counters.");
+        reportScore("gameStatus", "I decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
         console.log('Human move is def back on');
@@ -463,7 +466,7 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
     let decision = makeRandomMove(totalCounters);
 
     totalCounters = totalCounters - decision;
-    reportScore("gameStatus", "Computer decided to take " + decision + " counters.");
+    reportScore("gameStatus", "I decided to take " + decision + " counters.");
     reportScore("totalCounters", totalCounters);
 
     // Pass play to player 1 UNLESS Computer has won.
