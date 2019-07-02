@@ -293,7 +293,7 @@ position: relative;
 .clickcounterbutton {
     /* position: relative; */
     display: inline-block;
-    width: 200px;
+    width: 100px;
     height: 40px;
     /* background-color: orange;
     border-radius: 5px;
@@ -304,11 +304,34 @@ position: relative;
     height: 80px;
     min-height: 80px;
     min-width: 80px;
-    
+    color: #A64AC9;
     border-radius: 50%;
     /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
-    /* background-color: #A64AC9; */
-    background-image: linear-gradient(to top, #A64AC9 0%, #403684 100%);
+    background-color: #FCCD04;
+    /* background-image: linear-gradient(to top, #A64AC9 0%, #403684 100%); */
+
+}
+
+.passplaybutton {
+    /* position: relative; */
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    /* background-color: orange;
+    border-radius: 5px;
+    border-color: black;
+    border: solid;
+    border-width: 1px; */
+    font-size: 3em;
+    height: 80px;
+    min-height: 80px;
+    min-width: 80px;
+    color: #A64AC9;
+    border-radius: 50%;
+    /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+     */
+     background-color: #FCCD04;
+     /* background-image: linear-gradient(to top, #A64AC9 0%, #403684 100%); */
 
 }
 
@@ -332,28 +355,7 @@ position: relative;
 
 }
 
-.passplaybutton {
-    /* position: relative; */
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    /* background-color: orange;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px; */
-    font-size: 3em;
-    height: 80px;
-    min-height: 80px;
-    min-width: 80px;
-    
-    border-radius: 50%;
-    /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
-     */
-     /* background-color: #A64AC9; */
-     background-image: linear-gradient(to top, #A64AC9 0%, #403684 100%);
 
-}
 
 .hidden {
     display:none;
