@@ -8,6 +8,8 @@ let quitting = false;
 var silence = false;
 var playing =false;
 let musicon = false;
+let playerchecker;
+let firstgo = true;
 let music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3');
 
 // ----------------- Functions to access DOM  ----------------- 
@@ -27,6 +29,7 @@ function restartScores() {
     console.log(`It is player ${whoseTurnItIs} first ..`)
     countersTakenThisTurn = 0;
     totalCounters = 21;
+    
 }
 
 function displayStartScores() {
@@ -149,7 +152,8 @@ function decreaseOverallCounters(counts) {
 
 function checkPassTurn(takenThisTurn) {
     if (takenThisTurn === 3) {
-        countersTakenThisTurn = 0
+        countersTakenThisTurn = 0;
+        firstgo = true;
         return true;
     } else {
         return false;
@@ -170,7 +174,16 @@ function checkSwitchPlayer(currentPlayer) {
 // -*- Do the action of switching player automatically
 
 function switchPlayer() {
+playerchecker = whoseTurnItIs;
     whoseTurnItIs = checkSwitchPlayer(whoseTurnItIs);
+if (playerchecker != whoseTurnItIs) {
+    showPlayHasChanged();
+    firstgo = false;
+}
+else
+{}
+
+    // showPlayHasChanged();
     // reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
@@ -223,6 +236,7 @@ function showBeforeGameButtons() {
 
 function respondToWin() {
     reportScore("gameStatus", "Game Over, Player " + whoseTurnItIs + " has Won!");
+    firstgo = true;
 if (whoseTurnItIs === 2 && mode !== "human") {
     console.log('Increase Computer Score Tally by 1');
     // localStorage.setItem("computerScoreTally", userName);
@@ -250,15 +264,19 @@ function activateWinSequenceTest() {
 function showPlayHasChanged() {
 
 if (quitting) {
-    reportScore("changeofplayermessage","You have ended the game early. Nobody wins.");
+        reportScore("changeofplayermessage","You have ended the game early. Nobody wins.");
+    }
+
+else if (firstgo === false && countersTakenThisTurn === 0) {
+    reportScore("changeofplayermessage","You must take at least one counter.");
 }
 
 else if (mode != "human") {
-    reportScore("changeofplayermessage","Computer's Turn");
+    reportScore("changeofplayermessage","It is the .");
 }
 else
 {
-    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first.`);
+    reportScore("changeofplayermessage",`It is Player ${whoseTurnItIs}'s turn.`);
 }
 
     $(".playerturnbox").removeClass('hidden');
@@ -266,7 +284,7 @@ else
     setTimeout(function () {
         $(".playerturnbox").addClass('hidden')
     }, 3000);
-
+firstgo = false;
 }
 
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
@@ -284,6 +302,7 @@ function checkPassAllowed(passcheck) {
             return 2;
         } else {
             console.log('whoseTurnItIs is not found to be 1, so return 1');
+            
             return 1;
         }
     } else {
@@ -298,6 +317,7 @@ function checkPassAllowed(passcheck) {
 
 function passTurnToOtherPlayerManually() { // Call this function when 'PASS' Button is clicked
     whoseTurnItIs = checkPassAllowed(countersTakenThisTurn);
+    showPlayHasChanged();
     countersTakenThisTurn = 0;
     reportScore("whoseTurn", whoseTurnItIs);
     reportScore("takenThisTurn", countersTakenThisTurn);
@@ -330,7 +350,7 @@ function humanOrComputer() {
     {
         // reportScore("gameStatus", `Player 1s Turn`);
     }
-
+// showPlayHasChanged();
 }
 
 
@@ -565,7 +585,7 @@ $(document).ready(function () {
         startGame();
         startDisplay();
         quitting = false;
-                  
+        firstgo = true;
     });
 
     $(".quitdenybutton").click(function() {
