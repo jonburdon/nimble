@@ -272,7 +272,7 @@ else if (firstgo === false && countersTakenThisTurn === 0) {
 }
 
 else if (mode != "human") {
-    reportScore("changeofplayermessage","It is the .");
+    reportScore("changeofplayermessage","It is the Computer's Turn.");
 }
 else
 {
