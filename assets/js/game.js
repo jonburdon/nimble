@@ -283,7 +283,7 @@ else
 
     setTimeout(function () {
         $(".playerturnbox").addClass('hidden')
-    }, 3000);
+    }, 1500);
 firstgo = false;
 }
 

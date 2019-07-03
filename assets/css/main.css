@@ -216,6 +216,12 @@ border-radius: 20px;
     font-size: 1.2em;
 }
 
+.playerturnbox {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
 .reportsarea {
     display: block;
     /* margin: 30px 30px; */
