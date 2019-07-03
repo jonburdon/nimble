@@ -11,13 +11,15 @@ let music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-co
 
 // ----------------- Functions to access DOM  ----------------- 
 
-// reportScore Function to take a variable and place it on the DOM
+// -*- reportScore Function to take a variable and place it on the DOM
 
 function reportScore(target, score) {
     document.getElementById(target).innerHTML = score;
 }
 
 // ----------------- Functions to initialise the game  ----------------- 
+
+// -*- Set up scores at start of game
 
 function restartScores() {
     whoseTurnItIs = chooseWhoGoesFirst();
@@ -32,7 +34,6 @@ function displayStartScores() {
         reportScore("gameStatus", ""),
         reportScore("takenThisTurn", countersTakenThisTurn);
 };
-
 
 
 // -*- choose who goes first.
@@ -85,6 +86,8 @@ function startGame() {
     }
 }
 
+// ----------------- Game Settings  ----------------- 
+
 // -*- Change difficulty mode
 
 function changeMode(choice) {
@@ -93,7 +96,7 @@ function changeMode(choice) {
     reportScore("gameStatus", `Mode set to ${mode} mode.`)
 }
 
-// ----------------- Hiding and showing Counters on the screen  ----------------- 
+// ----------------- Functions to control gameplay  ----------------- 
 
 //-*- Remove Nth counter
 function hideNthCounter(counterNumber) {
@@ -101,6 +104,7 @@ function hideNthCounter(counterNumber) {
         .addClass("hidden");
 }
 
+// -*- Hide counters taken by computer 
 
 function hideComputersCounters(num) {
     for (i = num; i > 0; i--) {
@@ -164,7 +168,6 @@ function switchPlayer() {
     // reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
-
 // -*- endTheGameOrContinue
 
 function endTheGameOrContinue() {
@@ -181,7 +184,6 @@ function counterIsClicked() {
     playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     reportScore("whoseTurn", whoseTurnItIs);
     countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn);
-    // reportScore("takenThisTurn",countersTakenThisTurn);
     totalCounters = decreaseOverallCounters(totalCounters);
     reportScore("totalCounters", totalCounters);
     switchPlayer();
@@ -236,7 +238,6 @@ function activateWinSequenceTest() {
 }
 
 
-
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
 
 // -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
@@ -255,7 +256,7 @@ function checkPassAllowed(passcheck) {
         }
     } else {
         console.log('not found to be great than zero');
-        reportScore("gameStatus","You can't pass yet - you must take at least one counter");
+        reportScore("gameStatus","You can't pass yet - you must take at least one counter!");
         return whoseTurnItIs;
         
     }
@@ -293,14 +294,12 @@ function humanOrComputer() {
             thinkThenMove(1);
         }
 
-    } else // IF NOT HUMAN, TAKE A TURN BASED ON DIFFICULTY LEVEL
+    } else 
     {
-        // reportScore("gameStatus", `Playing I guess`);
+        // reportScore("gameStatus", `Player 1s Turn`);
     }
 
 }
-
-
 
 
 //-*- Impossible Mode - Computer makes ideal move every time
@@ -349,7 +348,7 @@ function thinkThenMove(diffLevel) {
 }
 
 
-// -*- Make a random moved based on how many counters are left - 1, 2 or 3
+// -*- Make a computer move based on how many counters are left - 1, 2 or 3
 
 function makeRandomMove(counters) {
     if (counters === 1) {
@@ -360,7 +359,6 @@ function makeRandomMove(counters) {
         return randomMoveWithThree();
     }
 }
-
 
 
 //-*- Levelled Move - receive difficulty level and return the number of counters to take 
@@ -408,60 +406,9 @@ function levelledMove(difficulty) {
 }
 
 
-// -*- Take an impossible to beat move
-
-// function perfectMove() {
-//     let myDecision = takeTheIdealMove();
-//     totalCounters = totalCounters - myDecision;
-//     reportScore("gameStatus","Computer decided to take "+ myDecision + " counters.");
-//     reportScore("totalCounters", totalCounters);
-
-//     // Pass play to player 1 UNLESS Computer has won.
-//     if (totalCounters === 0) {
-//         respondToWin();
-//     } else {
-//         whoseTurnItIs = 1;
-//         reportScore("whoseTurn", whoseTurnItIs);
-//     }
-// }
-
-
-// -*- Do the action of taking a Computers Turn in HARD MODE --- DON'T NEED THIS ANY MORE ---
-
-// function computersHardModeTurn() { 
-// console.log('I am in Hard Mode.');
-// let guesshard = (Math.random()*11);
-// console.log('My value is guess hard ' + guesshard)
-// if (guesshard > 7.5) {
-//     console.log('I will make a random move');
-//     var decision = makeRandomMove(totalCounters);
-//     console.log('I ran the makeRandomMove function and received ' + decision)
-// }
-// else
-// {
-//     console.log('I will make an impossible to beat move');
-//     var decision = takeTheIdealMove();
-//     console.log('I ran the impossible function and received ' + decision)
-// }
-
-// // let decision = makeRandomMove(totalCounters);
-// totalCounters = totalCounters - decision;
-// reportScore("gameStatus","Computer decided to take "+ decision + " counters.");
-// reportScore("totalCounters", totalCounters);
-
-// // Pass play to player 1 UNLESS Computer has won.
-// if (totalCounters === 0) {
-//     respondToWin();
-// } else {
-//     whoseTurnItIs = 1;
-//     reportScore("whoseTurn", whoseTurnItIs);
-// }
-// }
-
-
 // -*- Do the action of taking a Computers Turn
 
-function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impossible, hard, medium and easy
+function computersTurn() { 
 
     let decision = makeRandomMove(totalCounters);
 
@@ -477,7 +424,6 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
         reportScore("whoseTurn", whoseTurnItIs);
     }
 
-    // Needs refactoring to choose which function to run based on Random, Easy, Medium, Hard or Impossible Mode.
 }
 
 // ----------------- Audio Controls  -----------------
@@ -488,33 +434,6 @@ function computersTurn() { // When working, must receive 50, 8, 3 or 1 for Impos
 function playClick(url) {
     var a = new Audio(url);
         a.play();}
-
-
-// Original solution from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
-// Mute function from https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
-
-// function playAudio(url, cont) {
-//     playing = !playing;
-//     var a = new Audio(url);
-
-//     if (cont === true) {
-//         a.loop = true;
-//         a.play();}
-//         else {
-//             a.loop = false;
-//             a.play();
-//         }
-//     if (silence) {a.muted = true;}
-//     else {a.muted = false;}
-//     silence = true;
-
-// }
-
-// function muteaudio() {
-//     silence = !silence;
-// }
-
-
 
 function startMusic () {
     music.loop=true;
@@ -544,18 +463,6 @@ $(document).ready(function () {
 
 
 
-// ----------------- Buttons to Switch Views  ----------------- 
-
-// $("#startscreen").click(function() {
-//     $(this).addClass("hidden");
-//     $(".modechoosingscreen").removeClass("hidden");
-// });
-
-
-
-// ----------------- End of buttons to Switch Views  ----------------- 
-
-
     $(".clickcounterbutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't take a counter! It's not your turn.");
@@ -576,13 +483,7 @@ $(document).ready(function () {
         }
     });
 
-    // $(".togglebutton").click(function() {
-    //     $(this).addClass('hidden');
-    // });
 
-    // $(".finaltogglebutton").click(function() {
-    //     $(".togglebutton").removeClass('hidden');
-    // });
 
 // Hide this button, and show the next one - TODO: make one, more efficient function instead of five
 
@@ -631,7 +532,7 @@ $(document).ready(function () {
         $(".quitbox").addClass('hidden');
         startGame();
         startDisplay();
-            // Add functions to restart the game here       
+                  
     });
 
     $(".quitdenybutton").click(function() {
@@ -661,11 +562,6 @@ $(document).ready(function () {
         playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     });
 
-    
-
-    // $(".passplaybutton").click(function() {
-    //     passTurnToOtherPlayerManually();
-    // });
 
     $(".passplaybutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
@@ -682,8 +578,6 @@ $(document).ready(function () {
             }
         }
     });
-
- 
 
 
 });
