@@ -5,7 +5,7 @@
 * You must take at least one counter.
 * The player to take the last counter is the winner.
 
-###Developer Goals
+### Developer Goals
 * A first try at Javascript to write a game.
 * Implement Jasmine tests.
 
@@ -31,17 +31,17 @@ As a player aged 8+ I want to be able to
 ### Ideas for development and plans:
 
 
-[] Change the colour scheme depending on whose turn it is
-[] High Score table to log the wins by a particular player
+[ ] Change the colour scheme depending on whose turn it is
+[ ] High Score table to log the wins by a particular player
 [x] Play against a human
-[] Choose a colour theme
-[] Randomly choose who goes first
-[] Computer makes comments on the quality of your move - ie was it a good move?
-[] Audio plays on a mobile but not on a desktop, can be muted on either
-[] 'Classic' mode, with random number of stacks of counters. You can take as many as you like from any stack
-[] Implement tests for those functions which access the DOM
-[] Earn 'badges' for achievements.
-[] Alter UI to allow playing by clicking on the counters themselves.
+[ ] Choose a colour theme
+[x] Randomly choose who goes first
+[ ] Computer makes comments on the quality of your move - ie was it a good move?
+[ ] Audio plays on a mobile but not on a desktop, can be muted on either
+[ ] 'Classic' mode, with random number of stacks of counters. You can take as many as you like from any stack
+[ ] Implement tests for those functions which access the DOM
+[ ] Earn 'badges' for achievements.
+[ ] Alter UI to allow playing by clicking on the counters themselves.
 
 ### Credits:
 https://freesound.org/people/zagi2/sounds/260566/
