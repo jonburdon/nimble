@@ -1,3 +1,5 @@
+/*------------------ Fonts and Text Sizes / Colours ------------------ */
+
 .branding {
     text-align: center;
 
@@ -15,7 +17,6 @@ body {
 }
 
 /*------------------ Animations ------------------ */
-
 
 
 /* Pulse code from http://www.tipue.com/blog/css-pulse-buttons/*/
@@ -47,60 +48,6 @@ body {
 
 .green {
     color: #058E3E;
-}
-
-/* --------------- Boxes ---------------*/
-
-.gameplayarea {
-    /* border: solid; */
-    /* border-width: 1px; */
-    /* border-color: black; */
-    /* margin-top: 10%; */
-    /* width: 800px; */
-    margin-top: 20px;
-    height: 700px; 
-    background-color: white;
-    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
-border-radius: 20px;
-    /* padding-top: 10%; */
-}
-
-.infobox {
-    position: absolute;
-    z-index: 2;
-    /* background-color: rgba(0, 158, 253, 30); */
-    background-color: #17E9E0;
-    color: #403684;
-    width: 95%;
-    height: 50%;
-    padding: 20px;
-    border-radius:25px;
-    text-align: center;
-    font-size: 1.2em;
-}
-
-.reportsarea {
-    display: block;
-    /* margin: 30px 30px; */
-    margin-top: 30px;
-    padding: 4px;
-    border-radius: 25px;
-    height: 100px;
-    width: 100%;
-    /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
-    background-color: #A64AC9;
-}
-
-.countersOnScreen {
-    /* border: solid;
-    border-width: 1px;
-    border-color: black; */
-    /* height: 200px; */
-    min-height: 130px;
-}
-
-.scoreboard {
-    margin-top: 0px;
 }
 
 
@@ -139,18 +86,6 @@ border-radius: 20px;
     margin-top: -25px;
   }
 
-  /* .triangle-space {
-    margin-top: 12px;
-} */
-
-/* .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  } */
-
   .center {
     margin: 0;
     position: absolute;
@@ -175,129 +110,49 @@ position: relative;
     /* margin: 0; */
 }
 
-
-/* .smallcirclebutton:hover {background-color: #3e8e41} */
-
 .smallcirclebutton:active {
-  /* background-color: #3e8e41; */
-  box-shadow: 0 5px #FCCD04;
-  transform: translateY(4px);
-}
-
-#startmusicbutton:active, .clickcounterbutton:active, .passplaybutton:active {
     /* background-color: #3e8e41; */
-    box-shadow: 0 5px #A64AC9;
+    box-shadow: 0 5px #FCCD04;
     transform: translateY(4px);
   }
-
-.secondbutton {
-    /* margin: 0 auto; */
-    margin-top: 5px;
-    /* margin-left: 10px; */
-}
-
-/* .finaltogglebutton {
-    position: absolute;
-    left: 45%;
-} */ 
-
-/* #buttoncontainer {
-    position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
-} */
-
-/* .reportsarea {
-    margin-top: 100px;
-} */
-
-#startmusicbutton {
-    /* position: fixed; */
-    /* margin-top: 5px; */
-    /* padding: 15px; */
-    /* text-align: center; */
-    background-color: #FCCD04;
-    
-}
-
-.firstbutton {
-    /* position: fixed; */
-    margin-top: 5px;
-    padding: 15px;
-    text-align: center;
-    color: #A64AC9;
-}
-
-#helpbutton {
-    background-color: #A64AC9;
-    color: #FCCD04;
-}
+  
+  #startmusicbutton:active, .clickcounterbutton:active, .passplaybutton:active {
+      /* background-color: #3e8e41; */
+      box-shadow: 0 5px #A64AC9;
+      transform: translateY(4px);
+    }
+  
+  .secondbutton {
+      /* margin: 0 auto; */
+      margin-top: 5px;
+      /* margin-left: 10px; */
+  }
+  
+  
+  #startmusicbutton {
+      /* position: fixed; */
+      /* margin-top: 5px; */
+      /* padding: 15px; */
+      /* text-align: center; */
+      background-color: #FCCD04;
+      
+  }
+  
+  .firstbutton {
+      /* position: fixed; */
+      margin-top: 5px;
+      padding: 15px;
+      text-align: center;
+      color: #A64AC9;
+  }
+  
+  #helpbutton {
+      background-color: #A64AC9;
+      color: #FCCD04;
+  }
 
 
-
-
-
-/* .hardmodebutton {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: greenyellow;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-
-}
-
-.easymodebutton {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: greenyellow;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-
-}
-
-.mediummodebutton {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: greenyellow;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-
-}
-
-.impossiblemodebutton {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: greenyellow;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-
-}
-
-.humanmodebutton {
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: greenyellow;
-    border-radius: 5px;
-    border-color: black;
-    border: solid;
-    border-width: 1px;
-
-} */
-
-.buttonicon {
+  .buttonicon {
     width: 50px;
     height: 50px;
     display:inline-block;
@@ -351,14 +206,6 @@ position: relative;
 
 }
 
-.score {
-    font-size: 2em;
-}
-
-.scoreboard {
-    font-size: 1.3em;
-}
-
 .startgamebutton {
     /* display: inline-block;
     width: 200px;
@@ -371,7 +218,69 @@ position: relative;
 
 }
 
+/* --------------- Containers ---------------*/
 
+.gameplayarea {
+    /* border: solid; */
+    /* border-width: 1px; */
+    /* border-color: black; */
+    /* margin-top: 10%; */
+    /* width: 800px; */
+    margin-top: 20px;
+    height: 700px; 
+    background-color: white;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+border-radius: 20px;
+    /* padding-top: 10%; */
+}
+
+.infobox {
+    position: absolute;
+    z-index: 2;
+    /* background-color: rgba(0, 158, 253, 30); */
+    background-color: #17E9E0;
+    color: #403684;
+    width: 95%;
+    height: 50%;
+    padding: 20px;
+    border-radius:25px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.reportsarea {
+    display: block;
+    /* margin: 30px 30px; */
+    margin-top: 30px;
+    padding: 4px;
+    border-radius: 25px;
+    height: 100px;
+    width: 100%;
+    /* background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%); */
+    background-color: #A64AC9;
+}
+
+.countersOnScreen {
+    /* border: solid;
+    border-width: 1px;
+    border-color: black; */
+    /* height: 200px; */
+    min-height: 130px;
+}
+
+.scoreboard {
+    margin-top: 0px;
+}
+
+.score {
+    font-size: 2em;
+}
+
+.scoreboard {
+    font-size: 1.3em;
+}
+
+/* Override if needed with the hidden property - this class is toggled by button clicks */
 
 .hidden {
     display:none;
@@ -408,8 +317,6 @@ position: relative;
   }
 
 }
-
-
 
 @media only screen and (min-width: 992px) {
 

@@ -483,8 +483,6 @@ $(document).ready(function () {
         }
     });
 
-
-
 // Hide this button, and show the next one - TODO: make one, more efficient function instead of five
 
     $(".impossiblemodebutton").click(function() {
