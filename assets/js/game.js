@@ -4,6 +4,7 @@ let countersTakenThisTurn = 0;
 let totalCounters = 21;
 let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1];
 let mode = "human";
+let quitting = false;
 var silence = false;
 var playing =false;
 let musicon = false;
@@ -78,7 +79,11 @@ function startGame() {
     showAllCounters();
     restartScores();
     displayStartScores();
+
+
     showPlayHasChanged();
+
+
     if (whoseTurnItIs === 2 && mode !== "human") {
         reportScore("gameStatus","Computer will start play this time ...")
         humanOrComputer();
@@ -243,6 +248,18 @@ function activateWinSequenceTest() {
 // -*- Display Change of Turn box, then hide it again
 
 function showPlayHasChanged() {
+
+if (quitting) {
+    reportScore("changeofplayermessage","You have ended the game early. Nobody wins.");
+}
+
+else if (mode != "human") {
+    reportScore("changeofplayermessage","Computer's Turn");
+}
+else
+{
+    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first.`);
+}
 
     $(".playerturnbox").removeClass('hidden');
 
@@ -496,7 +513,6 @@ $(document).ready(function () {
                 reportScore("gameStatus","The Game is Over.")
             }
 
-
         }
     });
 
@@ -545,8 +561,10 @@ $(document).ready(function () {
 
     $(".quitconfirmbutton").click(function() {
         $(".quitbox").addClass('hidden');
+        quitting = true;
         startGame();
         startDisplay();
+        quitting = false;
                   
     });
 
@@ -562,7 +580,6 @@ $(document).ready(function () {
     $(".helpconfirmbutton").click(function() {
         $(".helpbox").addClass('hidden');    
     });
-
 
     $("#muteaudiobutton").click(function() {
         muteaudio();
