@@ -36,7 +36,7 @@ function displayStartScores() {
 };
 
 
-// -*- choose who goes first.
+// -*- choose who goes first randomly.
 
 function chooseWhoGoesFirst() {
     console.log('Choosing who goes first ...')
@@ -78,6 +78,7 @@ function startGame() {
     showAllCounters();
     restartScores();
     displayStartScores();
+    showPlayHasChanged();
     if (whoseTurnItIs === 2 && mode !== "human") {
         reportScore("gameStatus","Computer will start play this time ...")
         humanOrComputer();
@@ -168,7 +169,7 @@ function switchPlayer() {
     // reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
 }
 
-// -*- endTheGameOrContinue
+// -*- endTheGameOrContinue - IS THIS EVER CALLED? *************************************
 
 function endTheGameOrContinue() {
     let endOrNot = checkForWin(totalCounters);
@@ -237,6 +238,19 @@ function activateWinSequenceTest() {
     }
 }
 
+// ----------------- Functions to control the changing of turns  ----------------- 
+
+// -*- Display Change of Turn box, then hide it again
+
+function showPlayHasChanged() {
+
+    $(".playerturnbox").removeClass('hidden');
+
+    setTimeout(function () {
+        $(".playerturnbox").addClass('hidden')
+    }, 3000);
+
+}
 
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
 
@@ -249,6 +263,7 @@ function checkPassAllowed(passcheck) {
         console.log('passcheck(whoseTurnitis) is found to be >0');
         if (whoseTurnItIs === 1) {
             console.log('whoseTurnItIs is found to be 1, so return 2');
+            
             return 2;
         } else {
             console.log('whoseTurnItIs is not found to be 1, so return 1');
@@ -398,7 +413,8 @@ function levelledMove(difficulty) {
 
     // Pass play to player 1 UNLESS Computer has won.
     if (totalCounters === 0) {
-        respondToWin();
+        // respondToWin();
+        activateWinSequenceTest();
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
@@ -418,7 +434,8 @@ function computersTurn() {
 
     // Pass play to player 1 UNLESS Computer has won.
     if (totalCounters === 0) {
-        respondToWin();
+        // respondToWin();
+        activateWinSequenceTest();
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
@@ -579,8 +596,6 @@ $(document).ready(function () {
 
 
 });
-
-
 
 
 

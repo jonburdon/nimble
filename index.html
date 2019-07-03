@@ -40,7 +40,6 @@
                         <i class="buttonicon far fa-question-circle center" aria-hidden="true"></i>
                     </div>
 
-
                     <!-- Select Mode -->
                     <div class="col col-1 buttonicon impossiblemodebutton smallcirclebutton secondbutton hidden">
                             <i class=" fas fa-robot darkred center" aria-hidden="true"></i>
@@ -63,10 +62,8 @@
                             <span><i class=" fas fa-skull center" aria-hidden="true"></i></span>
                         </div>
 
-
-
                     <div class="col col-12 col-lg-7 branding ">
-                            <h1>Nimble <span id="spinner"></span></h1>
+                            <h1>Nimble</h1>
                         </div>
 
                 </div>
@@ -89,11 +86,10 @@
 
                 </div>
 
-
                 <div class="containerfluid helpbox infobox hidden">
                     <!-- Help Box -->
                     <p>Help:</p>
-                    <p>Click <i class=" far fa-hand-pointer" aria-hidden="true"></i> at up to three times in your turn. You must click at least once.</p> <p>Click <i class=" far fa-check-circle" aria-hidden="true"></i> to pass.</p><p>Take the final
+                    <p>Click <i class=" far fa-hand-pointer" aria-hidden="true"></i> up to three times in your turn. You must click at least once.</p> <p>Click <i class=" far fa-check-circle" aria-hidden="true"></i> to pass.</p><p>Take the final
                         counter to win.</p>
 
                     <div class="col col-1 beforegame buttonicon helpconfirmbutton smallcirclebutton ">
@@ -102,11 +98,19 @@
 
                 </div>
 
+                <div class="containerfluid playerturnbox infobox hidden">
+                    <!-- Player Changes Turn Box -->
+                    
+                    <span id="changeofplayermessage">Turn has changed</span>
+
+                    <!-- <div class="col col-1 beforegame buttonicon helpconfirmbutton smallcirclebutton ">
+                        <i class=" far fa-thumbs-up center" aria-hidden="true"></i>
+                    </div> -->
+
+                </div>
 
                 <p>
                     <!--Audio, Settings, Restart buttons displaying with fixed positioning-->
-
-
 
                     <div id="startscreen" class="container beforegame">
                         <!-- Start Screen, hide once button has been clicked-->
@@ -115,18 +119,6 @@
                         </div>
                     </div>
 
-
-
-                    <!-- <div class="modechoosingscreen hidden"> -->
-                    <!-- Mode Choosing Screen, hide once mode has been selected-->
-                    <!-- <p> Mode Choosing Screen</p>
-                        <div class="beforegame impossiblemodebutton">Set Impossible Mode</div>
-                        <div class="beforegame hardmodebutton">Set Hard Mode</div>
-                        <div class="beforegame mediummodebutton">Set Medium Mode</div>
-                        <div class="beforegame easymodebutton">Set Easy Mode</div>
-                        <div class="beforegame humanmodebutton">Set Human Mode</div>
-                        <div class="beforegame startgamebutton">Start Game</div>
-                    </div> -->
 
                     <div class="playingdisplay hidden duringgame text-center">
                         <!-- Buttons for play + counters, hide until selected-->
@@ -187,52 +179,11 @@
                                         <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i></span>
                             </div>
                              
-                            
-
-
                         </div>
                     </div>
             </div>
         </div>
     </div>
-
-
-
-
-    <!-- <button onclick="startGame()">Start Game</button> -->
-
-    <!-- <button onclick="counterIsClicked()">Click Counter</button> -->
-    <!-- <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
-
-    <!-- <button onclick="computersTurn()">Computer as Player 2 in Random Mode</button> -->
-    <!-- <button onclick="changeMode(impossible)">Set Impossible Mode</button> -->
-    <!-- <button onclick="computersHardModeTurn()">Computer as Player 2 in Hard Mode</button> -->
-
-    <!-- <button onclick="changeMode(hard)">Set HARD MODE</button> -->
-    <!-- <button onclick="changeMode(medium)">Set MEDIUM MODE</button> -->
-    <!-- <button onclick="changeMode(easy)">Set EASY MODE</button> -->
-    <!-- <button onclick="changeMode(human)">Set HUMAN MODE</button> -->
-    <!-- <button onclick="testComp()">Computer Go</button> -->
-    <!-- <button onclick="hideNthCounter()">Hide Nth Counter</button> -->
-    <!-- <button onclick="showAllCounters()">Show All Counters</button> -->
-
-
-    <!-- <button onclick="counterIsClicked()">Click Counter</button>
-            <button onclick="passTurnToOtherPlayerManually()">Pass Play to Other Player</button> -->
-
-
-
-
-
-
-
-    <!-- <input type="button" value="PLAY"  onclick="play()"> -->
-    <!-- <audio id="audio" src="assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3" ></audio> -->
-
-    <!-- <div onclick="playAudio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3',true)">PLAYV2</div> -->
-    <!-- <div id="muteaudiobutton">MUTE AUDIO</div> -->
-
-
 
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
