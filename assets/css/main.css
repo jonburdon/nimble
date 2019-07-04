@@ -223,9 +223,11 @@ height: 90%;
 }
 
 .playerturnbox {
+    top: 300px;
     width: 350px;
     height: 350px;
     border-radius: 50%;
+    /* margin: top: 100px; */
 }
 
 .reportsarea {
