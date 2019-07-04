@@ -90,32 +90,38 @@ As a player aged 7+ I want to be able to
 
 ### Testing protocol for each page
 
+Jasmine testing was implemented during the early staged of the project. The developer used a TDD approach. As development continued, this approach was discontinued. Tests were carried out by using console logs to show the behaviour of various functions.
+
 The following testing protocols were followed for each page on desktop, mobile, tablet and smart TV devices.
 
 * *Navigation Buttons*
-1. Verify that each link is correctly hyperlinked to the appropriate page. During testing, the brand text was found to be incorrectly linked.
-2. Verify that the menu item visited is signified as the active page.
-3. Hover over and off the button in the menu to ensure hover behaviour is as expected.
-4. Change the width of the browser to ensure the navbar collapses when expected.
-5. Click on the navbar toggler icon to ensure the navbar menu opens as expected.
-6. Verify that the text on the collapsed menu is clearly readbable and does not interfere with page content.
-7. Hover over the brand text and verify the hover behaviour is as expected.
-8. Hover over each link and verify that the hover behaviour is as expected.
+1. Verify that each button correctly displays the content when clicked.
+2. Verify that each buton makes a sound when clicked.
+4. Verify that each button displays a box shadow and changes position when clicked.
+5. Verify that the change mode buttons switch functionality when clicked.
+6. Change the width of the browser to ensure the navbar collapses when expected.
+7. Hover over buttons and verify that cursor: pointer is active.
+8. Verify that text is readable on different screen sizes.
+9. Verify that sound plays and can be muted.
 
 * *Page content*
 1. Resize the width of the browser and verify that the content resizes for different screen sizes as expected.
-2. Verify that any content that should be hidden on smaller screen sizes is hidden on those screens.
-3. Verify there is no overflow.
-4. Verify any video is responsive and plays when clicked.
-5. Verify any links to downloads or external sites open in a new tab.
-6. Verify that images cover the screen without interferring with text.
-During testing it was found that the hero image needed to be wider on extra large screens, so a separate image was loaded via a media query. The hero image was set to 95% viewport height for extra lareg screens.
+2. Verify that any content that should be hidden during game play is hidden, and any content hidden before the game has started is also hidden.
+3. Verify that text in the status bar does not overflow the container on any screen size.
+4. Verify there is no overflow.
 
-* *Footer*
-1. Enter a correct email address in the text field and click the submit button.
-2. Enter an incorrect email address in the text field and verify this is validated when the submit button is clicked.
-3. Hover over the social media buttons and verify that they behave as expected. During testing, it was found that these buttons were not linked to social media profiles.
-* During testing it was noticed that forms can be sent with no content, so the required property was added.
+* *Gameplay*
+1. Verify that the game confirms who is playing first, whether this is a human or computer opponent.
+2. Verify that pass is not possible unless at least one counter has been clicked.
+3. Verify that play passes to the other player when the pass play button has been clicked.
+4. Verify that pay passes to the other player automatically after 3 counters have been taken.
+5. Verify that values in the scoreboard update as expected.
+6. Verify that the game ends when the last counter has been taken.
+7. Verify that the correct player is designated as the winner.
+8. Verify that the winner is announced.
+9. Verify that the Computer takes an 'ideal' move every time when playing in impossible mode.
+10. Verify that the Computer takes an 'ideal' move 25% of the time in easy mode.
+11. Verify difficulty levels behave as expected in medium and hard modes.
 
 * Misc
 1. Verify that the favicon has loaded.
