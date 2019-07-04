@@ -216,6 +216,10 @@ border-radius: 20px;
     font-size: 1.2em;
 }
 
+.helpbox {
+height: 70%;
+}
+
 .playerturnbox {
     width: 350px;
     height: 350px;

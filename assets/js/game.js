@@ -2,6 +2,7 @@
 let whoseTurnItIs = 1;
 let countersTakenThisTurn = 0;
 let totalCounters = 21;
+// The idealMoves array contains the ideal strategic move, which will cause the computer to win every time.
 let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1];
 let mode = "human";
 let quitting = false;
@@ -69,7 +70,7 @@ function showGamePlayButtons() {
 function startDisplay() {
     $(".duringgame").addClass("hidden");
     $(".beforegame").removeClass("hidden");
-    reportScore("gameStatus",`Choose play mode 
+    reportScore("gameStatus",`Choose difficulty level 
     <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i>`);
 }
 
@@ -103,7 +104,14 @@ function startGame() {
 function changeMode(choice) {
     mode = choice;
     console.log(`${mode} selected by changeMode function`)
+
+if (mode === "human") {
+    reportScore("gameStatus", `Mode set to two player mode.`)
+}
+else {
     reportScore("gameStatus", `Mode set to ${mode} mode.`)
+}
+
 }
 
 // ----------------- Functions to control gameplay  ----------------- 
