@@ -174,7 +174,7 @@ function checkPassTurn(takenThisTurn) {
 function checkSwitchPlayer(currentPlayer) {
     let check = checkPassTurn(countersTakenThisTurn);
     if (check) {
-        return currentPlayer = (currentPlayer === 1) ? 2 : 1;
+        return (currentPlayer === 1) ? 2 : 1;
     } else {
         return currentPlayer
     }
