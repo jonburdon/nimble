@@ -205,6 +205,7 @@ border-radius: 20px;
 
 .infobox {
     position: absolute;
+    top: 50px;
     z-index: 2;
     /* background-color: rgba(0, 158, 253, 30); */
     background-color: #17E9E0;
@@ -218,7 +219,7 @@ border-radius: 20px;
 }
 
 .helpbox {
-height: 70%;
+height: 90%;
 }
 
 .playerturnbox {
@@ -270,13 +271,11 @@ height: 70%;
 
     .gameplayarea {
 
-        height: 600px; 
+        height: 650px; 
     
     }
 
-    .gamevalues {
-        font-size: 1.2em;
-    }
+
 
 .counter {
         width: 60px;
@@ -310,6 +309,14 @@ height: 70%;
 }
 
 @media only screen and (min-width: 992px) {
+
+    .helpbox {
+        height: 75%;
+        }
+
+    .gamevalues {
+        font-size: 1.2em;
+    }
 
     .gameplayarea {
 
