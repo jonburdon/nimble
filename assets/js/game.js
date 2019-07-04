@@ -109,7 +109,7 @@ if (mode === "human") {
     reportScore("gameStatus", `Mode set to two player mode.`)
 }
 else {
-    reportScore("gameStatus", `Mode set to ${mode} mode.`)
+    reportScore("gameStatus", `You chose the play the Computer at ${mode} difficulty level.`)
 }
 
 }
@@ -293,11 +293,20 @@ else if (firstgo === false && countersTakenThisTurn === 0) {
 }
 
 else if (mode != "human") {
-    reportScore("changeofplayermessage","It is the Computer's Turn.");
+
+    if (firstgo === false) {
+        reportScore("changeofplayermessage","It is the Computer's Turn.");
+    }
+    else {
+        reportScore("changeofplayermessage","The Computer will go first...");  
+    }
+
 }
 else
 {
-    reportScore("changeofplayermessage",`It is Player ${whoseTurnItIs}'s turn.`);
+
+    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first.`);
+
 }
 
     $(".playerturnbox").removeClass('hidden');
