@@ -198,12 +198,12 @@ else
 
 // -*- endTheGameOrContinue - IS THIS EVER CALLED? *************************************
 
-function endTheGameOrContinue() {
-    let endOrNot = checkForWin(totalCounters);
-    if (endOrNot) {
-        respondToWin();
-    }
-}
+// function endTheGameOrContinue() {
+//     let endOrNot = checkForWin(totalCounters);
+//     if (endOrNot) {
+//         respondToWin();
+//     }
+// }
 
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
@@ -439,7 +439,7 @@ function makeRandomMove(counters) {
 function levelledMove(difficulty) {
     console.log('Human is off');
 
-    myGo = (Math.random() * (difficulty + 3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
+    let myGo = (Math.random() * (difficulty + 3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
     console.log(`levelledMove received ${difficulty} and will return ${myGo}`)
 
     if (myGo > difficulty) {
@@ -558,6 +558,8 @@ $(document).ready(function () {
     });
 
 // Hide this button, and show the next one - TODO: make one, more efficient function instead of five
+
+
 
     $(".impossiblemodebutton").click(function() {
         changeMode("human");
