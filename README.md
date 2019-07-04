@@ -92,6 +92,8 @@ As a player aged 7+ I want to be able to
 
 Jasmine testing was implemented during the early staged of the project. The developer used a TDD approach. As development continued, this approach was discontinued. Tests were carried out by using console logs to show the behaviour of various functions.
 
+User testing - the game was presented to users of a variety of ages for feedback on usability and difficulty levels.
+
 The following testing protocols were followed for each page on desktop, mobile, tablet and smart TV devices.
 
 * *Navigation Buttons*
