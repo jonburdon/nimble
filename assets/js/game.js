@@ -209,7 +209,10 @@ function counterIsClicked() {
     switchPlayer();
     reportScore("whoseTurn", whoseTurnItIs);
     reportScore("takenThisTurn", countersTakenThisTurn);
-    humanOrComputer();
+    if (totalCounters > 0) {
+        humanOrComputer();
+    } else {}
+    
     activateWinSequenceTest();
 }
 
@@ -236,7 +239,16 @@ function showBeforeGameButtons() {
 }
 
 function respondToWin() {
+if (whoseTurnItIs === 1 || mode === "human") {
     reportScore("gameStatus", "Game Over, Player " + whoseTurnItIs + " has Won!");
+}
+else 
+{
+    
+    reportScore("gameStatus", "Game Over, Computer has Won!");
+}
+
+
     firstgo = true;
 if (whoseTurnItIs === 2 && mode !== "human") {
     console.log('Increase Computer Score Tally by 1');
