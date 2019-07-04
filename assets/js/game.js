@@ -69,7 +69,8 @@ function showGamePlayButtons() {
 function startDisplay() {
     $(".duringgame").addClass("hidden");
     $(".beforegame").removeClass("hidden");
-    reportScore("gameStatus","Let's play again...");
+    reportScore("gameStatus",`Choose play mode 
+    <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i>`);
 }
 
 // -*- RUNS START OF GAME FUNCTIONS
@@ -176,7 +177,7 @@ function checkSwitchPlayer(currentPlayer) {
 function switchPlayer() {
 playerchecker = whoseTurnItIs;
     whoseTurnItIs = checkSwitchPlayer(whoseTurnItIs);
-if (playerchecker != whoseTurnItIs) {
+if (playerchecker != whoseTurnItIs && totalCounters > 0) {
     showPlayHasChanged();
     firstgo = false;
 }

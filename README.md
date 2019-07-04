@@ -1,7 +1,7 @@
 # Nimble - learn an ancient logical game
 
 ### How to play
-* Take up to three counters in your turn, or click Pass to other player.
+* Take up to three counters in your turn by clicking on the hand button, or click Pass to other player by clicking on the tick button.
 * You must take at least one counter.
 * The player to take the last counter is the winner.
 
@@ -32,12 +32,12 @@ As a player aged 8+ I want to be able to
 
 
 1. [ ] Change the colour scheme depending on whose turn it is
-2. [ ] High Score table to log the wins by a particular player
-3. [x] Play against a human
+2. [ ] High Score table to log the wins by a particular player against a particular difficulty level
+3. [x] Play against a human or computer
 4. [ ] Choose a colour theme
 5. [x] Randomly choose who goes first
 6. [ ] Computer makes comments on the quality of your move - ie was it a good move?
-7. [ ] Audio plays on a mobile but not on a desktop, can be muted on either
+7. [ ] Audio plays on a mobile but not on a desktop, can be muted on either. Click sounds can be muted.
 8. [ ] 'Classic' mode, with random number of stacks of counters. You can take as many as you like from any stack
 9. [ ] Implement tests for those functions which access the DOM
 10. [ ] Earn 'badges' for achievements.
