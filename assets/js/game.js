@@ -27,7 +27,7 @@ function reportScore(target, score) {
 
 function restartScores() {
     whoseTurnItIs = chooseWhoGoesFirst();
-    console.log(`It is player ${whoseTurnItIs} first ..`)
+    // console.log(`It is player ${whoseTurnItIs} first ..`)
     countersTakenThisTurn = 0;
     totalCounters = 21;
     
@@ -44,14 +44,14 @@ function displayStartScores() {
 // -*- choose who goes first randomly.
 
 function chooseWhoGoesFirst() {
-    console.log('Choosing who goes first ...')
+    // console.log('Choosing who goes first ...')
     let playDec = (Math.random() * 2);
-    console.log(`Ransom decision is ${playDec}`)
+    // console.log(`Ransom decision is ${playDec}`)
     if (playDec < 1) {
-        console.log('P1 can go first this time');
+        // console.log('P1 can go first this time');
         return 1
     } else {
-        console.log('P2 can go first this time');
+        // console.log('P2 can go first this time');
         return 2
     }
 }
@@ -103,7 +103,7 @@ function startGame() {
 
 function changeMode(choice) {
     mode = choice;
-    console.log(`${mode} selected by changeMode function`)
+    // console.log(`${mode} selected by changeMode function`);
 
 if (mode === "human") {
     reportScore("gameStatus", `Mode set to two player mode.`)
@@ -126,7 +126,7 @@ function hideNthCounter(counterNumber) {
 
 function hideComputersCounters(num) {
     for (i = num; i > 0; i--) {
-        console.log(`TAKING COUNTER... Total Counters is ${totalCounters} TOTAL TO TAKE IS ${num} counter to take this time is ${totalCounters-(i-1)}th`)
+        // console.log(`TAKING COUNTER... Total Counters is ${totalCounters} TOTAL TO TAKE IS ${num} counter to take this time is ${totalCounters-(i-1)}th`);
         hideNthCounter(totalCounters-(i-1));
       }
 
@@ -250,12 +250,12 @@ else
 
     firstgo = true;
 if (whoseTurnItIs === 2 && mode !== "human") {
-    console.log('Increase Computer Score Tally by 1');
+    // console.log('Increase Computer Score Tally by 1');
     // localStorage.setItem("computerScoreTally", userName);
 } else if (whoseTurnItIs === 1) {
-    console.log('Increase Player 1 Score Tally by 1');
+    // console.log('Increase Player 1 Score Tally by 1');
 } else {
-    console.log('Increase Player 2 Score Tally by 1');
+    // console.log('Increase Player 2 Score Tally by 1');
 }
     // Also need to clear screen etc, and update High Score tables etc
 }
@@ -313,21 +313,21 @@ firstgo = false;
 // -*- checkPassAllowed Check if passing play to other player is allowed, and if so, swap whose turn it is
 
 function checkPassAllowed(passcheck) {
-    console.log('checkPassAllowed initiated');
-    console.log('whoseTurnItIs:' + whoseTurnItIs)
+    // console.log('checkPassAllowed initiated');
+    // console.log('whoseTurnItIs:' + whoseTurnItIs);
     if (passcheck > 0) {
-        console.log('passcheck(whoseTurnitis) is found to be >0');
+        // console.log('passcheck(whoseTurnitis) is found to be >0');
         if (whoseTurnItIs === 1) {
-            console.log('whoseTurnItIs is found to be 1, so return 2');
+            // console.log('whoseTurnItIs is found to be 1, so return 2');
             
             return 2;
         } else {
-            console.log('whoseTurnItIs is not found to be 1, so return 1');
+            // console.log('whoseTurnItIs is not found to be 1, so return 1');
             
             return 1;
         }
     } else {
-        console.log('not found to be great than zero');
+        // console.log('not found to be great than zero');
         reportScore("gameStatus","Please take at least one counter!");
         return whoseTurnItIs;
         
@@ -350,20 +350,20 @@ function passTurnToOtherPlayerManually() { // Call this function when 'PASS' But
 // -*- If Human v Human, do nothing, otherwise make a move based on difficulty mode and return play to P1
 
 function humanOrComputer() {
-    console.log(`It is player ${whoseTurnItIs} 's turn according to HorC function`)
+    // console.log(`It is player ${whoseTurnItIs} 's turn according to HorC function`);
     if (mode !== "human" && whoseTurnItIs === 2) { // IF HUMAN UPDATE STATUS
 
         if (mode === "impossible") {
-            console.log('Impossible Mode activated in humanOrComputer')
+            // console.log('Impossible Mode activated in humanOrComputer');
             thinkThenMove(50);
         } else if (mode === "hard") {
-            console.log('Hard Mode activated in humanOrComputer')
+            // console.log('Hard Mode activated in humanOrComputer');
             thinkThenMove(8);
         } else if (mode === "medium") {
-            console.log('Medium Mode activated in humanOrComputer')
+            // console.log('Medium Mode activated in humanOrComputer');
             thinkThenMove(3);
         } else { // DEFAULT TO EASY MODE
-            console.log('Easy Mode activated in humanOrComputer')
+            // console.log('Easy Mode activated in humanOrComputer');
             thinkThenMove(1);
         }
 
@@ -398,14 +398,14 @@ function randomMoveWithThree() {
 // -*- Decide randomly between taking 1 or 2 counters
 
 function randomMoveWithTwo() {
-    console.log('Using randomMoveWithTwo ...')
+    // console.log('Using randomMoveWithTwo ...');
     let guess2 = (Math.random() * 2);
-    console.log(guess2)
+    // console.log(guess2);
     if (guess2 < 1) {
-        console.log('I will return 1');
+        // console.log('I will return 1');
         return 1
     } else {
-        console.log('I will return 2');
+        // console.log('I will return 2');
         return 2
     }
 }
@@ -413,7 +413,7 @@ function randomMoveWithTwo() {
 //-*- Turn off Human Playability for 3 seconds whilst Computer 'thinks'
 
 function thinkThenMove(diffLevel) {
-    console.log('Human move is off');
+    // console.log('Human move is off');
     reportScore("gameStatus", "I am thinking ...");
     setTimeout(function () {
         levelledMove(diffLevel)
@@ -437,15 +437,15 @@ function makeRandomMove(counters) {
 //-*- Levelled Move - receive difficulty level and return the number of counters to take 
 
 function levelledMove(difficulty) {
-    console.log('Human is off');
+    // console.log('Human is off');
 
     let myGo = (Math.random() * (difficulty + 3)); //Pass this function 50 for impossible 8 for hard, 3 for Medium Mode, 1 for Easy Mode
-    console.log(`levelledMove received ${difficulty} and will return ${myGo}`)
+    // console.log(`levelledMove received ${difficulty} and will return ${myGo}`);
 
     if (myGo > difficulty) {
-        console.log('I chose to take a random move');
+        // console.log('I chose to take a random move');
         let dec = makeRandomMove(totalCounters);
-        console.log(`I decided to take ${dec} counters`);
+        // console.log(`I decided to take ${dec} counters`);
 
           hideComputersCounters(dec);      
         
@@ -455,9 +455,9 @@ function levelledMove(difficulty) {
 
         reportScore("totalCounters", totalCounters);
     } else {
-        console.log('I chose to take an ideal move');
+        // console.log('I chose to take an ideal move');
         let dec = takeTheIdealMove();
-        console.log(`I decided to take ${dec} counters`)
+        // console.log(`I decided to take ${dec} counters`);
         
         hideComputersCounters(dec);
 
@@ -466,7 +466,7 @@ function levelledMove(difficulty) {
         reportScore("gameStatus", "I decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
-        console.log('Human move is def back on');
+        // console.log('Human move is def back on');
     }
 
     // Pass play to player 1 UNLESS Computer has won.
@@ -633,7 +633,7 @@ $(document).ready(function () {
     });
 
     $(".smallcirclebutton, .passplaybutton, .startarrow, #triangleright").click(function() {
-        console.log('button click for sound.')
+        // console.log('button click for sound.');
         playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     });
 
