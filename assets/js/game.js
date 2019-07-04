@@ -6,8 +6,8 @@ let totalCounters = 21;
 let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1];
 let mode = "human";
 let quitting = false;
-var silence = false;
-var playing =false;
+let silence = false;
+let playing =false;
 let musicon = false;
 let playerchecker;
 let firstgo = true;
@@ -34,9 +34,9 @@ function restartScores() {
 }
 
 function displayStartScores() {
-    reportScore("totalCounters", totalCounters),
-        reportScore("whoseTurn", whoseTurnItIs),
-        reportScore("gameStatus", ""),
+    reportScore("totalCounters", totalCounters);
+        reportScore("whoseTurn", whoseTurnItIs);
+        reportScore("gameStatus", "");
         reportScore("takenThisTurn", countersTakenThisTurn);
 };
 
@@ -93,7 +93,7 @@ function startGame() {
         reportScore("gameStatus","Computer will start play this time ...")
         humanOrComputer();
     } else {
-        // reportScore("gameStatus","I'm bored, please have a go against the computer ...")
+
     }
 }
 
@@ -192,18 +192,9 @@ if (playerchecker != whoseTurnItIs && totalCounters > 0) {
 else
 {}
 
-    // showPlayHasChanged();
-    // reportScore("whoseTurn", checkSwitchPlayer(whoseTurnItIs));
+
 }
 
-// -*- endTheGameOrContinue - IS THIS EVER CALLED? *************************************
-
-// function endTheGameOrContinue() {
-//     let endOrNot = checkForWin(totalCounters);
-//     if (endOrNot) {
-//         respondToWin();
-//     }
-// }
 
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
@@ -566,7 +557,7 @@ $(document).ready(function () {
         }
     });
 
-// Hide this button, and show the next one - TODO: make one, more efficient function instead of five
+// Hide this button, and show the next one - IMPROVEMENT NEEDED: make one, more efficient function instead of five
 
 
 
