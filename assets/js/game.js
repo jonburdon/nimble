@@ -337,7 +337,7 @@ function checkPassAllowed(passcheck) {
         }
     } else {
         console.log('not found to be great than zero');
-        reportScore("gameStatus","You can't pass yet - you must take at least one counter!");
+        reportScore("gameStatus","Please take at least one counter!");
         return whoseTurnItIs;
         
     }

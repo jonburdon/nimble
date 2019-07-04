@@ -16,6 +16,10 @@ body {
     color: white;
 }
 
+.gamevalues {
+    font-size: .8em;
+}
+
 /*------------------ Animations ------------------ */
 
 
@@ -192,17 +196,11 @@ position: relative;
 /* --------------- Containers ---------------*/
 
 .gameplayarea {
-    /* border: solid; */
-    /* border-width: 1px; */
-    /* border-color: black; */
-    /* margin-top: 10%; */
-    /* width: 800px; */
+
     margin-top: 20px;
-    height: 700px; 
+    height: 550px; 
     background-color: white;
-    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
 border-radius: 20px;
-    /* padding-top: 10%; */
 }
 
 .infobox {
@@ -270,6 +268,16 @@ height: 70%;
 
 @media only screen and (min-width: 768px) {
 
+    .gameplayarea {
+
+        height: 600px; 
+    
+    }
+
+    .gamevalues {
+        font-size: 1.2em;
+    }
+
 .counter {
         width: 60px;
         height: 60px;
@@ -297,9 +305,17 @@ height: 70%;
     margin: 0 auto;
   }
 
+
+
 }
 
 @media only screen and (min-width: 992px) {
+
+    .gameplayarea {
+
+        height: 700px; 
+    
+    }
 
 .counter {
         width: 70px;
