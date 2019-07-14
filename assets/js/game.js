@@ -282,7 +282,7 @@ else if (firstgo === false && countersTakenThisTurn === 0) {
     reportScore("changeofplayermessage","You must take at least one counter.");
 }
 
-else if (mode != "human") {
+else if (mode !== "human") {
 
     if (firstgo === false) {
         reportScore("changeofplayermessage","It is the Computer's Turn.");
