@@ -289,14 +289,14 @@ else if (mode != "human") {
         reportScore("changeofplayermessage","It is the Computer's Turn.");
     }
     else {
-        reportScore("changeofplayermessage","The Computer will go first...");  
+        reportScore("changeofplayermessage","The Computer will take a turn...");  
     }
 
 }
 else
 {
 
-    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first.`);
+    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} may now take a turn.`);
 
 }
 
