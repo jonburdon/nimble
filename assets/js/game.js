@@ -288,7 +288,13 @@ else if (mode != "human") {
         reportScore("changeofplayermessage","It is the Computer's Turn.");
     }
     else {
-        reportScore("changeofplayermessage","The Computer will go first...");  
+        if (whoseTurnItIs === 1) {
+            reportScore("changeofplayermessage","You are going first..."); 
+        }
+        else {
+            reportScore("changeofplayermessage","The Computer will go first..."); 
+        }
+         
     }
 
 }
