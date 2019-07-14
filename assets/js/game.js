@@ -185,7 +185,6 @@ function switchPlayer() {
 playerchecker = whoseTurnItIs;
     whoseTurnItIs = checkSwitchPlayer(whoseTurnItIs);
 if (playerchecker != whoseTurnItIs && totalCounters > 0) {
-    showPlayHasChanged();
     firstgo = false;
 }
 else
