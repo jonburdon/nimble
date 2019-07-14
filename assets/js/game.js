@@ -162,7 +162,6 @@ function decreaseOverallCounters(counts) {
 function checkPassTurn(takenThisTurn) {
     if (takenThisTurn === 3) {
         countersTakenThisTurn = 0;
-        firstgo = true;
         return true;
     } else {
         return false;
@@ -247,7 +246,7 @@ else
     reportScore("gameStatus", "Game Over, Computer has Won!");
 }
 
-
+    mode = "human";
     firstgo = true;
 if (whoseTurnItIs === 2 && mode !== "human") {
     // console.log('Increase Computer Score Tally by 1');
@@ -289,15 +288,19 @@ else if (mode != "human") {
         reportScore("changeofplayermessage","It is the Computer's Turn.");
     }
     else {
-        reportScore("changeofplayermessage","The Computer will take a turn...");  
+        reportScore("changeofplayermessage","The Computer will go first...");  
     }
 
 }
 else
 {
-
-    reportScore("changeofplayermessage",`Player ${whoseTurnItIs} may now take a turn.`);
-
+    if (firstgo === false) {
+        reportScore("changeofplayermessage",`It is Player ${whoseTurnItIs}'s turn next...`);
+    }
+    else {
+        reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first...`);  
+    }
+    
 }
 
     $(".playerturnbox").removeClass('hidden');
@@ -454,6 +457,7 @@ function levelledMove(difficulty) {
         reportScore("gameStatus", "I decided to take " + dec + " counters.");
 
         reportScore("totalCounters", totalCounters);
+        
     } else {
         // console.log('I chose to take an ideal move');
         let dec = takeTheIdealMove();
@@ -467,6 +471,7 @@ function levelledMove(difficulty) {
 
         reportScore("totalCounters", totalCounters);
         // console.log('Human move is def back on');
+        
     }
 
     // Pass play to player 1 UNLESS Computer has won.
@@ -477,6 +482,7 @@ function levelledMove(difficulty) {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
     }
+    
 }
 
 
@@ -609,6 +615,7 @@ $(document).ready(function () {
         startDisplay();
         quitting = false;
         firstgo = true;
+        mode = "human";
     });
 
     $(".quitdenybutton").click(function() {
