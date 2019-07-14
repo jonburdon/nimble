@@ -11,6 +11,7 @@ let playing =false;
 let musicon = false;
 let playerchecker;
 let firstgo = true;
+let firstturn;
 let music = new Audio('assets/audio/260566_zagi2_pop-rock-loop-3(online-audio-converter.com).mp3');
 
 // ----------------- Functions to access DOM  ----------------- 
@@ -30,7 +31,7 @@ function restartScores() {
     // console.log(`It is player ${whoseTurnItIs} first ..`)
     countersTakenThisTurn = 0;
     totalCounters = 21;
-    
+    firstturn = true;
 }
 
 function displayStartScores() {
@@ -189,7 +190,12 @@ if (playerchecker != whoseTurnItIs && totalCounters > 0) {
 }
 else
 {}
-
+if (playerchecker != whoseTurnItIs) {
+    firstgo = true;
+    firstturn = false;
+    showPlayHasChanged();
+    
+}
 
 }
 
@@ -299,7 +305,7 @@ else if (mode !== "human") {
 }
 else
 {
-    if (firstgo === false) {
+    if (firstturn === false) {
         reportScore("changeofplayermessage",`It is Player ${whoseTurnItIs}'s turn next...`);
     }
     else {
