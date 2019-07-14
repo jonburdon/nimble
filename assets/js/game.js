@@ -421,6 +421,7 @@ function thinkThenMove(diffLevel) {
     setTimeout(function () {
         levelledMove(diffLevel)
     }, 3000);
+    
 }
 
 
@@ -454,7 +455,7 @@ function levelledMove(difficulty) {
         
           totalCounters = totalCounters - dec;
         
-        reportScore("gameStatus", "I decided to take " + dec + " counters.");
+        reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
 
         reportScore("totalCounters", totalCounters);
         
@@ -467,7 +468,7 @@ function levelledMove(difficulty) {
 
         totalCounters = totalCounters - dec;
 
-        reportScore("gameStatus", "I decided to take " + dec + " counters.");
+        reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
 
         reportScore("totalCounters", totalCounters);
         // console.log('Human move is def back on');
@@ -481,6 +482,7 @@ function levelledMove(difficulty) {
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
+        
     }
     
 }
@@ -493,7 +495,7 @@ function computersTurn() {
     let decision = makeRandomMove(totalCounters);
 
     totalCounters = totalCounters - decision;
-    reportScore("gameStatus", "I decided to take " + decision + " counters.");
+    reportScore("gameStatus", "I decided to take " + decision + " counters. Your turn next.");
     reportScore("totalCounters", totalCounters);
 
     // Pass play to player 1 UNLESS Computer has won.
@@ -503,6 +505,7 @@ function computersTurn() {
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
+        
     }
 
 }
