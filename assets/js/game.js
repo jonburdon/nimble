@@ -619,7 +619,7 @@ $(document).ready(function () {
     $(".quitconfirmbutton").click(function() {
         $(".quitbox").addClass('hidden');
         quitting = true;
-        startGame();
+        // startGame();
         startDisplay();
         quitting = false;
         firstgo = true;
