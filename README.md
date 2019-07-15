@@ -1,7 +1,7 @@
 # Nimble - learn an ancient logical game
 
 ---
-[View Site on GitHub Pages](https://jonburdon.github.io/nimble-javascript-game/)
+[View Site on GitHub Pages](https://jonburdon.github.io/nimble/)
 ---
 
 This website project is a logical puzzle game. The site features a javascript game which is designed to be an introduction to the ancient game of Nim.
