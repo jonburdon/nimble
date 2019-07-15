@@ -353,12 +353,15 @@ function showPlayHasChanged() {
 // -*- Function to display computer has taken a turn
 
 function YourTurnNext(num) {
+    
+    if (quitting === false) {
     reportScore("changeofplayermessage", `I took ${num} counters. It's your turn now.`);
     $(".playerturnbox").removeClass('hidden');
 
     setTimeout(function () {
         $(".playerturnbox").addClass('hidden')
     }, 1500);
+}
 }
 
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
@@ -504,7 +507,10 @@ function levelledMove(difficulty) {
 
         totalCounters = totalCounters - dec;
 
-        reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
+        if (quitting === false) {
+            reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
+        }
+    
         YourTurnNext(dec);
         reportScore("totalCounters", totalCounters);
 
@@ -517,7 +523,9 @@ function levelledMove(difficulty) {
 
         totalCounters = totalCounters - dec;
 
+        if (quitting === false) {
         reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
+        }
         YourTurnNext(dec);
         reportScore("totalCounters", totalCounters);
         // console.log('Human move is def back on');
@@ -544,7 +552,9 @@ function computersTurn() {
     let decision = makeRandomMove(totalCounters);
 
     totalCounters = totalCounters - decision;
+    if (quitting === false) {
     reportScore("gameStatus", "I decided to take " + decision + " counters. Your turn next.");
+    }
     reportScore("totalCounters", totalCounters);
 
     // Pass play to player 1 UNLESS Computer has won.
@@ -666,7 +676,13 @@ $(document).ready(function () {
         quitting = true;
         // startGame();
         startDisplay();
-        quitting = false;
+
+        if (mode != "human"){
+        setTimeout(function () {
+            quitting = false;
+        }, 3100);}
+        else {quitting = false;}
+
         firstgo = true;
         mode = "human";
     });
