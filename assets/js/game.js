@@ -393,6 +393,7 @@ function checkPassAllowed(passcheck) {
 // -*- passTurnToOtherPlayerManually - EXECUTE OTHER FUNCTIONS to update DOM by changing the player ONLY if allowed.
 
 function passTurnToOtherPlayerManually() { // Call this function when 'PASS' Button is clicked
+    
     whoseTurnItIs = checkPassAllowed(countersTakenThisTurn);
     showPlayHasChanged();
     countersTakenThisTurn = 0;
@@ -684,6 +685,7 @@ $(document).ready(function () {
         else {quitting = false;}
 
         firstgo = true;
+        firstgo = true;
         mode = "human";
     });
 
@@ -715,6 +717,7 @@ $(document).ready(function () {
 
 
     $(".passplaybutton").click(function (e) {
+        firstturn = false;
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't click this whilst I'm thinking...");
         } else {
