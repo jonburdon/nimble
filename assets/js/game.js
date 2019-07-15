@@ -7,7 +7,7 @@ let idealMoves = [1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1, 2, 3, 1, 1]
 let mode = "human";
 let quitting = false;
 let silence = false;
-let playing =false;
+let playing = false;
 let musicon = false;
 let playerchecker;
 let firstgo = true;
@@ -36,9 +36,9 @@ function restartScores() {
 
 function displayStartScores() {
     reportScore("totalCounters", totalCounters);
-        reportScore("whoseTurn", whoseTurnItIs);
-        reportScore("gameStatus", "");
-        reportScore("takenThisTurn", countersTakenThisTurn);
+    reportScore("whoseTurn", whoseTurnItIs);
+    reportScore("gameStatus", "");
+    reportScore("takenThisTurn", countersTakenThisTurn);
 };
 
 
@@ -71,7 +71,7 @@ function showGamePlayButtons() {
 function startDisplay() {
     $(".duringgame").addClass("hidden");
     $(".beforegame").removeClass("hidden");
-    reportScore("gameStatus",`Choose difficulty level 
+    reportScore("gameStatus", `Choose difficulty level 
     <i class=" far fa-user-circle" aria-hidden="true"></i> <br>or start <i class=" far fa-play-circle" aria-hidden="true"></i>`);
 }
 
@@ -91,7 +91,7 @@ function startGame() {
 
 
     if (whoseTurnItIs === 2 && mode !== "human") {
-        reportScore("gameStatus","Computer will start play this time ...")
+        reportScore("gameStatus", "Computer will start play this time ...")
         humanOrComputer();
     } else {
 
@@ -106,12 +106,11 @@ function changeMode(choice) {
     mode = choice;
     // console.log(`${mode} selected by changeMode function`);
 
-if (mode === "human") {
-    reportScore("gameStatus", `Mode set to two player mode.`)
-}
-else {
-    reportScore("gameStatus", `You chose the play the Computer at ${mode} difficulty level.`)
-}
+    if (mode === "human") {
+        reportScore("gameStatus", `Mode set to two player mode.`)
+    } else {
+        reportScore("gameStatus", `You chose the play the Computer at ${mode} difficulty level.`)
+    }
 
 }
 
@@ -128,8 +127,8 @@ function hideNthCounter(counterNumber) {
 function hideComputersCounters(num) {
     for (i = num; i > 0; i--) {
         // console.log(`TAKING COUNTER... Total Counters is ${totalCounters} TOTAL TO TAKE IS ${num} counter to take this time is ${totalCounters-(i-1)}th`);
-        hideNthCounter(totalCounters-(i-1));
-      }
+        hideNthCounter(totalCounters - (i - 1));
+    }
 
 }
 
@@ -183,19 +182,26 @@ function checkSwitchPlayer(currentPlayer) {
 // -*- Do the action of switching player automatically
 
 function switchPlayer() {
-playerchecker = whoseTurnItIs;
+    if (totalCounters === 0) {
+        activateWinSequenceTest();
+    }
+else {
+
+    playerchecker = whoseTurnItIs;
     whoseTurnItIs = checkSwitchPlayer(whoseTurnItIs);
-if (playerchecker != whoseTurnItIs && totalCounters > 0) {
-    firstgo = false;
+    if (playerchecker != whoseTurnItIs && totalCounters > 0) {
+        firstgo = false;
+    } else {}
+    if (playerchecker != whoseTurnItIs) {
+        firstgo = true;
+        firstturn = false;
+        showPlayHasChanged();
+
+    }
+
 }
-else
-{}
-if (playerchecker != whoseTurnItIs) {
-    firstgo = true;
-    firstturn = false;
-    showPlayHasChanged();
-    
-}
+
+
 
 }
 
@@ -203,7 +209,7 @@ if (playerchecker != whoseTurnItIs) {
 // -*- counterClicked - EXECUTE COUNTER CLICK FUNCTIONS - Above
 
 function counterIsClicked() {
-    reportScore("gameStatus","");
+    reportScore("gameStatus", "");
     playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     reportScore("whoseTurn", whoseTurnItIs);
     countersTakenThisTurn = increaseCountersTaken(countersTakenThisTurn);
@@ -215,7 +221,7 @@ function counterIsClicked() {
     if (totalCounters > 0) {
         humanOrComputer();
     } else {}
-    
+
     activateWinSequenceTest();
 }
 
@@ -242,17 +248,48 @@ function showBeforeGameButtons() {
 }
 
 function respondToWin() {
-if (whoseTurnItIs === 1 || mode === "human") {
-    reportScore("gameStatus", "Game Over, Player " + whoseTurnItIs + " has Won!");
-}
-else 
-{
-    
-    reportScore("gameStatus", "Game Over, Computer has Won!");
+    if (mode === "human") 
+    {
+        reportScore("gameStatus", `Game Over, Player ${whoseTurnItIs} has Won!`);
+
+        reportScore("changeofplayermessage", `Game Over, Player ${whoseTurnItIs} has won!`);
+        $(".playerturnbox").removeClass('hidden');
+        setTimeout(function () {
+            $(".playerturnbox").addClass('hidden')
+        }, 1500);
+
+    } else 
+
+    {
+        if (whoseTurnItIs === 1)
+            {
+                reportScore("gameStatus", "Game Over, Player 1 has Won!");
+
+                reportScore("changeofplayermessage", `Game Over, Player 1 has won!`);
+                $(".playerturnbox").removeClass('hidden');
+                setTimeout(function () {
+                    $(".playerturnbox").addClass('hidden')
+                }, 1500);
+            }
+        else
+            {
+                reportScore("gameStatus", "Game Over, Computer has won!");
+
+                reportScore("changeofplayermessage", `Game Over, Computer has won!`);
+                $(".playerturnbox").removeClass('hidden');
+                setTimeout(function () {
+                    $(".playerturnbox").addClass('hidden')
+                }, 1500);
+
+            }
+
+
+    }
+
 }
 
-    mode = "human";
-    firstgo = true;
+mode = "human";
+firstgo = true;
 if (whoseTurnItIs === 2 && mode !== "human") {
     // console.log('Increase Computer Score Tally by 1');
     // localStorage.setItem("computerScoreTally", userName);
@@ -261,8 +298,8 @@ if (whoseTurnItIs === 2 && mode !== "human") {
 } else {
     // console.log('Increase Player 2 Score Tally by 1');
 }
-    // Also need to clear screen etc, and update High Score tables etc
-}
+// Also need to clear screen etc, and update High Score tables etc
+
 
 function activateWinSequenceTest() {
     if (checkForWin(totalCounters)) {
@@ -279,47 +316,49 @@ function activateWinSequenceTest() {
 
 function showPlayHasChanged() {
 
-if (quitting) {
-        reportScore("changeofplayermessage","You have ended the game early. Nobody wins.");
-    }
+    if (quitting) {
+        reportScore("changeofplayermessage", "You have ended the game early. Nobody wins.");
+    } else if (firstgo === false && countersTakenThisTurn === 0) {
+        reportScore("changeofplayermessage", "You must take at least one counter.");
+    } else if (mode !== "human") {
 
-else if (firstgo === false && countersTakenThisTurn === 0) {
-    reportScore("changeofplayermessage","You must take at least one counter.");
-}
+        if (firstturn === false) {
+            reportScore("changeofplayermessage", "It is the Computer's Turn.");
+        } else {
+            if (whoseTurnItIs === 1) {
+                reportScore("changeofplayermessage", "You are going first...");
+            } else {
+                reportScore("changeofplayermessage", "The Computer will go first...");
+            }
 
-else if (mode !== "human") {
-
-    if (firstturn === false) {
-        reportScore("changeofplayermessage","It is the Computer's Turn.");
-    }
-    else {
-        if (whoseTurnItIs === 1) {
-            reportScore("changeofplayermessage","You are going first..."); 
         }
-        else {
-            reportScore("changeofplayermessage","The Computer will go first..."); 
-        }
-         
-    }
 
-}
-else
-{
-    if (firstturn === false) {
-        reportScore("changeofplayermessage",`It is Player ${whoseTurnItIs}'s turn next...`);
+    } else {
+        if (firstturn === false) {
+            reportScore("changeofplayermessage", `It is Player ${whoseTurnItIs}'s turn next...`);
+        } else {
+            reportScore("changeofplayermessage", `Player ${whoseTurnItIs} will go first...`);
+        }
+
     }
-    else {
-        reportScore("changeofplayermessage",`Player ${whoseTurnItIs} will go first...`);  
-    }
-    
-}
 
     $(".playerturnbox").removeClass('hidden');
 
     setTimeout(function () {
         $(".playerturnbox").addClass('hidden')
     }, 1500);
-firstgo = false;
+    firstgo = false;
+}
+
+// -*- Function to display computer has taken a turn
+
+function YourTurnNext(num) {
+    reportScore("changeofplayermessage", `I took ${num} counters. It's your turn now.`);
+    $(".playerturnbox").removeClass('hidden');
+
+    setTimeout(function () {
+        $(".playerturnbox").addClass('hidden')
+    }, 1500);
 }
 
 // ----------------- Functions to run when a the PASS PLAY Button has been clicked  ----------------- 
@@ -333,18 +372,18 @@ function checkPassAllowed(passcheck) {
         // console.log('passcheck(whoseTurnitis) is found to be >0');
         if (whoseTurnItIs === 1) {
             // console.log('whoseTurnItIs is found to be 1, so return 2');
-            
+
             return 2;
         } else {
             // console.log('whoseTurnItIs is not found to be 1, so return 1');
-            
+
             return 1;
         }
     } else {
         // console.log('not found to be great than zero');
-        reportScore("gameStatus","Please take at least one counter!");
+        reportScore("gameStatus", "Please take at least one counter!");
         return whoseTurnItIs;
-        
+
     }
 }
 
@@ -381,11 +420,10 @@ function humanOrComputer() {
             thinkThenMove(1);
         }
 
-    } else 
-    {
+    } else {
         // reportScore("gameStatus", `Player 1s Turn`);
     }
-// showPlayHasChanged();
+    // showPlayHasChanged();
 }
 
 
@@ -432,7 +470,7 @@ function thinkThenMove(diffLevel) {
     setTimeout(function () {
         levelledMove(diffLevel)
     }, 3000);
-    
+
 }
 
 
@@ -462,28 +500,28 @@ function levelledMove(difficulty) {
         let dec = makeRandomMove(totalCounters);
         // console.log(`I decided to take ${dec} counters`);
 
-          hideComputersCounters(dec);      
-        
-          totalCounters = totalCounters - dec;
-        
-        reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
-
-        reportScore("totalCounters", totalCounters);
-        
-    } else {
-        // console.log('I chose to take an ideal move');
-        let dec = takeTheIdealMove();
-        // console.log(`I decided to take ${dec} counters`);
-        
         hideComputersCounters(dec);
 
         totalCounters = totalCounters - dec;
 
         reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
+        YourTurnNext(dec);
+        reportScore("totalCounters", totalCounters);
 
+    } else {
+        // console.log('I chose to take an ideal move');
+        let dec = takeTheIdealMove();
+        // console.log(`I decided to take ${dec} counters`);
+
+        hideComputersCounters(dec);
+
+        totalCounters = totalCounters - dec;
+
+        reportScore("gameStatus", "I decided to take " + dec + " counters. Your turn next.");
+        YourTurnNext(dec);
         reportScore("totalCounters", totalCounters);
         // console.log('Human move is def back on');
-        
+
     }
 
     // Pass play to player 1 UNLESS Computer has won.
@@ -493,15 +531,15 @@ function levelledMove(difficulty) {
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
-        
+
     }
-    
+
 }
 
 
 // -*- Do the action of taking a Computers Turn
 
-function computersTurn() { 
+function computersTurn() {
 
     let decision = makeRandomMove(totalCounters);
 
@@ -516,7 +554,7 @@ function computersTurn() {
     } else {
         whoseTurnItIs = 1;
         reportScore("whoseTurn", whoseTurnItIs);
-        
+
     }
 
 }
@@ -528,25 +566,26 @@ function computersTurn() {
 
 function playClick(url) {
     var a = new Audio(url);
-        a.play();}
+    a.play();
+}
 
-function startMusic () {
-    music.loop=true;
+function startMusic() {
+    music.loop = true;
     music.play();
     musicon = true;
 }
 
-function stopMusic () {
+function stopMusic() {
     music.pause();
     musicon = false;
 }
 
 function toggleMusic() {
-if (musicon) {
-    stopMusic();
-} else {
-    startMusic();
-}
+    if (musicon) {
+        stopMusic();
+    } else {
+        startMusic();
+    }
 }
 
 
@@ -562,7 +601,7 @@ $(document).ready(function () {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't take a counter! It's not your turn.");
         } else {
-            
+
             if (totalCounters > 0) {
 
                 e.preventDefault();
@@ -571,58 +610,58 @@ $(document).ready(function () {
                 // $(this).addClass('hidden');
 
             } else {
-                reportScore("gameStatus","The Game is Over.")
+                reportScore("gameStatus", "The Game is Over.")
             }
 
         }
     });
 
-// Hide this button, and show the next one - IMPROVEMENT NEEDED: make one, more efficient function instead of five
+    // Hide this button, and show the next one - IMPROVEMENT NEEDED: make one, more efficient function instead of five
 
 
 
-    $(".impossiblemodebutton").click(function() {
+    $(".impossiblemodebutton").click(function () {
         changeMode("human");
         $(this).addClass('hidden');
         $(".humanmodebutton").removeClass('hidden');
     });
 
-    $(".hardmodebutton").click(function() {
+    $(".hardmodebutton").click(function () {
         changeMode("impossible");
         $(this).addClass('hidden');
         $(".impossiblemodebutton").removeClass('hidden');
     });
 
-    $(".mediummodebutton").click(function() {
+    $(".mediummodebutton").click(function () {
         changeMode("hard");
         $(this).addClass('hidden');
         $(".hardmodebutton").removeClass('hidden');
     });
 
-    $(".easymodebutton").click(function() {
+    $(".easymodebutton").click(function () {
         changeMode("medium");
         $(this).addClass('hidden');
         $(".mediummodebutton").removeClass('hidden');
     });
 
-    $(".humanmodebutton").click(function() {
+    $(".humanmodebutton").click(function () {
         changeMode("easy");
         $(this).addClass('hidden');
         $(".easymodebutton").removeClass('hidden');
     });
 
-    $(".startgamebutton").click(function() {
+    $(".startgamebutton").click(function () {
         $(".modechoosingscreen").addClass("hidden");
         $(".playingdisplay").removeClass("hidden");
         startGame();
     });
 
 
-    $(".quitbutton").click(function() { 
+    $(".quitbutton").click(function () {
         $(".quitbox").removeClass('hidden');
     });
 
-    $(".quitconfirmbutton").click(function() {
+    $(".quitconfirmbutton").click(function () {
         $(".quitbox").addClass('hidden');
         quitting = true;
         // startGame();
@@ -632,28 +671,28 @@ $(document).ready(function () {
         mode = "human";
     });
 
-    $(".quitdenybutton").click(function() {
-        
+    $(".quitdenybutton").click(function () {
+
         $(".quitbox").addClass('hidden');
     });
 
-    $("#helpbutton").click(function() { 
+    $("#helpbutton").click(function () {
         $(".helpbox").removeClass('hidden');
     });
 
-    $(".helpconfirmbutton").click(function() {
-        $(".helpbox").addClass('hidden');    
+    $(".helpconfirmbutton").click(function () {
+        $(".helpbox").addClass('hidden');
     });
 
-    $("#muteaudiobutton").click(function() {
+    $("#muteaudiobutton").click(function () {
         muteaudio();
     });
 
-    $("#startmusicbutton").click(function() {
+    $("#startmusicbutton").click(function () {
         toggleMusic();
     });
 
-    $(".smallcirclebutton, .passplaybutton, .startarrow, #triangleright").click(function() {
+    $(".smallcirclebutton, .passplaybutton, .startarrow, #triangleright").click(function () {
         // console.log('button click for sound.');
         playClick('assets/audio/376968__elmasmalo1__bubble-pop.wav');
     });
@@ -663,21 +702,17 @@ $(document).ready(function () {
         if (whoseTurnItIs === 2 && mode !== "human") {
             reportScore("gameStatus", "Oy! You can't click this whilst I'm thinking...");
         } else {
-            
+
             if (totalCounters > 0) {
 
                 e.preventDefault();
                 passTurnToOtherPlayerManually();
 
             } else {
-                reportScore("gameStatus","The Game is Over.")
+                reportScore("gameStatus", "The Game is Over.")
             }
         }
     });
 
 
 });
-
-
-
-
