@@ -79,6 +79,10 @@ body {
     cursor: pointer;
 }
 
+.pulsing {
+    animation: shadow-pulse 1s infinite;
+}
+
 /* Original code for shape from https://css-tricks.com/the-shapes-of-css/ */
 #triangle-right {
     width: 0;
