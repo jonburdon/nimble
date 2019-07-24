@@ -606,7 +606,7 @@ function toggleMusic() {
 $(document).ready(function () {
 
 
-
+// Listen for Click Counter Button, check if it's a humans turn, hide the Nth counter and then run counterIsClicked function
 
     $(".clickcounterbutton").click(function (e) {
         if (whoseTurnItIs === 2 && mode !== "human") {
